@@ -1,0 +1,5 @@
+--output html --read-all
+--dict mydict.txt
+--encoding cp1252
+--ignore sh:nobreak,sh:d:002
+--check en ../report.tex

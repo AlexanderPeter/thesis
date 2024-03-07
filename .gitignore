@@ -1,0 +1,31 @@
+# folders
+/.venv/
+
+# files
+**/__pycache__/**/*.pyc
+
+# report
+report/*.aux
+report/*.bbl
+report/*.bcf
+report/*.blg
+# report/*.dvi
+# report/*.fdb_latexmk
+# report/*.fls
+report/*.glg
+report/*.glo
+report/*.gls
+report/*.ist
+report/*.lof
+report/*.log
+report/*.lot
+report/*.markdown.lua
+report/*.out
+# report/*.out.ps
+report/*.pdf
+report/*.run.xml
+report/*.synctex.gz
+report/*.toc
+report/_markdown_report/*.md.tex
+report/textidote/report.html
+report/textidote/textidote.jar

@@ -1,0 +1,43 @@
+%-----------------------------
+% Installierte Pakete
+%-----------------------------
+
+\ProvidesPackage{config}
+\usepackage[utf8]{inputenc} % load inputenc before csquotes
+\usepackage[smartEllipses]{markdown} % load smartEllipses before enumitem
+\usepackage{amsmath, amssymb, anyfontsize, color, csquotes, csvsimple, enumitem, float, graphicx, hyperref, listings, pifont, pdfpages, scrhack, subcaption, Tabbing, tabularx}
+\usepackage[british]{babel}
+\usepackage[automake]{glossaries}
+\usepackage[a4paper,bindingoffset=0.2in, left=3.35cm,right=2.12cm,top=3.75cm,bottom=2.88cm, footskip=.25in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[backend=biber,style=apa]{biblatex}
+\DeclareLanguageMapping{british}{british-apa}
+
+\graphicspath{{./images/}}
+
+\definecolor{backcolor}{rgb}{0.95, 0.95, 0.95}
+\definecolor{numbercolor}{rgb}{0.3, 0.3, 0.3}
+\definecolor{commentcolor}{rgb}{0, 0.5, 0}
+\definecolor{keywordcolor}{rgb}{0, 0.2, 0.8}
+\definecolor{stringcolor}{rgb}{0.9, 0.45, 0}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolor},
+    basicstyle=\ttfamily\footnotesize\color{black},
+    numberstyle=\tiny\color{numbercolor},
+    commentstyle=\color{commentcolor},
+    keywordstyle=\color{keywordcolor},
+    stringstyle=\color{stringcolor},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\lstset{style=mystyle}

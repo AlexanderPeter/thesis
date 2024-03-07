@@ -1,0 +1,40 @@
+\documentclass{scrreprt}
+
+\usepackage{config}
+
+% textidote: ignore begin
+\loadglsentries{glossary}
+% textidote: ignore end
+
+\makeglossaries
+
+\addbibresource{bibliography.bib}
+
+\title{Report}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\input{content/0_0_demo.tex}
+% \input{content/1_1_cover.tex}
+\input{content/1_2_declaration.tex}
+
+\pagenumbering{roman}
+
+% \input{content/2_1_abstract.tex}
+\input{content/2_2_table_of_contents.tex}
+
+\clearpage
+\pagenumbering{arabic}
+
+% \input{content/3_1_introduction.tex}
+% \input{content/3_2_related_work.tex}
+% \input{content/3_3_method.tex}
+% \input{content/3_4_results.tex}
+% \input{content/3_5_discussion.tex}
+\input{content/4_1_appendix.tex}
+\input{content/4_2_glossaries.tex}
+\input{content/4_3_bibliography.tex}
+
+\end{document}
