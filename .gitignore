@@ -2,7 +2,7 @@
 /.venv/
 /data/
 /model_weights/
-/datasets/
+/datasets/*
 
 # files
 **/__pycache__/**/*.pyc
@@ -32,3 +32,6 @@ report/*.toc
 report/_markdown_report/*.md.tex
 report/textidote/report.html
 report/textidote/textidote.jar
+
+# Exceptions
+!.gitkeep
