@@ -2,6 +2,11 @@
 
 "It is clear from the results shown in Figs. 7 to 9 that the proposed PDDD-based and PlantVillage-based plant disease pre-training models outperform the generic ImageNet-based pre-training models in terms of both training efficiency and accuracy. This suggests that the plant disease domain is specialized and has specific knowledge that is different from the generic domain. Thus, pre-training using plant disease datasets can provide more prior knowledge that is beneficial for plant disease diagnosis." https://spj.science.org/doi/10.34133/plantphenomics.0054
 
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10194370/
+
+- "PDDD, we incorporated these images into our dataset."
+- "the ratio between field-taken plant disease images versus online-collected ones is about 8:2."
+
 Pretrained on ImageNet:
 
 - https://www.sciencedirect.com/science/article/pii/S2772375523001041?via%3Dihub
