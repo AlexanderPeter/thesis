@@ -19,3 +19,7 @@ The following sections include selected notes from multiple meetings with the su
 
 It is recommended to use about 4 tasks for plant diseases and dermatology each, differing in number of classes, proximity(close up photo with neutral background vs. full plant picture with natural background), etc.
 For the tasks it is recommended to use mainly classification rather than segmentation. Segmentation would give an unfair advantage for some model architectures.
+
+**Q: How many output features does the dermatology pretrained model have? Is it a good idea to replace the last layer?**
+
+**A:**

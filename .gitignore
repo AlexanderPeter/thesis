@@ -6,6 +6,7 @@
 
 # files
 **/__pycache__/**/*.pyc
+runs/**/*.pth
 
 # report
 report/*.aux

@@ -17,7 +17,8 @@
 | 🟢     | Research papers                                      |
 | 🟢     | Find plant datasets with pretrained weights          |
 | 🟢     | Create ResNet50 model                                |
-| 🔵     | Format notebooks                                     |
+| 🟢     | Format notebooks                                     |
 | 🔵     | Create Tiny-ViT model                                |
 | 🔵     | Find self supervised weights                         |
 | 🔵     | Request dermatology datasets with pretrained weights |
+| 🔵     | use preprocessed images 224x224                      |
