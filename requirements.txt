@@ -4,3 +4,5 @@ matplotlib
 scipy
 pandas
 scikit-learn
+# pip install torch --index-url https://download.pytorch.org/whl/cu121
+# pip install torchvision --index-url https://download.pytorch.org/whl/cu121
