@@ -18,6 +18,8 @@
 | 🟢     | Find plant datasets with pretrained weights          |
 | 🟢     | Create ResNet50 model                                |
 | 🟢     | Format notebooks                                     |
+| 🔵     | Create knn results                                   |
+| 🔵     | Create linear regression results                     |
 | 🔵     | Create Tiny-ViT model                                |
 | 🔵     | Find self supervised weights                         |
 | 🔵     | Request dermatology datasets with pretrained weights |
