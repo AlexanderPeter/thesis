@@ -18,8 +18,9 @@
 | 🟢     | Find plant datasets with pretrained weights          |
 | 🟢     | Create ResNet50 model                                |
 | 🟢     | Format notebooks                                     |
-| 🔵     | Create knn results                                   |
-| 🔵     | Create linear regression results                     |
+| 🟢     | Create knn results                                   |
+| 🟢     | Create logistic regression results                   |
+| 🔵     | Use more random and the other imagenet version       |
 | 🔵     | Create Tiny-ViT model                                |
 | 🔵     | Find self supervised weights                         |
 | 🔵     | Request dermatology datasets with pretrained weights |
