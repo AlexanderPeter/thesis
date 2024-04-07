@@ -4,5 +4,7 @@ matplotlib
 scipy
 pandas
 scikit-learn
+# transformers
+timm # ==0.6.12
 # pip install torch --index-url https://download.pytorch.org/whl/cu121
 # pip install torchvision --index-url https://download.pytorch.org/whl/cu121

@@ -38,7 +38,7 @@ More examples on: https://paperswithcode.com/datasets
 | IP102: Dataset for Insect Pest Recognition  | 75'222  | 102      | No plants                           | https://github.com/xpwu95/IP102                                                  |
 | Eight common tomato pest images             | 609     | 8        | Insects                             | https://data.mendeley.com/datasets/s62zm6djd2/1                                  |
 | Plant disease diagnosis dataset (PDDD)      | 421'133 | 120      | combination, 8:1:1, 224 × 224       |                                                                                  |
-| DARMA                                       |         |          | Offline                             |                                                                                  |
+| DARMA                                       |         |          | ~50GB                               | https://drive.google.com/drive/folders/13bOuB7U15CgYMm1vrd0jgtOXFwMlHqXf         |
 | PlantDataset                                | 5'106   | 20       |                                     | https://www.kaggle.com/datasets/duggudurgesh/plantdataset                        |
 | Leaf disease segmentation dataset           | 588     | 0        | segmentation                        | https://www.kaggle.com/datasets/fakhrealam9537/leaf-disease-segmentation-dataset |
 | CVPPP, LSC                                  | 532     | 0        | segmentation                        | https://github.com/lxfhfut/Self-Supervised-Leaf-Segmentation                     |

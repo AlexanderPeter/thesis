@@ -3,7 +3,15 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
   },
-  "cSpell.words": ["convolutional", "singleline", "Texmaker", "textidote"],
+  "cSpell.enableFiletypes": [
+    "!python"
+  ],
+  "cSpell.words": [
+    "convolutional",
+    "singleline",
+    "Texmaker",
+    "textidote"
+  ],
   "git.ignoreLimitWarning": true,
   "python.defaultInterpreterPath": ".venv\\Scripts\\python.exe",
   "python.terminal.activateEnvironment": true
