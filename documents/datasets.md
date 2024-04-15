@@ -15,7 +15,7 @@ More examples on: https://paperswithcode.com/datasets
 | Name                                        | #Images | #Classes | Comments                            | Link                                                                             |
 | ------------------------------------------- | ------- | -------- | ----------------------------------- | -------------------------------------------------------------------------------- |
 | PlantVillage (PVD)                          | 54'303  | 38       | Laboratory setup, many sources      | https://github.com/spMohanty/PlantVillage-Dataset                                |
-| PlantDoc                                    | 2'598   | 17       | Real-life, scrapped from internet   | https://github.com/pratikkayal/PlantDoc-Dataset                                  |
+| PlantDoc                                    | 2'598   | 28       | Real-life, scrapped from internet   | https://github.com/pratikkayal/PlantDoc-Dataset                                  |
 | Leaf Images                                 | 4'502   | 2        |                                     | https://data.mendeley.com/datasets/hb74ynkjcn/1                                  |
 | Agriculture-Vision Database                 |         |          | Aerial images                       | https://www.agriculture-vision.com/agriculture-vision-2020/dataset               |
 | Agriculture-Vision Database                 |         |          | Aerial images                       | https://www.agriculture-vision.com/agriculture-vision-2021/dataset-2021          |
@@ -43,6 +43,7 @@ More examples on: https://paperswithcode.com/datasets
 | Leaf disease segmentation dataset           | 588     | 0        | segmentation                        | https://www.kaggle.com/datasets/fakhrealam9537/leaf-disease-segmentation-dataset |
 | CVPPP, LSC                                  | 532     | 0        | segmentation                        | https://github.com/lxfhfut/Self-Supervised-Leaf-Segmentation                     |
 | New Plant Diseases Dataset                  | 87'000  | 38       | augmented from PlantVillage-Dataset | https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset/data        |
+| Cassava Leaf Disease Classification         | 21398   | 5        |                                     | https://www.kaggle.com/competitions/cassava-leaf-disease-classification          |
 |                                             |         |          |                                     |                                                                                  |
 
 Other lists:
