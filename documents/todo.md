@@ -26,7 +26,7 @@
 | 🟢     | Check more plant datasets                                                           |
 | 🟢     | download www.kaggle.com/competitions/cassava-leaf-disease-classification            |
 | 🟢     | download www.kaggle.com/datasets/duggudurgesh/plantdataset                          |
-| 🔵     | fix splitting bug (pandas reuses old data)                                          |
+| 🟢     | fix splitting bug (wrong path)                                                      |
 | 🔵     | checkout cassava all notebooks                                                      |
 | 🔵     | request data/models from previous work                                              |
 | 🔵     | validate methodology of "logistic regression"                                       |
