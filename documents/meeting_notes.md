@@ -20,6 +20,10 @@ The following sections include selected notes from multiple meetings with the su
 It is recommended to use about 4 tasks for plant diseases and dermatology each, differing in number of classes, proximity(close up photo with neutral background vs. full plant picture with natural background), etc.
 For the tasks it is recommended to use mainly classification rather than segmentation. Segmentation would give an unfair advantage for some model architectures.
 
+**Q: PDDD does not provide weights for a tiny ViT model which would have a similar size as the ResNet50 model. Would the weights of the tiny Swin be a suitable substitute?**
+
+**A: Although bigger, the base ViT would be a better choice than the Swin model for this work.**
+
 **Q: ?**
 
 **A:**
