@@ -28,10 +28,11 @@
 | 🟢     | download www.kaggle.com/datasets/duggudurgesh/plantdataset                          |
 | 🟢     | fix splitting bug (wrong path)                                                      |
 | 🟢     | write meeting notes                                                                 |
-| 🔵     | use SSL pretrained weights on imagenet from Dino/Dino2                              |
-| 🔵     | use vit_base instead of swin                                                        |
-| 🔵     | use adjusted accuracy or f1-score instead of accuracy                               |
-| 🔵     | improve pipeline and fix known bugs                                                 |
+| 🟢     | use SSL pretrained weights on imagenet from Dino/Dino2                              |
+| 🟢     | use vit_base instead of swin                                                        |
+| 🟢     | use adjusted accuracy or f1-score instead of accuracy                               |
+| 🟢     | improve pipeline and fix known bugs                                                 |
+| 🔵     | use different number of class samples                                               |
 | 🔵     | define 2 more plant tasks (diverse)                                                 |
 | 🔵     | checkout cassava all notebooks                                                      |
 | 🔵     | request data/models from previous work                                              |

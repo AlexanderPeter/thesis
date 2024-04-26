@@ -2,10 +2,10 @@ index,architecture,weigths_num_classes,weigths_path,dataset_path,feature_path
 0,resnet50,1000,../model_weights/random/ResNet50-Random_19.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ResNet50-Random_19.csv
 1,resnet50,1000,../model_weights/random/ResNet50-Random_20.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ResNet50-Random_20.csv
 2,resnet50,1000,../model_weights/random/ResNet50-Random_21.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ResNet50-Random_21.csv
-3,resnet50,1000,../model_weights/imagenet/ResNet50-ImageNet_v1.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava-ResNet50-ImageNet_v1.csv
-4,resnet50,1000,../model_weights/imagenet/ResNet50-ImageNet_v2.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava-ResNet50-ImageNet_v2.csv
-5,resnet50,0,../model_weights/imagenet/dino_resnet50_pretrain.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava-ResNet50-ImageNet_SSL.csv
-6,resnet50,120,../model_weights/pddd/ResNet50-Plant-model-80.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava-ResNet50-PDDD.csv
+3,resnet50,1000,../model_weights/imagenet/ResNet50-ImageNet_v1.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ResNet50-ImageNet_v1.csv
+4,resnet50,1000,../model_weights/imagenet/ResNet50-ImageNet_v2.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ResNet50-ImageNet_v2.csv
+5,resnet50,0,../model_weights/imagenet/dino_resnet50_pretrain.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ResNet50-ImageNet_SSL.csv
+6,resnet50,120,../model_weights/pddd/ResNet50-Plant-model-80.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ResNet50-PDDD.csv
 7,vit_b16,0,../model_weights/random/ViT_B16-Random_19.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ViT_B16-Random_19.csv
 8,vit_b16,0,../model_weights/random/ViT_B16-Random_20.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ViT_B16-Random_20.csv
 9,vit_b16,0,../model_weights/random/ViT_B16-Random_21.pth,../datasets/cassava-dataset/all-mini/,../datasets/intermediate-features/Cassava_Mini-ViT_B16-Random_21.csv
