@@ -32,7 +32,8 @@
 | 🟢     | use vit_base instead of swin                                                        |
 | 🟢     | use adjusted accuracy or f1-score instead of accuracy                               |
 | 🟢     | improve pipeline and fix known bugs                                                 |
-| 🔵     | use different number of class samples                                               |
+| 🟢     | use different number of class samples                                               |
+| 🔵     | Consider quantiles instead of min-mean-max                                          |
 | 🔵     | define 2 more plant tasks (diverse)                                                 |
 | 🔵     | checkout cassava all notebooks                                                      |
 | 🔵     | request data/models from previous work                                              |
