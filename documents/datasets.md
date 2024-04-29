@@ -43,7 +43,7 @@ More examples on: https://paperswithcode.com/datasets
 | Insects from rice, maize, soybean                  |         |          | ?                                          |                                                                                  |
 | Pest and Disease Image Database (PDID)             |         |          | No plants                                  |                                                                                  |
 | Plant Disease and Pest Recognition (PDPR)          |         |          | ?                                          |                                                                                  |
-| Plant disease diagnosis dataset (PDDD)             | 421'133 | 120      | combination, 8:1:1, 224 × 224              |                                                                                  |
+| Plant disease diagnosis dataset (PDDD)             | 421'133 | 120      | combination, 8:1:1, 224 × 224              | https://plantpad.samlab.cn/image_down.html                                       |
 |                                                    |         |          |                                            |                                                                                  |
 
 Other lists:
