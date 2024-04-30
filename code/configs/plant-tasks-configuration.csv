@@ -63,7 +63,6 @@ index,architecture,weigths_num_classes,weigths_path,dataset_path,feature_path
 61,vit_b16,0,../model_weights/imagenet/dino_vitbase16_pretrain.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ViT_B16-ImageNet_SSL.csv
 62,vit_b16,0,../model_weights/pddd/vit_base_patch16_224_in21k-model-96.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ViT_B16-PDDD_96.csv
 63,vit_b16,0,../model_weights/pddd/vit_base_patch16_224_in21k-model-197.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ViT_B16-PDDD_197.csv
-
 64,resnet50,1000,../model_weights/random/ResNet50-Random_19.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ResNet50-Random_19.csv
 65,resnet50,1000,../model_weights/random/ResNet50-Random_20.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ResNet50-Random_20.csv
 66,resnet50,1000,../model_weights/random/ResNet50-Random_21.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ResNet50-Random_21.csv
@@ -80,3 +79,19 @@ index,architecture,weigths_num_classes,weigths_path,dataset_path,feature_path
 77,vit_b16,0,../model_weights/imagenet/dino_vitbase16_pretrain.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ViT_B16-ImageNet_SSL.csv
 78,vit_b16,0,../model_weights/pddd/vit_base_patch16_224_in21k-model-96.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ViT_B16-PDDD_96.csv
 79,vit_b16,0,../model_weights/pddd/vit_base_patch16_224_in21k-model-197.pth,../datasets/PlantVillage-Dataset/raw/color/,../datasets/intermediate-features/PlantVillage-ViT_B16-PDDD_197.csv
+80,resnet50,1000,../model_weights/random/ResNet50-Random_19.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ResNet50-Random_19.csv
+81,resnet50,1000,../model_weights/random/ResNet50-Random_20.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ResNet50-Random_20.csv
+82,resnet50,1000,../model_weights/random/ResNet50-Random_21.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ResNet50-Random_21.csv
+83,resnet50,1000,../model_weights/imagenet/ResNet50-ImageNet_v1.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ResNet50-ImageNet_v1.csv
+84,resnet50,1000,../model_weights/imagenet/ResNet50-ImageNet_v2.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ResNet50-ImageNet_v2.csv
+85,resnet50,0,../model_weights/imagenet/dino_resnet50_pretrain.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ResNet50-ImageNet_SSL.csv
+86,resnet50,120,../model_weights/pddd/ResNet50-Plant-model-80.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ResNet50-PDDD.csv
+87,vit_b16,0,../model_weights/random/ViT_B16-Random_19.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-Random_19.csv
+88,vit_b16,0,../model_weights/random/ViT_B16-Random_20.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-Random_20.csv
+89,vit_b16,0,../model_weights/random/ViT_B16-Random_21.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-Random_21.csv
+90,vit_b16,0,../model_weights/imagenet/ViT_B16-ImageNet_v1.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-ImageNet_v1.csv
+91,vit_b16,0,../model_weights/imagenet/ViT_B16-ImageNet_v2.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-ImageNet_v2.csv
+92,vit_b16,0,../model_weights/imagenet/ViT_B16-ImageNet_v3.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-ImageNet_v3.csv
+93,vit_b16,0,../model_weights/imagenet/dino_vitbase16_pretrain.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-ImageNet_SSL.csv
+94,vit_b16,0,../model_weights/pddd/vit_base_patch16_224_in21k-model-96.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-PDDD_96.csv
+95,vit_b16,0,../model_weights/pddd/vit_base_patch16_224_in21k-model-197.pth,../datasets/PlantDataset/,../datasets/intermediate-features/PlantDataset-ViT_B16-PDDD_197.csv

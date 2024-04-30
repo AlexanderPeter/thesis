@@ -33,6 +33,7 @@
 | 🟢     | use adjusted accuracy or f1-score instead of accuracy                               |
 | 🟢     | improve pipeline and fix known bugs                                                 |
 | 🟢     | use different number of class samples                                               |
+| 🔵     | Consider subset of DARMA or PDDD as task                                            |
 | 🔵     | Consider quantiles instead of min-mean-max                                          |
 | 🔵     | define 2 more plant tasks (diverse)                                                 |
 | 🔵     | checkout cassava all notebooks                                                      |
