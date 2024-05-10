@@ -64,4 +64,13 @@ Other lists:
 | Cannabis     | ResNet18 + UNet | SSL      | https://drive.google.com/drive/folders/1zJBUnGh_A0xd4VZgkzx9ShC1XZ0ALaB6                 |
 | CVPPP, LSC   | ResNet18 + UNet | SSL      | https://drive.google.com/drive/folders/1zJBUnGh_A0xd4VZgkzx9ShC1XZ0ALaB6                 |
 |              |                 |          |                                                                                          |
-|              |                 |          |                                                                                          |
+
+# Dermatology datasets
+
+| Name                             | #Images | #Classes | Comments | Link                                                                                 |
+| -------------------------------- | ------- | -------- | -------- | ------------------------------------------------------------------------------------ |
+| Diverse Dermatology Images (DDI) | 656     | 2, 78    |          | https://stanfordaimi.azurewebsites.net/datasets/35866158-8196-48d8-87bf-50dca81df965 |
+| PAD-UFES-20                      | 2'298   | 6        |          | https://data.mendeley.com/datasets/zr7vgbcyr2/1                                      |
+| HAM10000                         | 10'015  | 7        |          | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T      |
+| Fitzpatrick 17k                  |         |          |          | https://github.com/mattgroh/fitzpatrick17k                                           |
+|                                  |         |          |          |                                                                                      |
