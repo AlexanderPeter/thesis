@@ -33,19 +33,20 @@
 | 🟢     | use adjusted accuracy or f1-score instead of accuracy                               |
 | 🟢     | improve pipeline and fix known bugs                                                 |
 | 🟢     | use different number of class samples                                               |
+| 🟢     | Consider quantiles instead of min-mean-max                                          |
+| 🟢     | define 2 more plant tasks (diverse)                                                 |
+| 🟢     | ask PDDD and other works for data: > 500'000 images would be good                   |
+| 🟢     | determine k on validation and take score of test                                    |
+| 🟢     | create figure 1 of Dermatology-Paper                                                |
+| 🟢     | Request dermatology datasets with pretrained weights                                |
+| 🟢     | validate methodology of "logistic regression"                                       |
+| 🔵     | Prepare images for SSL                                                              |
 | 🔵     | Consider subset of DARMA or PDDD as task                                            |
-| 🔵     | Consider quantiles instead of min-mean-max                                          |
-| 🔵     | define 2 more plant tasks (diverse)                                                 |
 | 🔵     | checkout cassava all notebooks                                                      |
 | 🔵     | request data/models from previous work                                              |
-| 🔵     | ask PDDD and other works for data: > 500'000 images would be good                   |
 | 🔵     | subsampling less images per class                                                   |
-| 🔵     | determine k on validation and take score of test                                    |
 | 🔵     | read Dermatology-Paper                                                              |
-| 🔵     | create figure 1 of Dermatology-Paper                                                |
 | 🔵     | research iBot/DINO                                                                  |
 | 🔵     | checkout cassava all notebooks                                                      |
-| 🔵     | validate methodology of "logistic regression"                                       |
 | 🔵     | Find self supervised weights                                                        |
-| 🔵     | Request dermatology datasets with pretrained weights                                |
 | 🔵     | use preprocessed images 224x224                                                     |

@@ -67,10 +67,10 @@ Other lists:
 
 # Dermatology datasets
 
-| Name                             | #Images | #Classes | Comments | Link                                                                                 |
-| -------------------------------- | ------- | -------- | -------- | ------------------------------------------------------------------------------------ |
-| Diverse Dermatology Images (DDI) | 656     | 2, 78    |          | https://stanfordaimi.azurewebsites.net/datasets/35866158-8196-48d8-87bf-50dca81df965 |
-| PAD-UFES-20                      | 2'298   | 6        |          | https://data.mendeley.com/datasets/zr7vgbcyr2/1                                      |
-| HAM10000                         | 10'015  | 7        |          | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T      |
-| Fitzpatrick 17k                  |         |          |          | https://github.com/mattgroh/fitzpatrick17k                                           |
-|                                  |         |          |          |                                                                                      |
+| Name                             | #Images        | #Classes | Comments | Link                                                                                 |
+| -------------------------------- | -------------- | -------- | -------- | ------------------------------------------------------------------------------------ |
+| Diverse Dermatology Images (DDI) | 656            | 2, 78    |          | https://stanfordaimi.azurewebsites.net/datasets/35866158-8196-48d8-87bf-50dca81df965 |
+| PAD-UFES-20                      | 2'298          | 6        |          | https://data.mendeley.com/datasets/zr7vgbcyr2/1                                      |
+| HAM10000                         | 10'015         | 7        |          | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T      |
+| Fitzpatrick 17k                  | 16'536, 16'577 | 9        |          | https://github.com/mattgroh/fitzpatrick17k                                           |
+|                                  |                |          |          |                                                                                      |
