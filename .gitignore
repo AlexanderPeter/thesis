@@ -1,8 +1,9 @@
 # folders
 /.venv/
 /data/
-/model_weights/
 /datasets/*
+/model_weights/
+/presentations/*
 
 # files
 **/__pycache__/**/*.pyc

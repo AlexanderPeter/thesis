@@ -40,7 +40,11 @@
 | 🟢     | create figure 1 of Dermatology-Paper                                                |
 | 🟢     | Request dermatology datasets with pretrained weights                                |
 | 🟢     | validate methodology of "logistic regression"                                       |
-| 🔵     | Prepare images for SSL                                                              |
+| 🟢     | Prepare images for SSL                                                              |
+| 🟢     | Analyze best k distribution with DDI                                                |
+| 🟢     | Use more repetitions/seeds with DDI and check if there is a difference              |
+| 🟢     | Allow more neighbors in knn with DDI                                                |
+| 🔵     | Use 3-partition instead of 9-partition with Fitzpatrick                             |
 | 🔵     | Consider subset of DARMA or PDDD as task                                            |
 | 🔵     | checkout cassava all notebooks                                                      |
 | 🔵     | request data/models from previous work                                              |
