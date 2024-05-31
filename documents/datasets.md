@@ -14,8 +14,10 @@ More examples on: https://paperswithcode.com/datasets
 
 | Name                                               | #Images | #Classes | Comments                                   | Link                                                                             |
 | -------------------------------------------------- | ------- | -------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
-| PlantVillage (PVD)                                 | 54'303  | 38       | Laboratory setup, many sources             | https://github.com/spMohanty/PlantVillage-Dataset                                |
-| PlantDoc                                           | 2'598   | 28       | Real-life, scrapped from internet          | https://github.com/pratikkayal/PlantDoc-Dataset                                  |
+| ⭐ PlantDoc                                        | 2'598   | 28       | Real-life, scrapped from internet, mixed   | https://github.com/pratikkayal/PlantDoc-Dataset                                  |
+| ⭐ PlantDataset                                    | 5'106   | 20       | many repetitions                           | https://www.kaggle.com/datasets/duggudurgesh/plantdataset                        |
+| ⭐ Cassava Leaf Disease Classification             | 21'398  | 5        | Real life images, diseases                 | https://www.kaggle.com/competitions/cassava-leaf-disease-classification          |
+| ⭐ PlantVillage (PVD)                              | 54'303  | 38       | Laboratory setup, many sources             | https://github.com/spMohanty/PlantVillage-Dataset                                |
 | Leaf Images                                        | 4'502   | 2        |                                            | https://data.mendeley.com/datasets/hb74ynkjcn/1                                  |
 | Rice leaf disease dataset                          | 120     | 3        |                                            | https://archive.ics.uci.edu/ml/datasets/Rice+Leaf+Diseases                       |
 | Plant-Pathology-2020                               | 3'651   | 38       |                                            | https://www.kaggle.com/c/plant-pathology-2020-fgvc7/data                         |
@@ -29,11 +31,9 @@ More examples on: https://paperswithcode.com/datasets
 | IP102: Dataset for Insect Pest Recognition         | 75'222  | 102      | No plants                                  | https://github.com/xpwu95/IP102                                                  |
 | Eight common tomato pest images                    | 609     | 8        | Insects                                    | https://data.mendeley.com/datasets/s62zm6djd2/1                                  |
 | DARMA                                              | 231'414 | 1'000    | ~50GB                                      | https://drive.google.com/drive/folders/13bOuB7U15CgYMm1vrd0jgtOXFwMlHqXf         |
-| PlantDataset                                       | 5'106   | 20       | many repetitions                           | https://www.kaggle.com/datasets/duggudurgesh/plantdataset                        |
 | Leaf disease segmentation dataset                  | 588     | 0        | segmentation                               | https://www.kaggle.com/datasets/fakhrealam9537/leaf-disease-segmentation-dataset |
 | CVPPP, LSC                                         | 532     | 0        | segmentation                               | https://github.com/lxfhfut/Self-Supervised-Leaf-Segmentation                     |
 | New Plant Diseases Dataset                         | 87'000  | 38       | augmented from PlantVillage-Dataset        | https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset/data        |
-| Cassava Leaf Disease Classification                | 21'398  | 5        |                                            | https://www.kaggle.com/competitions/cassava-leaf-disease-classification          |
 | Agriculture-Vision Database                        |         |          | Aerial images                              | https://www.agriculture-vision.com/agriculture-vision-2020/dataset               |
 | Agriculture-Vision Database                        |         |          | Aerial images                              | https://www.agriculture-vision.com/agriculture-vision-2021/dataset-2021          |
 | Crop Disease dataset                               |         | 27       | ?                                          |                                                                                  |
@@ -67,10 +67,10 @@ Other lists:
 
 # Dermatology datasets
 
-| Name                             | #Images        | #Classes | Comments | Link                                                                                 |
-| -------------------------------- | -------------- | -------- | -------- | ------------------------------------------------------------------------------------ |
-| Diverse Dermatology Images (DDI) | 656            | 2, 78    |          | https://stanfordaimi.azurewebsites.net/datasets/35866158-8196-48d8-87bf-50dca81df965 |
-| PAD-UFES-20                      | 2'298          | 6        |          | https://data.mendeley.com/datasets/zr7vgbcyr2/1                                      |
-| HAM10000                         | 10'015         | 7        |          | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T      |
-| Fitzpatrick 17k                  | 16'536, 16'577 | 9        |          | https://github.com/mattgroh/fitzpatrick17k                                           |
-|                                  |                |          |          |                                                                                      |
+| Name                                | #Images        | #Classes | Comments | Link                                                                                 |
+| ----------------------------------- | -------------- | -------- | -------- | ------------------------------------------------------------------------------------ |
+| ⭐ Diverse Dermatology Images (DDI) | 656            | 2, 78    |          | https://stanfordaimi.azurewebsites.net/datasets/35866158-8196-48d8-87bf-50dca81df965 |
+| ⭐ PAD-UFES-20                      | 2'298          | 6        |          | https://data.mendeley.com/datasets/zr7vgbcyr2/1                                      |
+| ⭐ HAM10000                         | 10'015         | 7        |          | https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T      |
+| ⭐ Fitzpatrick 17k                  | 16'536, 16'577 | 9        |          | https://github.com/mattgroh/fitzpatrick17k                                           |
+|                                     |                |          |          |                                                                                      |
