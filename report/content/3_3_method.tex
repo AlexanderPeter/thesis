@@ -4,8 +4,34 @@ In this chapter the work environment and the procedure is explained.
 \section{Frameworks and tools}
 This work uses Python $3.8.10$ as programming language for the data analysis as well as for the training and evaluation of the models. Python already offers many high-end libraries for \gls{ml}. Jupyter notebooks were used to write and adjust all code. Important snippets were moved into python files to reuse it in multiple notebooks.
 
-\section{Public datasets}
-\label{section:datasets}
+\section{Public plant disease datasets}
+\label{section:plant_datasets}
+
+The following Table \ref{tab:plant_datasets} lists the various publicly available datasets with plant disease images. 
+
+\begin{table}[H]
+\centering
+\caption{Public datasets \label{tab:plant_datasets}}
+\begin{tabularx}{\textwidth}{|
+ >{\hsize=.60\hsize}X |
+ >{\hsize=.14\hsize\raggedleft}X |
+ >{\hsize=.14\hsize\raggedleft}X |
+ >{\hsize=.12\hsize}X |
+}
+\hline
+\textbf{Name} & \textbf{\#Images} & \textbf{\#Classes} & \textbf{Source} \\ \hline
+PlantVillage (PVD) \autocite{hughes2016} & 54'303 & 38 & \href{https://github.com/spMohanty/PlantVillage-Dataset}{\color{blue}{\underline{Github}}}\footnotemark{} \\ \hline
+Cassava Leaf Disease Classification \newline \autocite{mwebaze2020} & 21'398 & 5 & \href{https://www.kaggle.com/competitions/cassava-leaf-disease-classification}{\color{blue}{\underline{Kaggle}}}\footnotemark{} \\ \hline
+PlantDataset & 5'106 & 20 & \href{https://www.kaggle.com/datasets/duggudurgesh/plantdataset}{\color{blue}{\underline{Kaggle}}}\footnotemark{} \\ \hline
+PlantDoc \autocite{singh2020} & 2'598 & 28 & \href{https://github.com/pratikkayal/PlantDoc-Dataset}{\color{blue}{\underline{Github}}}\footnotemark{} \\ \hline
+\end{tabularx}
+\end{table}
+
+\addtocounter{footnote}{-4}
+\stepcounter{footnote}\footnotetext{https://github.com/spMohanty/PlantVillage-Dataset}
+\stepcounter{footnote}\footnotetext{https://www.kaggle.com/competitions/cassava-leaf-disease-classification}
+\stepcounter{footnote}\footnotetext{https://www.kaggle.com/datasets/duggudurgesh/plantdataset}
+\stepcounter{footnote}\footnotetext{https://github.com/pratikkayal/PlantDoc-Dataset}
 
 \subsection{...}
 

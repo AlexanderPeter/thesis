@@ -12,10 +12,10 @@ The following sections include selected notes from multiple meetings with the su
 
 | Weights           | Model                  | Plant disease tasks | Dermatology tasks |
 | ----------------- | ---------------------- | ------------------- | ----------------- |
-| Random            | ResNet50 <br> Tiny-ViT | ❹                   | ❹                 |
-| ImageNet (SL)     | ResNet50 <br> Tiny-ViT | ❸                   | ❸                 |
-| Plant (SSL / SL)  | ResNet50 <br> Tiny-ViT | ❶                   | ❷                 |
-| Dermatology (SSL) | ResNet50 <br> Tiny-ViT | ❷                   | ❶                 |
+| Random            | ResNet50 <br> Tiny-ViT | 4.                  | 4.                |
+| ImageNet (SL)     | ResNet50 <br> Tiny-ViT | 3.                  | 3.                |
+| Plant (SSL / SL)  | ResNet50 <br> Tiny-ViT | 1.                  | 2.                |
+| Dermatology (SSL) | ResNet50 <br> Tiny-ViT | 2.                  | 1.                |
 
 It is recommended to use about 4 tasks for plant diseases and dermatology each, differing in number of classes, proximity(close up photo with neutral background vs. full plant picture with natural background), etc.
 For the tasks it is recommended to use mainly classification rather than segmentation. Segmentation would give an unfair advantage for some model architectures.

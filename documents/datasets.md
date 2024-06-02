@@ -18,6 +18,7 @@ More examples on: https://paperswithcode.com/datasets
 | ⭐ PlantDataset                                    | 5'106   | 20       | many repetitions                           | https://www.kaggle.com/datasets/duggudurgesh/plantdataset                        |
 | ⭐ Cassava Leaf Disease Classification             | 21'398  | 5        | Real life images, diseases                 | https://www.kaggle.com/competitions/cassava-leaf-disease-classification          |
 | ⭐ PlantVillage (PVD)                              | 54'303  | 38       | Laboratory setup, many sources             | https://github.com/spMohanty/PlantVillage-Dataset                                |
+| Medicinal plantdataset                             |         |          | Too late                                   | https://www.kaggle.com/datasets/samundersingh/plantdataset                       |
 | Leaf Images                                        | 4'502   | 2        |                                            | https://data.mendeley.com/datasets/hb74ynkjcn/1                                  |
 | Rice leaf disease dataset                          | 120     | 3        |                                            | https://archive.ics.uci.edu/ml/datasets/Rice+Leaf+Diseases                       |
 | Plant-Pathology-2020                               | 3'651   | 38       |                                            | https://www.kaggle.com/c/plant-pathology-2020-fgvc7/data                         |
