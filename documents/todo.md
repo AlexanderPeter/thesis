@@ -56,4 +56,5 @@
 | 🔵     | checkout cassava all notebooks                                                              |
 | 🔵     | Find self supervised weights                                                                |
 | 🔵     | use preprocessed images 224x224                                                             |
+| 🔵     | remove comments from weekly meeting notes                                                   |
 | 🔴     | Consider subset of DARMA or PDDD as task                                                    |
