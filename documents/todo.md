@@ -45,6 +45,7 @@
 | 🟢     | Use more repetitions/seeds with DDI and check if there is a difference                      |
 | 🟢     | Allow more neighbors in knn with DDI                                                        |
 | 🟢     | Use 3-partition instead of 9-partition with Fitzpatrick                                     |
+| 🔵     | analyze "y_pred contains classes not in y_true"                                             |
 | 🔵     | show skewness of each dataset                                                               |
 | 🔵     | calculate score when always predicting largest class                                        |
 | 🔵     | Plot examples of knn neighbors (are the images not unique enough?) >0.9 Score is suspicious |
@@ -57,4 +58,5 @@
 | 🔵     | Find self supervised weights                                                                |
 | 🔵     | use preprocessed images 224x224                                                             |
 | 🔵     | remove comments from weekly meeting notes                                                   |
+| 🔵     | Consider using only pretrained weight in some layers and randomly initialize the others     |
 | 🔴     | Consider subset of DARMA or PDDD as task                                                    |
