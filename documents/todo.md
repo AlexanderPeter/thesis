@@ -45,6 +45,9 @@
 | 🟢     | Use more repetitions/seeds with DDI and check if there is a difference                      |
 | 🟢     | Allow more neighbors in knn with DDI                                                        |
 | 🟢     | Use 3-partition instead of 9-partition with Fitzpatrick                                     |
+| 🔵     | add notes from meeting to meeting notes                                                     |
+| 🔵     | check seed machine dependency                                                               |
+| 🔵     | completely rework code                                                                      |
 | 🔵     | analyze "y_pred contains classes not in y_true"                                             |
 | 🔵     | show skewness of each dataset                                                               |
 | 🔵     | calculate score when always predicting largest class                                        |
