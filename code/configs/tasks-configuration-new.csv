@@ -1,7 +1,7 @@
-architecture,weigths_path,dataset_path,feature_path
-vit_t16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/PAD-UFES-20/images/diagnostic/,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
-vit_t16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/PAD-UFES-20/images/diagnostic/,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_AugReg.csv
-vit_t16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/PAD-UFES-20/images/diagnostic/,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_1k_SSL_Dino.csv
-vit_t16,../model_weights/vit_t16_v1/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/PAD-UFES-20/images/diagnostic/,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Plant.csv
-vit_t16,../model_weights/vit_t16_v1/ViT_T16-Random_headless.pth,../datasets/PAD-UFES-20/images/diagnostic/,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Random.csv
-vit_t16,../model_weights/vit_t16_v1/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/PAD-UFES-20/images/diagnostic/,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Derma.csv
+dataset_path,architecture,weigths_path,feature_path
+../datasets/PAD-UFES-20/images/diagnostic/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Derma.csv
+../datasets/PAD-UFES-20/images/diagnostic/,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
+../datasets/PAD-UFES-20/images/diagnostic/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_1k_SSL_Dino.csv
+../datasets/PAD-UFES-20/images/diagnostic/,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_AugReg.csv
+../datasets/PAD-UFES-20/images/diagnostic/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Plant.csv
+../datasets/PAD-UFES-20/images/diagnostic/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Random.csv
