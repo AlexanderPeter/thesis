@@ -35,7 +35,7 @@ For the tasks it is recommended to use mainly classification rather than segment
 
 **Q: Does the diagram from MICCAI use the average, minimal and maximal values or the median?**
 
-**A: It uses the median and the standard deviations as interval.**
+**A: It uses the median and the standard error as interval.**
 
 <!-- ### Weekly meeting 13.05.2024 -->
 <!-- More repetitions, higher k, fitzpatrick 3-partitions -->
