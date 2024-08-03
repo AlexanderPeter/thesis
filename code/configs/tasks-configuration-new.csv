@@ -11,3 +11,15 @@ dataset_path,architecture,weigths_path,feature_path
 ../datasets/ddi-diverse-dermatology-images/malignant/,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-ImageNet_AugReg.csv
 ../datasets/ddi-diverse-dermatology-images/malignant/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-Plant.csv
 ../datasets/ddi-diverse-dermatology-images/malignant/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-Random.csv
+../datasets/HAM10000/images/dx/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-Derma.csv
+../datasets/HAM10000/images/dx/,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
+../datasets/HAM10000/images/dx/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-ImageNet_1k_SSL_Dino.csv
+../datasets/HAM10000/images/dx/,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-ImageNet_AugReg.csv
+../datasets/HAM10000/images/dx/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-Plant.csv
+../datasets/HAM10000/images/dx/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-Random.csv
+../datasets/fitzpatrick17k/images/three_partition_label/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-Derma.csv
+../datasets/fitzpatrick17k/images/three_partition_label/,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
+../datasets/fitzpatrick17k/images/three_partition_label/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-ImageNet_1k_SSL_Dino.csv
+../datasets/fitzpatrick17k/images/three_partition_label/,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-ImageNet_AugReg.csv
+../datasets/fitzpatrick17k/images/three_partition_label/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-Plant.csv
+../datasets/fitzpatrick17k/images/three_partition_label/,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-Random.csv
