@@ -57,7 +57,6 @@
 | 🔵     | subsampling less images per class                                                           |
 | 🔵     | read Dermatology-Paper                                                                      |
 | 🔵     | research iBot/DINO                                                                          |
-| 🔵     | checkout cassava all notebooks                                                              |
 | 🔵     | Find self supervised weights                                                                |
 | 🔵     | use preprocessed images 224x224                                                             |
 | 🔵     | remove comments from weekly meeting notes                                                   |
