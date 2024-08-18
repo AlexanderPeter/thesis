@@ -6,6 +6,7 @@
 /presentations/*
 /runs/incomplete/
 /runs/unadjusted/
+/runs/duplicates/
 
 # files
 **/__pycache__/**/*.pyc
