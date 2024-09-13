@@ -119,6 +119,9 @@ dataset_path,architecture,weigths_path,feature_path
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-teacher-Derma.csv
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-teacher-ImageNet_1k_SSL_Dino.csv
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-teacher-Plant.csv
+../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-teacher-Derma.csv
+../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-teacher-ImageNet_1k_SSL_Dino.csv
+../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-teacher-Plant.csv
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-teacher-Derma.csv
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-teacher-ImageNet_1k_SSL_Dino.csv
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_teacher_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-teacher-Plant.csv

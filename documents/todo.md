@@ -45,11 +45,12 @@
 | 🟢     | Use more repetitions/seeds with DDI and check if there is a difference                      |
 | 🟢     | Allow more neighbors in knn with DDI                                                        |
 | 🟢     | Use 3-partition instead of 9-partition with Fitzpatrick                                     |
+| 🟢     | Fix PlantDoc missing values                                                                 |
+| 🔵     | run PlantDoc teacher                                                                        |
+| 🔵     | Upload all split files                                                                      |
 | 🔵     | Compare WinKawak architecture with builder                                                  |
 | 🔵     | Use Keras plotter und checkpoint to create dynamic structures                               |
 | 🔵     | Separate ResNet50 from ViT_T16 metrics                                                      |
-| 🔵     | Fix PlantDoc missing values                                                                 |
-| 🔵     | run PlantDoc teacher                                                                        |
 | 🔵     | add notes from meeting to meeting notes                                                     |
 | 🔵     | calculate score when always predicting largest class / random baseline                      |
 | 🔵     | check seed machine dependency                                                               |
