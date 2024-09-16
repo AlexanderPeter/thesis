@@ -46,21 +46,23 @@
 | 🟢     | Allow more neighbors in knn with DDI                                                        |
 | 🟢     | Use 3-partition instead of 9-partition with Fitzpatrick                                     |
 | 🟢     | Fix PlantDoc missing values                                                                 |
-| 🔵     | run PlantDoc teacher                                                                        |
+| 🟢     | run PlantDoc teacher                                                                        |
+| 🟢     | Separate ResNet50 from ViT_T16 metrics                                                      |
+| 🟢     | analyze "y_pred contains classes not in y_true"                                             |
+| 🟢     | subsampling less images per class                                                           |
+| 🔵     | check truth matrix (potato early blight, potato late blight, ...)                           |
+| 🔵     | visualize_mae                                                                               |
 | 🔵     | Upload all split files                                                                      |
 | 🔵     | Compare WinKawak architecture with builder                                                  |
 | 🔵     | Use Keras plotter und checkpoint to create dynamic structures                               |
-| 🔵     | Separate ResNet50 from ViT_T16 metrics                                                      |
 | 🔵     | add notes from meeting to meeting notes                                                     |
 | 🔵     | calculate score when always predicting largest class / random baseline                      |
 | 🔵     | check seed machine dependency                                                               |
 | 🔵     | completely rework code                                                                      |
-| 🔵     | analyze "y_pred contains classes not in y_true"                                             |
 | 🔵     | show skewness of each dataset                                                               |
 | 🔵     | Plot examples of knn neighbors (are the images not unique enough?) >0.9 Score is suspicious |
 | 🔵     | checkout cassava all notebooks                                                              |
 | 🔵     | request data/models from previous work                                                      |
-| 🔵     | subsampling less images per class                                                           |
 | 🔵     | read Dermatology-Paper                                                                      |
 | 🔵     | research iBot/DINO                                                                          |
 | 🔵     | remove comments from weekly meeting notes                                                   |

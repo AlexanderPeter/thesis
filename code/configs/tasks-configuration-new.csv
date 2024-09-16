@@ -51,56 +51,56 @@ dataset_path,architecture,weigths_path,feature_path
 ../datasets/PAD-UFES-20/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Derma.csv
 ../datasets/PAD-UFES-20/images/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/PAD-UFES-20/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/PAD-UFES-20/images/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_AugReg.csv
+../datasets/PAD-UFES-20/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-ImageNet_AugReg.csv
 ../datasets/PAD-UFES-20/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Plant.csv
 ../datasets/PAD-UFES-20/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/PAD_UFES_20-ViT_T16-Random.csv
 
 ../datasets/ddi-diverse-dermatology-images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-Derma.csv
 ../datasets/ddi-diverse-dermatology-images/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/ddi-diverse-dermatology-images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/ddi-diverse-dermatology-images/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-ImageNet_AugReg.csv
+../datasets/ddi-diverse-dermatology-images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-ImageNet_AugReg.csv
 ../datasets/ddi-diverse-dermatology-images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-Plant.csv
 ../datasets/ddi-diverse-dermatology-images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/DDI-ViT_T16-Random.csv
 
 ../datasets/HAM10000/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-Derma.csv
 ../datasets/HAM10000/images/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/HAM10000/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/HAM10000/images/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-ImageNet_AugReg.csv
+../datasets/HAM10000/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-ImageNet_AugReg.csv
 ../datasets/HAM10000/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-Plant.csv
 ../datasets/HAM10000/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/HAM10000-ViT_T16-Random.csv
 
 ../datasets/fitzpatrick17k/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-Derma.csv
 ../datasets/fitzpatrick17k/images/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/fitzpatrick17k/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/fitzpatrick17k/images/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-ImageNet_AugReg.csv
+../datasets/fitzpatrick17k/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-ImageNet_AugReg.csv
 ../datasets/fitzpatrick17k/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-Plant.csv
 ../datasets/fitzpatrick17k/images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/Fitzpatrick17k-ViT_T16-Random.csv
 
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-Derma.csv
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-ImageNet_AugReg.csv
+../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-ImageNet_AugReg.csv
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-Plant.csv
 ../datasets/PlantDataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/PlantDataset-ViT_T16-Random.csv
 
 ../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-Derma.csv
 ../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-ImageNet_AugReg.csv
+../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-ImageNet_AugReg.csv
 ../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-Plant.csv
 ../datasets/plantdoc-dataset/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/PlantDoc-ViT_T16-Random.csv
 
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-Derma.csv
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-ImageNet_AugReg.csv
+../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-ImageNet_AugReg.csv
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-Plant.csv
 ../datasets/cassava-leaf-disease-classification/train_images/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/Cassava-ViT_T16-Random.csv
 
 ../datasets/PlantVillage-Dataset/raw/color/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Derma_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantVillage-ViT_T16-Derma.csv
 ../datasets/PlantVillage-Dataset/raw/color/split.csv,ViT_T16,../model_weights/vit_t16_v1/ViT_T16-ImageNet_1k_SL_WinKawaks_headless.pth,../datasets/intermediate-features/PlantVillage-ViT_T16-ImageNet_1k_SL_WinKawaks.csv
 ../datasets/PlantVillage-Dataset/raw/color/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantVillage-ViT_T16-ImageNet_1k_SSL_Dino.csv
-../datasets/PlantVillage-Dataset/raw/color/split.csv,ViT_T16,../model_weights/vit_t16_v3/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PlantVillage-ViT_T16-ImageNet_AugReg.csv
+../datasets/PlantVillage-Dataset/raw/color/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-ImageNet_AugReg_headless.pth,../datasets/intermediate-features/PlantVillage-ViT_T16-ImageNet_AugReg.csv
 ../datasets/PlantVillage-Dataset/raw/color/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth,../datasets/intermediate-features/PlantVillage-ViT_T16-Plant.csv
 ../datasets/PlantVillage-Dataset/raw/color/split.csv,ViT_T16,../model_weights/vit_t16_v2/ViT_T16-Random_headless.pth,../datasets/intermediate-features/PlantVillage-ViT_T16-Random.csv
 
