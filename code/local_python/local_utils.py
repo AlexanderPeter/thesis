@@ -1,3 +1,4 @@
+import json
 import os
 import pandas as pd
 import timm
@@ -125,3 +126,13 @@ def load_dataloader(
         num_workers=0,
     )
     return dl_full
+
+
+# load concatenated json objects
+def load_pd_from_json(metric_file_path):
+    metric_file = open(metric_file_path, "r")
+    content = metric_file.read().replace("\n", "").replace("}{", "},{")
+    entries = json.loads("[" + content + "]")
+    metric_file_name = os.path.basename(metric_file_path)
+    print(f"Read {len(entries)} entries from {metric_file_name}")
+    return pd.DataFrame.from_records(entries)
