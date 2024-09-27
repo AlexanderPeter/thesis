@@ -136,3 +136,33 @@ def load_pd_from_json(metric_file_path):
     metric_file_name = os.path.basename(metric_file_path)
     print(f"Read {len(entries)} entries from {metric_file_name}")
     return pd.DataFrame.from_records(entries)
+
+
+def select_and_sort_dataframe(df, selection_config):
+    for selection_key in selection_config:
+        selection_value = selection_config[selection_key]
+        assert (
+            selection_key in df.columns.values
+        ), f"No column found with name {selection_key}"
+        if selection_value is None:
+            continue
+        elif isinstance(selection_value, str):
+            assert (
+                selection_value in df[selection_key].unique()
+            ), f"No rows matching the given criteria {selection_key}={selection_value}"
+            df = df[df[selection_key] == selection_value]
+        elif hasattr(selection_value, "__iter__"):
+            unique_values = df[selection_key].unique()
+            match_dict = {
+                unique_value: substring
+                for substring in selection_value
+                for unique_value in unique_values
+                if substring in unique_value
+            }
+            df = df[df[selection_key].isin(match_dict.keys())]
+            df[selection_key] = pd.Categorical(df[selection_key], match_dict.keys())
+        else:
+            print(
+                f"No implementation for selection {selection_key} with type {type(selection_value)}"
+            )
+    return df.sort_values(by=list(selection_config.keys()))
