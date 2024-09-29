@@ -1,5 +1,6 @@
 # folders
 /.venv/
+/code/wandb/
 /data/
 /datasets/*
 /model_weights/
@@ -13,6 +14,7 @@
 runs/**/*.pth
 documents/demo_notes.md
 documents/research/MICCAI___SSL_in_Dermatology.pdf
+documents/research/miccai_notes.md
 
 # report
 report/*.aux

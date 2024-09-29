@@ -94,13 +94,18 @@ def load_headless_model(checkpoint_path, ignore_key_prefix=True, use_ssl_library
 
 
 def load_dataloader(
-    data_dir,
+    data_dir=None,
+    df=None,
     batch_size=16,
     img_size=224,
     normalise_mean=(0.485, 0.456, 0.406),  # ImageNet
     normalise_std=(0.229, 0.224, 0.225),  # ImageNet
+    filepath_column="filepath",
+    label_columns=["target_code", "set"],
 ):
-    df = pd.read_csv(data_dir)
+    assert data_dir is not None or df is not None, f"data_dir or df is required"
+    if df is None:
+        df = pd.read_csv(data_dir)
     transform = transforms.Compose(
         [
             # NOTE: ResNet50_Weights.IMAGENET1K_V1 also uses these resize and crop values
@@ -114,8 +119,8 @@ def load_dataloader(
     # NOTE: DataframeImageDataset uses pil_loader as default, which executes Image.convert("RGB") implicitly
     ds_full = DataframeImageDataset(
         df,
-        filepath_column="filepath",
-        label_columns=["target_code", "set"],
+        filepath_column=filepath_column,
+        label_columns=label_columns,
         transform=transform,
     )
 
