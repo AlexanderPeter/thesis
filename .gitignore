@@ -5,9 +5,8 @@
 /datasets/*
 /model_weights/
 /presentations/*
-/runs/incomplete/
-/runs/unadjusted/
-/runs/duplicates/
+/runs/
+*_old/
 
 # files
 **/__pycache__/**/*.pyc

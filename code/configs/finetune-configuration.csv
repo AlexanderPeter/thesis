@@ -1,0 +1,2 @@
+seed,strategy,dataset_path,checkpoint_path
+1,concat_0,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth

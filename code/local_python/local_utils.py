@@ -1,6 +1,8 @@
 import json
+import numpy as np
 import os
 import pandas as pd
+import random
 import timm
 import torch
 import torch.nn as nn
@@ -8,68 +10,71 @@ import torch.utils.data as data
 from collections import OrderedDict
 from transformers import ViTModel
 from torchvision.models import resnet50
-from torchvision import transforms
-
-from local_python.dataframe_image_dataset import DataframeImageDataset
+from transformers import set_seed as transformers_set_seed
 
 
-def print_parameters(model, verbose=False, required_parameters=False):
-    print(f"Number of entries: {len(model.state_dict())}")
+def set_seed(seed):
+    print(f"Setting seed to {seed}")
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    transformers_set_seed(seed)
+
+
+def print_parameters(model, verbose=False):
+    if verbose:
+        print(f"Number of entries: {len(model.state_dict())}")
+
     param_count_total = 0
-    param_count_required = 0
+    param_count_trainable = 0
     for name, parameter in model.named_parameters():
         param_count = parameter.numel()
         param_count_total += param_count
         if parameter.requires_grad:
-            param_count_required += param_count
+            param_count_trainable += param_count
         if verbose:
             print(f"{name}: {param_count}")
 
-    print(f"Total parameters: {param_count_total}")
-    if required_parameters:
-        print(f"Required parameters: {param_count_required} ")
+    print(f"Trainable parameters: {param_count_trainable}/{param_count_total}")
 
 
-def load_headless_model(checkpoint_path, ignore_key_prefix=True, use_ssl_library=True):
+def load_model(
+    checkpoint_path, ignore_key_prefix=True, use_ssl_library=True, freeze=True
+):
     if use_ssl_library:
         from ssl_library.src.pkg.embedder import Embedder
         from ssl_library.src.pkg.wrappers import Wrapper
 
-    model_architecture = os.path.basename(os.path.dirname(checkpoint_path))
-    print(
-        f"Loading model with architecture '{model_architecture}' from {checkpoint_path}"
-    )
     checkpoint = torch.load(checkpoint_path, map_location=torch.device("cpu"))
     checkpoint_keys = list(checkpoint.keys())
+    number_of_keys = len(checkpoint_keys)
 
-    if model_architecture == "resnet50":
+    if 150 == number_of_keys:
+        print("Loading vit_tiny_patch16_224 from timm-library")
+        if use_ssl_library:
+            model = Embedder.load_pretrained("vit_tiny_random")
+        else:
+            model = timm.create_model("vit_tiny_patch16_224", pretrained=False)
+        model.head = nn.Sequential()
+    elif 200 == number_of_keys:
+        print("Loading vit_tiny_patch16_224 from transformers-library")
+        if use_ssl_library:
+            model = Embedder.load_pretrained("imagenet_vit_tiny")
+        else:
+            model = ViTModel.from_pretrained("WinKawaks/vit-tiny-patch16-224")
+        model.head = nn.Sequential()
+    elif 318 == number_of_keys:
+        print("Loading ResNet50 from torchvision-library")
         model = resnet50(weights=None)
         model = nn.Sequential(*list(model.children())[:-1])
         if use_ssl_library:
             model = Wrapper(model=model)
-    elif model_architecture == "vit_t16_v1":
-        if use_ssl_library:
-            model = Embedder.load_pretrained("imagenet_vit_tiny")
-            model.head = nn.Sequential()
-        else:
-            model = ViTModel.from_pretrained("WinKawaks/vit-tiny-patch16-224")
-            model.head = nn.Sequential()
-    elif model_architecture == "vit_t16_v2":
-        if use_ssl_library:
-            model = Embedder.load_pretrained("vit_tiny_random")
-            model.head = nn.Sequential()
-        else:
-            model = timm.create_model("vit_tiny_patch16_224", pretrained=False)
-            model.head = nn.Sequential()
     else:
-        raise Exception(
-            f"Model architecture '{model_architecture}' is not implemented yet"
-        )
+        raise Exception(f"No architecture with '{number_of_keys}' keys implemented yet")
 
     model_keys = list(model.state_dict().keys())
-    assert len(checkpoint_keys) == len(
-        model_keys
-    ), f"Checkpoint does not match architecture!"
+    assert number_of_keys == len(model_keys), f"Checkpoint does not match architecture!"
 
     if (
         ignore_key_prefix
@@ -87,50 +92,11 @@ def load_headless_model(checkpoint_path, ignore_key_prefix=True, use_ssl_library
 
     model.load_state_dict(checkpoint, strict=True)
 
-    for param in model.parameters():
-        param.requires_grad = False
+    if freeze:
+        for param in model.parameters():
+            param.requires_grad = False
 
     return model
-
-
-def load_dataloader(
-    data_dir=None,
-    df=None,
-    batch_size=16,
-    img_size=224,
-    normalise_mean=(0.485, 0.456, 0.406),  # ImageNet
-    normalise_std=(0.229, 0.224, 0.225),  # ImageNet
-    filepath_column="filepath",
-    label_columns=["target_code", "set"],
-):
-    assert data_dir is not None or df is not None, f"data_dir or df is required"
-    if df is None:
-        df = pd.read_csv(data_dir)
-    transform = transforms.Compose(
-        [
-            # NOTE: ResNet50_Weights.IMAGENET1K_V1 also uses these resize and crop values
-            transforms.Resize((256, 256)),
-            transforms.CenterCrop(img_size),
-            transforms.ToTensor(),
-            transforms.Normalize(normalise_mean, normalise_std),
-        ]
-    )
-
-    # NOTE: DataframeImageDataset uses pil_loader as default, which executes Image.convert("RGB") implicitly
-    ds_full = DataframeImageDataset(
-        df,
-        filepath_column=filepath_column,
-        label_columns=label_columns,
-        transform=transform,
-    )
-
-    dl_full = data.DataLoader(
-        ds_full,
-        batch_size=batch_size,
-        shuffle=False,
-        num_workers=0,
-    )
-    return dl_full
 
 
 # load concatenated json objects
