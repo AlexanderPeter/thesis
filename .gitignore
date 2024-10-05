@@ -11,8 +11,9 @@
 # files
 **/__pycache__/**/*.pyc
 runs/**/*.pth
+documents/medium/
 documents/demo_notes.md
-documents/research/MICCAI___SSL_in_Dermatology.pdf
+documents/research/Towards *.pdf
 documents/research/miccai_notes.md
 
 # report
