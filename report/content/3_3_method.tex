@@ -7,9 +7,7 @@ This work uses Python $3.8.10$ as programming language for the data analysis as 
 \section{Public plant disease datasets}
 \label{section:plant_datasets}
 
-The following Table \ref{tab:suitable_plant_datasets} lists a subset of suitable plant disease datasets. The complete table including links is in the appendix \ref{appendix:datasets_tables}.
-
-the various publicly available datasets with plant disease images. 
+There are several datasets on plant diseases publicly available, but only a few meet the requirements such as sufficient size and appropriate image resolution. The following Table \ref{tab:suitable_plant_datasets} lists the suitable plant disease datasets used in this work. The complete list regarded plant datasets including links is in the appendix \ref{appendix:datasets_tables}.
 
 \begin{table}[H]
 \centering
@@ -30,7 +28,31 @@ Plant disease diagnosis dataset (PDDD) \autocite{dong2023} & 421'133  & 120 \tab
 \end{tabularx}
 \end{table}
 
+Most datasets contained duplicated images. These image were removed. In the appendix %TODO add ref and info
+is the list of removed images. %TODO cite-Gröger
+shows that there are even more superfluous images, but these were kept for the sake of simplicity.
 
-\subsection{...}
+
+\subsection{PlantVillage (PVD)}
+All images in the dataset have a neutral background as shown in Figure \ref{fig:example_images_of_plantvillage}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_plantvillage.png}
+    \caption{Example images of PlantVillage}
+    \label{fig:example_images_of_plantvillage}
+    \end{center}
+\end{figure}
+
+This dataset does not provide a split for a test test. Therefore, the splitting was carried out by myself using 80/% training, 10\% validation and test data respectively. The stratifying ensures, that the class distribution is the same over all sets, which can be seen in Figure {fig:class_distribution_of_plantvillage}.  
+The PlantVillage dataset has 38 different classes including different plants and diseases. 
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_plantvillage.png}
+    \caption{Class distribution of PlantVillage}
+    \label{fig:class_distribution_of_plantvillage}
+    \end{center}
+\end{figure}
 
 \section{Models}
