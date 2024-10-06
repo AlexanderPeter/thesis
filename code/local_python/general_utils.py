@@ -137,3 +137,24 @@ def select_and_sort_dataframe(df, selection_config):
                 f"No implementation for selection {selection_key} with type {type(selection_value)}"
             )
     return df.sort_values(by=list(selection_config.keys()))
+
+
+def load_values_from_previous_epochs(run_path):
+    loss_file_path = os.path.join(run_path, "loss.txt")
+    latest_epoch = -1
+    best_loss = None
+    if os.path.exists(loss_file_path):
+        df_metrics = load_pd_from_json(loss_file_path)
+        if 0 < len(df_metrics):
+            latest_epoch = df_metrics["epoch"].max()
+            print(f"Latest epoch: {latest_epoch}")
+
+            df_losses = (
+                df_metrics[df_metrics["set"] == "valid"]
+                .groupby(["epoch"])["loss"]
+                .mean()
+            )
+            best_epoch = df_losses.argmin()
+            best_loss = df_losses.min()
+            print(f"Best epoch: {best_epoch} with {best_loss}")
+    return (loss_file_path, latest_epoch, best_loss)
