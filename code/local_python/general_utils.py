@@ -13,8 +13,9 @@ from torchvision.models import resnet50
 from transformers import set_seed as transformers_set_seed
 
 
-def set_seed(seed):
-    print(f"Setting seed to {seed}")
+def set_seed(seed, verbose=True):
+    if verbose:
+        print(f"Setting seed to {seed}")
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)

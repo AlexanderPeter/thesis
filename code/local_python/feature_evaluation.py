@@ -26,16 +26,17 @@ def evaluate_with_lr(
     features,
     targets,
     entry,
+    seed=None,
     max_iter=10_000,
 ):
     (train_features, _, test_features) = features
     (train_targets, _, test_targets) = targets
 
-    model_lr = LogisticRegression(max_iter=max_iter)
+    model_lr = LogisticRegression(max_iter=max_iter, random_state=seed)
     model_lr.fit(train_features, train_targets)
     test_pred = model_lr.predict(test_features)
 
-    entry["n_iter"] = model_lr.n_iter_
+    entry["n_iter"] = model_lr.n_iter_.tolist()[0]
     return calculate_scores(
         test_targets,
         test_pred,

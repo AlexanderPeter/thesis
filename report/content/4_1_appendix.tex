@@ -2,24 +2,14 @@
 \appendix
 % textidote: ignore end
 \chapter{Appendix}
+The appendix includes detailed information, the original task description and selected notes from the meetings with the supervisors.
 
-The appendix includes the original task description and selected notes from the meetings with supervisors.
+\section{Detail informations}
+%TODO put something on this page
 
-\includepdf[pages=-,addtotoc={1, section, 1, Task description, task description}]{../documents/task_description.pdf}
-%TODO change to final version
-
-\label{appendix:task_description}
-
-\section{Meeting notes}
-\label{subsection:notes}
-% textidote: ignore begin
-\markdownInput{../documents/meeting_notes.md}
-% textidote: ignore end
-
-\newpage
-\section{Dataset collection}
+\newpage % To make sure footnotes are on the same page.
+\subsection{Dataset collection}
 \label{appendix:datasets_tables}
-%TODO consider subsection
 The following Table \ref{tab:all_plant_datasets} shows all plant disease datasets which could be found publicly available. 
 
 \begin{table}[H]
@@ -33,7 +23,7 @@ The following Table \ref{tab:all_plant_datasets} shows all plant disease dataset
 }
 \hline
 \textbf{Name} & \textbf{\#Images} & \textbf{\#Classes} & \textbf{Download} \\ \hline
-PlantVillage (PVD) & 54'303 & 38 & \href{https://github.com/spMohanty/PlantVillage-Dataset}{\color{blue}{\underline{Github}}}\footnotemark{} \\ \hline
+PlantVillage Dataset (PVD) & 54'303 & 38 & \href{https://github.com/spMohanty/PlantVillage-Dataset}{\color{blue}{\underline{Github}}}\footnotemark{} \\ \hline
 Cassava Leaf Disease Classification & 21'398 & 5 & \href{https://www.kaggle.com/competitions/cassava-leaf-disease-classification}{\color{blue}{\underline{Kaggle}}}\footnotemark{} \\ \hline
 PlantDataset & 5'106 & 20 & \href{https://www.kaggle.com/datasets/duggudurgesh/plantdataset}{\color{blue}{\underline{Kaggle}}}\footnotemark{} \\ \hline
 PlantDoc & 2'598 & 28 & \href{https://github.com/pratikkayal/PlantDoc-Dataset}{\color{blue}{\underline{Github}}}\footnotemark{} \\ \hline
@@ -76,3 +66,37 @@ Plant disease diagnosis dataset (PDDD) & 421'133  & 120 & \href{https://plantpad
 \stepcounter{footnote}\footnotetext{https://github.com/lxfhfut/Self-Supervised-Leaf-Segmentation}
 \stepcounter{footnote}\footnotetext{https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset/data}
 \stepcounter{footnote}\footnotetext{https://plantpad.samlab.cn/image\_down.html}
+
+
+\subsection{Data quality assessment}
+\label{appendix:data_quality_assessment}
+
+\begin{table}[H]
+\centering
+\caption{Dataset cleaning \label{tab:dataset_cleaning}}
+\begin{tabularx}{\textwidth}{|
+ >{\hsize=.50\hsize}X |
+ >{\hsize=.20\hsize\raggedleft}X |
+ >{\hsize=.30\hsize\raggedleft}X |
+}
+\hline
+\textbf{Dataset} & \textbf{\#Duplicates} & \textbf{Additional} \tabularnewline \hline
+PlantVillage Dataset (PVD) & 42 & \tabularnewline \hline
+Cassava Leaf Disease Classification & 0 &  \tabularnewline \hline
+PlantDataset & 62 & \tabularnewline \hline
+PlantDoc  & 40 & 1 nonsense class  \tabularnewline \hline
+PAD-UFES-20 & 32 & \tabularnewline \hline
+Diverse Dermatology Images (DDI) & 0 &  \tabularnewline \hline
+HAM10000 & 4 & 1 corrupted file \tabularnewline \hline
+Fitzpatrick17k & 10 &  \tabularnewline \hline
+\end{tabularx}
+\end{table}
+
+\includepdf[pages=-,addtotoc={1, section, 1, Task description, task description}]{../documents/task_description_printed.pdf}
+\label{appendix:task_description}
+
+\section{Meeting notes}
+\label{subsection:notes}
+% textidote: ignore begin
+\markdownInput{../documents/meeting_notes.md}
+% textidote: ignore end
