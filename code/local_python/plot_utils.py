@@ -1,4 +1,26 @@
 import matplotlib.pyplot as plt
+import numpy as np
+
+from PIL import Image
+
+# model
+# precision/recall scatterplot
+# activisions
+# spiderplot
+# confusion matrix
+# line plots with standard errors
+# line plots with min/max
+
+
+def plot_example_images(values):
+    for i, (filepath, title) in enumerate(values):
+        img = Image.open(filepath)
+        img = img.convert("RGB")
+        img = np.array(img)
+        plt.subplot(1, len(values), i + 1)
+        plt.axis("off")
+        plt.imshow(img)
+        plt.title(title)
 
 
 def plot_distribution_barh(
@@ -46,3 +68,31 @@ def plot_distribution_barh(
     if title:
         plt.title(title)
     plt.legend(stack_legend)
+
+
+def plot_tsne_scatter(features_reduced, color_list, labels=None):
+    plt.ylabel("tSNE dimension 1")
+    plt.xlabel("tSNE dimension 2")
+    scatter = plt.scatter(
+        features_reduced[:, 0],
+        features_reduced[:, 1],
+        c=color_list,
+        # s=None,
+        cmap="jet",
+    )
+    handles, labels_numbers = scatter.legend_elements(num=len(set(color_list)) - 1)
+    ncol = 1
+    if labels is None:
+        ncol = 2
+        labels = labels_numbers
+
+    plt.legend(
+        handles=handles,
+        labels=labels,
+        title="Label",
+        ncol=ncol,
+        loc="right",
+        bbox_to_anchor=(1.4, 0.5),
+    )
+    plt.xticks([])
+    plt.yticks([])

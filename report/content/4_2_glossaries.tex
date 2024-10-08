@@ -1,7 +1,9 @@
 \chapter{Glossary and lists}
 %TODO text necessary?
 
-\let\cleardoublepage\clearpage
+\let\LaTeXStandardClearpage\clearpage % save clearpage setting
+\let\clearpage\relax  % overwrite clearpage
+
 \printglossary[type=\acronymtype, title=Glossary]
 \addtocounter{section}{1}
 % textidote: ignore begin
@@ -25,3 +27,5 @@
 %textidote: ignore begin
 % \addcontentsline{toc}{section}{\protect\numberline{\thesection}{List of equations}}
 %textidote: ignore end
+
+\let\clearpage\LaTeXStandardClearpage % restore settings
