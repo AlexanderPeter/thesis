@@ -16,7 +16,7 @@ There are several datasets on plant diseases publicly available, but only a few 
 \begin{tabularx}{\textwidth}{|
  >{\hsize=.72\hsize}X |
  >{\hsize=.14\hsize\raggedleft}X |
- >{\hsize=.14\hsize}X |
+ >{\hsize=.14\hsize\raggedleft}X |
 }
 \hline
 \textbf{Name} & \textbf{\#Images} & \textbf{\#Classes} \tabularnewline \hline
@@ -25,7 +25,7 @@ Cassava Leaf Disease Classification \autocite{mwebaze2020} & 21'398 & 5 \tabular
 PlantDataset \autocite{pal2022} & 5'106 & 20 \tabularnewline \hline
 PlantDoc \autocite{singh2020} & 2'598 & 28 \tabularnewline \hline
 DARMA \autocite{keaton2021} & 231'414  & 1'000 \tabularnewline \hline
-Plant disease diagnosis dataset (PDDD) \autocite{dong2023} & 421'133  & 120 \tabularnewline \hline
+Plant Disease Diagnosis Dataset (PDDD) \autocite{dong2023} & 421'133  & 120 \tabularnewline \hline
 \end{tabularx}
 \end{table}
 
@@ -52,5 +52,32 @@ This dataset does not provide a split for a test test. Therefore, the splitting 
     \label{fig:class_distribution_of_plantvillage}
     \end{center}
 \end{figure}
+
+\subsection{Cassava Leaf Disease Classification}
+Figure \ref{fig:example_images_of_cassava}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_cassava.png}
+    \caption{Example images of Cassava}
+    \label{fig:example_images_of_cassava}
+    \end{center}
+\end{figure}
+
+Figure \ref{fig:class_distribution_of_cassava}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_cassava.png}
+    \caption{Class distribution of Cassava}
+    \label{fig:class_distribution_of_cassava}
+    \end{center}
+\end{figure}
+
+
+\subsection{PlantDataset}
+\subsection{PlantDoc}
+\subsection{DARMA}
+\subsection{Plant Disease Diagnosis Dataset (PDDD)}
 
 \section{Models}
