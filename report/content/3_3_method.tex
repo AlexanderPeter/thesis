@@ -9,7 +9,6 @@ This work uses Python $3.8.10$ as programming language for the data analysis as 
 
 There are several datasets on plant diseases publicly available, but only a few meet the requirements such as sufficient size and appropriate image resolution. The following Table~\ref{tab:suitable_plant_datasets} lists the suitable plant disease datasets used in this work. The complete list regarded plant datasets including links is in the Appendix~\ref{appendix:datasets_tables}.
 
-%TODO add citation to PlantDataset
 \begin{table}[H]
 \centering
 \caption{Large plant disease datasets\label{tab:suitable_plant_datasets}}
@@ -20,12 +19,12 @@ There are several datasets on plant diseases publicly available, but only a few 
 }
 \hline
 \textbf{Name} & \textbf{\#Images} & \textbf{\#Classes} \tabularnewline \hline
-PlantVillage Dataset (PVD) \autocite{hughes2016} & 54'303 & 38 \tabularnewline \hline
+\gls{pvd} \autocite{hughes2016} & 54'303 & 38 \tabularnewline \hline
 Cassava Leaf Disease Classification \autocite{mwebaze2020} & 21'398 & 5 \tabularnewline \hline
 PlantDataset \autocite{pal2022} & 5'106 & 20 \tabularnewline \hline
 PlantDoc \autocite{singh2020} & 2'598 & 28 \tabularnewline \hline
-DARMA \autocite{keaton2021} & 231'414  & 1'000 \tabularnewline \hline
-Plant Disease Diagnosis Dataset (PDDD) \autocite{dong2023} & 421'133  & 120 \tabularnewline \hline
+\gls{darma} \autocite{keaton2021} & 231'414  & 1'000 \tabularnewline \hline
+\gls{pddd} \autocite{dong2023} & 421'133  & 120 \tabularnewline \hline
 \end{tabularx}
 \end{table}
 
@@ -76,8 +75,173 @@ Figure~\ref{fig:class_distribution_of_cassava}
 
 
 \subsection{PlantDataset}
+
+Figure~\ref{fig:example_images_of_plantdataset}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_plantdataset.png}
+    \caption{Example images of PlantDataset}
+   \label{fig:example_images_of_plantdataset}
+    \end{center}
+\end{figure}
+
+Figure~\ref{fig:class_distribution_of_plantdataset}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_plantdataset.png}
+    \caption{Class distribution of PlantDataset}
+   \label{fig:class_distribution_of_plantdataset}
+    \end{center}
+\end{figure}
+
 \subsection{PlantDoc}
+Figure~\ref{fig:example_images_of_plantdoc}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_plantdoc.png}
+    \caption{Example images of PlantDoc}
+   \label{fig:example_images_of_plantdoc}
+    \end{center}
+\end{figure}
+
+Figure~\ref{fig:class_distribution_of_plantdoc}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_plantdoc.png}
+    \caption{Class distribution of PlantDoc}
+   \label{fig:class_distribution_of_plantdoc}
+    \end{center}
+\end{figure}
+
 \subsection{DARMA}
+
+Figure~\ref{fig:example_images_of_darma}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_darma.png}
+    \caption{Example images of \gls{darma}}
+   \label{fig:example_images_of_darma}
+    \end{center}
+\end{figure}
+
 \subsection{Plant Disease Diagnosis Dataset (PDDD)}
 
-\section{Models}
+Figure~\ref{fig:example_images_of_pddd}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_pddd.png}
+    \caption{Example images of \gls{pddd}}
+   \label{fig:example_images_of_pddd}
+    \end{center}
+\end{figure}
+
+
+\section{Public dermatology datasets}
+\label{section:derma_datasets}
+
+%TODO: replace citations
+\begin{table}[H]
+\centering
+\caption{Dermatology datasets\label{tab:suitable_derma_datasets}}
+\begin{tabularx}{\textwidth}{|
+    >{\hsize=.72\hsize}X |
+    >{\hsize=.14\hsize\raggedleft}X |
+    >{\hsize=.14\hsize\raggedleft}X |
+}
+\hline
+\textbf{Name} & \textbf{\#Images} & \textbf{\#Classes} \tabularnewline \hline
+PAD-UFES-20 \autocite{hslu} & ? & ? \tabularnewline \hline
+\gls{ddi} \autocite{hslu} & ? & ? \tabularnewline \hline
+HAM10000 \autocite{hslu} & ? & ? \tabularnewline \hline
+Fitzpatrick17k \autocite{hslu} & ? & ? \tabularnewline \hline
+\end{tabularx}
+\end{table}
+
+\subsection{PAD-UFES-20}
+Figure~\ref{fig:example_images_of_pad-ufes-20}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_pad-ufes-20.png}
+    \caption{Example images of PAD-UFES-20}
+   \label{fig:example_images_of_pad-ufes-20}
+    \end{center}
+\end{figure}
+
+Figure~\ref{fig:class_distribution_of_pad-ufes-20}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_pad-ufes-20.png}
+    \caption{Class distribution of PAD-UFES-20}
+   \label{fig:class_distribution_of_pad-ufes-20}
+    \end{center}
+\end{figure}
+\subsection{Diverse Dermatology Images (DDI)}
+Figure~\ref{fig:example_images_of_ddi}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_ddi.png}
+    \caption{Example images of \gls{ddi}}
+   \label{fig:example_images_of_ddi}
+    \end{center}
+\end{figure}
+
+Figure~\ref{fig:class_distribution_of_ddi}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_ddi.png}
+    \caption{Class distribution of \gls{ddi}}
+   \label{fig:class_distribution_of_ddi}
+    \end{center}
+\end{figure}
+\subsection{HAM10000}
+Figure~\ref{fig:example_images_of_ham10000}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_ham10000.png}
+    \caption{Example images of HAM10000}
+   \label{fig:example_images_of_ham10000}
+    \end{center}
+\end{figure}
+
+Figure~\ref{fig:class_distribution_of_ham10000}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_ham10000.png}
+    \caption{Class distribution of HAM10000}
+   \label{fig:class_distribution_of_ham10000}
+    \end{center}
+\end{figure}
+\subsection{Fitzpatrick17k}
+Figure~\ref{fig:example_images_of_fitzpatrick17k}.
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/example_images_of_fitzpatrick17k.png}
+    \caption{Example images of Fitzpatrick17k}
+   \label{fig:example_images_of_fitzpatrick17k}
+    \end{center}
+\end{figure}
+
+Figure~\ref{fig:class_distribution_of_fitzpatrick17k}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{../images/class_distribution_of_fitzpatrick17k.png}
+    \caption{Class distribution of Fitzpatrick17k}
+   \label{fig:class_distribution_of_fitzpatrick17k}
+    \end{center}
+\end{figure}
+
+
