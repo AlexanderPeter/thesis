@@ -75,3 +75,11 @@ set num_workers=0
 ```powershell
 \.venv\Scripts\python.exe -m pip install --upgrade --force-reinstall pip
 ```
+
+### I can't find file `"|texlua ./report.markdown.lua"'.
+
+Use `-enable-write18` or `shell-escape` when generating pdf
+
+### Cannot find control file 'report.bcf'!
+
+Close editor, reopen and try again
