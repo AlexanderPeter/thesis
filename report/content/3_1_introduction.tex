@@ -3,42 +3,22 @@ This chapter explains the basic problem and motivation. It also defines the expe
 
 \section{Problem definition}
 
-%TODO add text
+The medical fields often lack large datasets with the annotated diagnoses to easily train \gls{ml} models.%cite?
+Usually regulations like data protection laws hinder collecting or publishing large sets of images. Some institutions are able to collect data in their domain, but are not allowed publishing it. Such sets are usually small and may be biased to local conditions such as light skin pigmentation.
+Creating the according labels of high quality require experienced specialists. These costs compared to the limited scope may render it financially not worthwhile.
 
-% \subsection{Basic goal}
+One approach is to use weights of models pretrained on generic images like ImageNet dataset and fine-tune the model on a smaller domain specific dataset. Another approach uses \gls{ssl} to train foundation models without the cost of labeling large quantities of data. 
+Generic foundation models are sometimes not applicable, when the target domain differs to much from the generic data.%cite
+\gls{ssl} on the other hand, requires a lot of domain specific data.
 
+A large quantity of data from a similar domain could improve the performance or decrease the amount of required domain specific data. 
+Plant disease images for example resemble to skin disease images in many aspects. The diseases in both cases usually manifest in discolorations which can be used to classify the cause and enables according treatment.
+Plant disease datasets are, in contrary to dermatology images, publicly available in large quantities and are therefore suited to try out this approach.
+
+
+\subsection{Basic goal}
+This work includes a basic research on transfer learning in general and the state of the art procedures. 
+The main part of this work includes the comparison of the performance of plant disease based pretraining to ImageNet and dermatology based ones. Beside the difference in score also the theoretical amount of data reduction is calculated to reach the same result when only using common foundation models or domain specific \gls{ssl}. 
+Finally, it will be investigated if it is possible to detect which plant disease images have a higher influence.
 The detailed requirements can be found in the task description in the appendix~\ref{appendix:task_description}.
 
-\newpage
-
-\section{Organization of the report}
-This report has five main chapters. The first chapter gives a brief introduction into the problem and describes the expected result. The second chapter provides some background information about previous work on a similar topic as well as about the basic concept of \gls{ml} to understand the functionality. The third chapter explains the general procedure and the decisions. In chapter four are the results of the chosen datasets and built models. The fifth chapter sums up the results and provides a note on further research. %TODO adjust when structure has changed
-
-\subsection{Notation}
-The following Table~\ref{tab:notation} shows the used notations.
-
-\begin{table}[H]
-\centering
-\caption{Notations\label{tab:notation}}
-\begin{tabularx}{\textwidth}{|
- >{\hsize=.1\hsize}X |
- >{\hsize=.9\hsize}X |
-}
-\hline
-\textbf{Symbol} & \textbf{Description} \\\hline
-$a$ & Scalar value \\\hline 
-$\mathbf{a}$ & Row or column vector \\\hline
-$\mathbf{a}^{[i]}$ & Vector with index $i$  \\\hline
-$\mathbf{A}$ & Matrix \\\hline 
-$\mathbf{A}^{[i]}$ & Matrix with index $i$ \\\hline 
-$a_i$ & Entry of vector $\mathbf{a}$ with index $i$ \\\hline 
-$a_{i,j}$ & Entry of matrix $\mathbf{A}$ in row $i$ and column $j$ \\\hline
-$\overline{x}$ & Mean value for a series $x$ or a  vector $\mathbf{x}$ \\\hline
-$\hat{y}$ & Estimation for $y$ \\\hline 
-$\mathbb{R}$ & The set of real numbers \\\hline
-$f'$ & Derivative of $f$ \\\hline
-$\partial$ & Partial derivative \\\hline
-$\cdot$ & Matrix product \\\hline
-$\ast$ & Convolution \\\hline
-\end{tabularx}
-\end{table}
