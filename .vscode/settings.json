@@ -35,7 +35,7 @@
   "latex-workshop.message.error.show": false,
   "latex-workshop.message.information.show": false,
   "latex-workshop.message.warning.show": false,
-  "latex.linter.enabled": true,
+  "latex.linter.enabled": false,
   "python.defaultInterpreterPath": ".venv\\Scripts\\python.exe",
   "python.terminal.activateEnvironment": true
 }
