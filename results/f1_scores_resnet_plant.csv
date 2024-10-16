@@ -1,0 +1,8 @@
+Downstream,PlantDoc,PlantDoc,PlantDataset,PlantDataset,Cassava,Cassava,PlantVillage,PlantVillage
+Classifier,LogReg,k-NN,LogReg,k-NN,LogReg,k-NN,LogReg,k-NN
+Pre-training,,,,,,,,
+Random,13.5±0.6,6.7±0.6,34.6±0.3,17.2±0.7,31.6±0.2,23.9±0.1,70.5±0.0,39.9±0.2
+ImageNet SL,54.7±0.4,37.4±0.8,92.0±0.2,83.8±0.8,62.3±0.2,49.1±0.3,97.3±0.0,92.0±0.1
+ImageNet SSL,11.9±0.6,9.0±0.8,32.0±0.4,22.0±0.5,21.1±0.2,22.8±0.2,50.1±0.0,34.7±0.1
+Derma SSL,1.0±0.0,18.9±1.0,1.8±0.0,30.7±0.9,16.6±0.0,27.8±0.2,6.4±0.0,49.3±0.2
+Plant SL,65.3±0.5,41.3±0.5,67.4±0.2,60.5±0.5,51.6±0.1,40.6±0.4,99.1±0.0,98.7±0.1

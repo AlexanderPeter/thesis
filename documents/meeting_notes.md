@@ -58,7 +58,7 @@ For the tasks it is recommended to use mainly classification rather than segment
 
 **A:** The following points are recommended to adjust:
 
-- The macro-f1-score should be used instead of the weighted f1-score, except for PAD-UFES-20, where the binary-f1-score is correct.
+- The macro-f1-score should be used instead of the weighted f1-score, except for DDI, where the binary-f1-score is correct.
 - The last four layers of the ViT should be concatenated.
 - The KNN from scikit uses the euclidean distance as default. It is better to explicitly use the cosine metric.
 - If there are not enough samples per class it is better to skip the whole evaluation instead of allowing repeated sampling.
