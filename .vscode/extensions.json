@@ -6,6 +6,7 @@
     "ms-toolsai.jupyter",
     "streetsidesoftware.code-spell-checker",
     "james-yu.latex-workshop",
-    "mathematic.vscode-latex"
+    "mathematic.vscode-latex",
+    "torn4dom4n.latex-support"
   ]
 }

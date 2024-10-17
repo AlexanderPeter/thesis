@@ -1,6 +1,6 @@
 \chapter{Related work}
 This chapter explains the necessary basis to understand the procedure and contains all relevant information of previous work in this field.
-\section{Machine learning}
+\section{Basic machine learning algorithms}
 %entry text
 
 \subsection{Linear regression}
@@ -82,7 +82,7 @@ The class labels of the $k$ nearest neighbors serve as basis for the output. For
 The optimal $k$ is often determined by calculating multiple values and comparing the resulting score. With a skewed dataset and simple majority voting, $k$ will most likely be relatively small, because many neighbors benefit large classes and therefore hinder the prediction of smaller classes.
 % more content
 
-
+\section{Basic artificial neural networks}
 \subsection{Artificial neurons}
 Artificials neurons were originally invented for binary classifications and mimic biological neurons \autocite{mcculloch1943}. Several input values are summed up and compared with a predefined threshold value to receive a binary output. This neuron was supplemented with weight values and a bias value to function as a linear regression, while the weights correspond to the slopes and the bias to the intercept  \autocite{rosenblatt1957}. This system can mathematically be described with a column vector $\mathbf{x}$ for the $n$ input, the scalar $b$ for the bias and the row vector $\mathbf{w}$ for the weight values.
 
@@ -198,6 +198,8 @@ Every `bottleneck' block contains the layers shown in Figure~\ref{fig:resnet50_a
     \end{center}
 \end{figure}
 
+\subsection{Vision transformer}
+
 \subsection{ViT-T/16}
 Another major breakthrough was achieved 2017 by introducing the transformer \autocite{vaswani2017}. The transformer is able to handle context due to the concept of `attention'. After the broad success in \gls{nlp} transformers were introduced for visual tasks as well \autocite{dosovitskiy2020}. This original \gls{vit} comes in the sizes `base', `large' and `huge'. But further papers introduced the smaller version `tiny' \autocite{liu2021,wu2022}.
 
@@ -219,15 +221,62 @@ Figure~\ref{fig:vit_t16_architecture_block}.
     \end{center}
 \end{figure}
 
-%DINO
+
+
+\section{Transfer Learning}
+The basic concept of transfer learning is to reuse the trained parameters for other similar tasks. It was shown, that the positive effect of transfer learning often was not achieved and sometimes even a negative effect occured \autocite{perkins1999}. There are several approaches trying to determine the potential by measering the relatedness of tasks \autocite{torrey2009}. In most cases the success of transfer was highly dependent on the type of \gls{ml} algorithm and even the specific architecture. There is simply no solution that fits all.
+
+\subsection{Transfer Learning in medical imaging}
+In the past years it became common practise in image classification to use the pre-trained weights such as from the ImageNet dataset and then fine-tuning on the domain specific task \autocite{russakovsky2014}. 
+Among others this approach has been successfully used with \glspl{cnn} for image classification in dermatology and many other medical fields \autocite{esteva2017,lam2018,bayramoglu2016,pardamean2018,yang2018}. But some results show that ImageNet pre-training may speed up convergence early in training, but does not improve the final accuracy compared to randomly initialized models \autocite{he2018}.
+
+Some claim that the differences between the pre-training and target data sets is considerabely high and therefore the ImageNet are not suited \autocite{raghu2019}.
+The main differences include the resolution, data set size and the number of classes.
+
+\autocite{raghu2019} shows, that Resnet-50 fine-tuned on the medical datasets CheXpert and Retina does not benefit significantly from ImageNet pre-training.
+
+
+\subsection{Linear evaluation with frozen features}
+DINO outperforms other models \autocite{truong2021}.
+
+\subsection{Fine-tuning}
+weight transfusion
+
+\autocite{raghu2019} also shows that only certain layer benefit from pretrained weights while others should be initialized randomly.
+% No general claim is possible.
+
+
+\subsection{Self-supervised pre-training}
+In the past years serveral approaches with \gls{ssl} pre-training was made in the field of medical image classification \autocite{zhou2019,chen2019,taleb2020,bai2019,abbet2020,sowrirajan2020}.
+
+Skin Lesion Analysis
+dermatology \autocite{chaves2021}
+
+Previous work shows better results when finetuning all layers instead of freezing earlier parts of the network \autocite{newell2020}.
+
+
+
+% \autocite{newell2020} measure the utility 
+
+% suggests that the utility of self-supervised pretraining comes mainly from better regularization that reduces overfitting, not better optimization
+% that reduces underfitting—otherwise we should expect selfsupervision to have non-negligible utility even with large
+% numbers of labeled samples
+
+SimCLR \autocite{chen2020}
+DINO \autocite{caron2021}
+% Linear evaluation
+
+% While there are successfull
+
+% \autocite{kornblith2019} used \gls{cca} and \gls{cka} to compare the layers within neural networks as well as different trained models.
+
+% \autocite{perkins1999}
 
 % AI
 % Finetuning / Transfer Learning
 % Modern approaches: Lora, Adapter
 % Frozen evaluation
 % Utility Score
-
-
 
 % DINO
 % Teacher / Student

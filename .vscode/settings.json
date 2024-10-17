@@ -4,32 +4,17 @@
     "editor.formatOnSave": true
   },
   "cSpell.diagnosticLevel": "Hint",
-  "cSpell.enableFiletypes": [
-    "!python"
-  ],
+  "cSpell.enableFiletypes": ["!python"],
   "latex-workshop.latex.autoClean.run": "onFailed",
   "git.ignoreLimitWarning": true,
   "latex-workshop.latex.recipes": [
     {
       "name": "Fast: pdflatex",
-      "tools": [
-        "pdflatex"
-      ]
-    },
-    {
-      "name": "Bibtex: biber",
-      "tools": [
-        "biber"
-      ]
+      "tools": ["pdflatex"]
     },
     {
       "name": "Full: pdflatex, biber",
-      "tools": [
-        "pdflatex",
-        "biber",
-        "pdflatex",
-        "pdflatex"
-      ]
+      "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
     }
   ],
   "latex-workshop.message.error.show": false,

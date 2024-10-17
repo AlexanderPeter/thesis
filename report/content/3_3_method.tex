@@ -1,8 +1,5 @@
 \chapter{Method}
-In this chapter the work environment and the procedure is explained. 
-
-\section{Frameworks and tools}
-This work uses Python $3.8.10$ as programming language for the data analysis as well as for the training and evaluation of the models. Python already offers many high-end libraries for \gls{ml}. Jupyter notebooks were used to write and adjust all code. Important snippets were moved into python files to reuse it in multiple notebooks.
+This chapter lists all the used data sets and explains the procedure.
 
 \section{Public plant disease datasets}
 \label{section:plant_datasets}
@@ -28,29 +25,31 @@ PlantDoc \autocite{singh2020} & 2'598 & 28 \tabularnewline \hline
 \end{tabularx}
 \end{table}
 
-All datasets were checked for obvious duplicates and cleaned up if necessary. \autocite{groeger2023} shows, that some of the datasets also have label errors and near duplicates with different magnifications or similar small changes. These changes make it harder to detect such cases. For the sake of simplicity the duplicate check in this work only covers images with the exact same image hash or the same file name combined with manual verification. The complete list of cleaning steps is in the Appendix~\ref{appendix:data_quality_assessment}.
+All datasets were checked for obvious duplicates and cleaned up if necessary. Some of the datasets have additional label errors and near duplicates with different magnifications or similar small changes \autocite{groeger2023}. These changes make it harder to detect such cases. For the sake of simplicity the duplicate check in this work only covers images with the exact same image hash or the same file name combined with manual verification. The complete list of cleaning steps is in the Appendix~\ref{appendix:data_quality_assessment}.
 
 \subsection{PlantVillage Dataset (PVD)}
-All images in the dataset have a lab-controlled background as shown in Figure~\ref{fig:example_images_of_plantvillage}.
+The \gls{pvd} contain 54'303 images and is therefore one of the larger plant disease data sets available. Accordingly it is often used in other work \autocite{hughes2016}, but there is no official test split provided to compare the results of already existing models. Some achieved an accuracy around 90\% with the ResNet50 architecture \autocite{gole2023}.
 
+All images in the dataset have a lab-controlled background as shown in Figure~\ref{fig:example_images_of_plantvillage}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_plantvillage.png}
-    \caption{Example images of PlantVillage}
-   \label{fig:example_images_of_plantvillage}
+    \caption{Example images of the \gls{pvd}}\label{fig:example_images_of_plantvillage}
     \end{center}
 \end{figure}
 
 This dataset does not provide a split for a test test. Therefore, the splitting was carried out by myself using 80\% of the data for the training set and 10\% each for the validation and test set. The stratifying ensures, that the distribution of the 38 classes is the same over all sets, which can be seen in Figure~\ref{fig:class_distribution_of_plantvillage}. 
-% Without a given split is also not possible to have a meaningful line.
-
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_plantvillage.png}
-    \caption{Class distribution of PlantVillage}
-   \label{fig:class_distribution_of_plantvillage}
+    \caption{Class distribution of PlantVillage}\label{fig:class_distribution_of_plantvillage}
     \end{center}
 \end{figure}
+
+
+
+% Without a given split is also not possible to have a meaningful line.
+
 
 \subsection{Cassava Leaf Disease Classification}
 Figure~\ref{fig:example_images_of_cassava}.
@@ -58,8 +57,7 @@ Figure~\ref{fig:example_images_of_cassava}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_cassava.png}
-    \caption{Example images of Cassava}
-   \label{fig:example_images_of_cassava}
+    \caption{Example images of Cassava}\label{fig:example_images_of_cassava}
     \end{center}
 \end{figure}
 
@@ -68,8 +66,7 @@ Figure~\ref{fig:class_distribution_of_cassava}
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_cassava.png}
-    \caption{Class distribution of Cassava}
-   \label{fig:class_distribution_of_cassava}
+    \caption{Class distribution of Cassava}\label{fig:class_distribution_of_cassava}
     \end{center}
 \end{figure}
 
@@ -81,8 +78,7 @@ Figure~\ref{fig:example_images_of_plantdataset}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_plantdataset.png}
-    \caption{Example images of PlantDataset}
-   \label{fig:example_images_of_plantdataset}
+    \caption{Example images of PlantDataset}\label{fig:example_images_of_plantdataset}
     \end{center}
 \end{figure}
 
@@ -91,8 +87,7 @@ Figure~\ref{fig:class_distribution_of_plantdataset}
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_plantdataset.png}
-    \caption{Class distribution of PlantDataset}
-   \label{fig:class_distribution_of_plantdataset}
+    \caption{Class distribution of PlantDataset}\label{fig:class_distribution_of_plantdataset}
     \end{center}
 \end{figure}
 
@@ -102,8 +97,7 @@ Figure~\ref{fig:example_images_of_plantdoc}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_plantdoc.png}
-    \caption{Example images of PlantDoc}
-   \label{fig:example_images_of_plantdoc}
+    \caption{Example images of PlantDoc}\label{fig:example_images_of_plantdoc}
     \end{center}
 \end{figure}
 
@@ -112,8 +106,7 @@ Figure~\ref{fig:class_distribution_of_plantdoc}
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_plantdoc.png}
-    \caption{Class distribution of PlantDoc}
-   \label{fig:class_distribution_of_plantdoc}
+    \caption{Class distribution of PlantDoc}\label{fig:class_distribution_of_plantdoc}
     \end{center}
 \end{figure}
 
@@ -124,8 +117,7 @@ Figure~\ref{fig:example_images_of_darma}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_darma.png}
-    \caption{Example images of \gls{darma}}
-   \label{fig:example_images_of_darma}
+    \caption{Example images of \gls{darma}}\label{fig:example_images_of_darma}
     \end{center}
 \end{figure}
 
@@ -136,8 +128,7 @@ Figure~\ref{fig:example_images_of_pddd}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_pddd.png}
-    \caption{Example images of \gls{pddd}}
-   \label{fig:example_images_of_pddd}
+    \caption{Example images of \gls{pddd}}\label{fig:example_images_of_pddd}
     \end{center}
 \end{figure}
 
@@ -169,8 +160,7 @@ Figure~\ref{fig:example_images_of_pad-ufes-20}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_pad-ufes-20.png}
-    \caption{Example images of PAD-UFES-20}
-   \label{fig:example_images_of_pad-ufes-20}
+    \caption{Example images of PAD-UFES-20}\label{fig:example_images_of_pad-ufes-20}
     \end{center}
 \end{figure}
 
@@ -179,8 +169,7 @@ Figure~\ref{fig:class_distribution_of_pad-ufes-20}
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_pad-ufes-20.png}
-    \caption{Class distribution of PAD-UFES-20}
-   \label{fig:class_distribution_of_pad-ufes-20}
+    \caption{Class distribution of PAD-UFES-20}\label{fig:class_distribution_of_pad-ufes-20}
     \end{center}
 \end{figure}
 \subsection{Diverse Dermatology Images (DDI)}
@@ -189,8 +178,7 @@ Figure~\ref{fig:example_images_of_ddi}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_ddi.png}
-    \caption{Example images of \gls{ddi}}
-   \label{fig:example_images_of_ddi}
+    \caption{Example images of \gls{ddi}}\label{fig:example_images_of_ddi}
     \end{center}
 \end{figure}
 
@@ -199,8 +187,7 @@ Figure~\ref{fig:class_distribution_of_ddi}
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_ddi.png}
-    \caption{Class distribution of \gls{ddi}}
-   \label{fig:class_distribution_of_ddi}
+    \caption{Class distribution of \gls{ddi}}\label{fig:class_distribution_of_ddi}
     \end{center}
 \end{figure}
 \subsection{HAM10000}
@@ -209,8 +196,7 @@ Figure~\ref{fig:example_images_of_ham10000}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_ham10000.png}
-    \caption{Example images of HAM10000}
-   \label{fig:example_images_of_ham10000}
+    \caption{Example images of HAM10000}\label{fig:example_images_of_ham10000}
     \end{center}
 \end{figure}
 
@@ -219,8 +205,7 @@ Figure~\ref{fig:class_distribution_of_ham10000}
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_ham10000.png}
-    \caption{Class distribution of HAM10000}
-   \label{fig:class_distribution_of_ham10000}
+    \caption{Class distribution of HAM10000}\label{fig:class_distribution_of_ham10000}
     \end{center}
 \end{figure}
 \subsection{Fitzpatrick17k}
@@ -229,8 +214,7 @@ Figure~\ref{fig:example_images_of_fitzpatrick17k}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_fitzpatrick17k.png}
-    \caption{Example images of Fitzpatrick17k}
-   \label{fig:example_images_of_fitzpatrick17k}
+    \caption{Example images of Fitzpatrick17k}\label{fig:example_images_of_fitzpatrick17k}
     \end{center}
 \end{figure}
 
@@ -239,9 +223,6 @@ Figure~\ref{fig:class_distribution_of_fitzpatrick17k}
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_fitzpatrick17k.png}
-    \caption{Class distribution of Fitzpatrick17k}
-   \label{fig:class_distribution_of_fitzpatrick17k}
+    \caption{Class distribution of Fitzpatrick17k}\label{fig:class_distribution_of_fitzpatrick17k}
     \end{center}
 \end{figure}
-
-
