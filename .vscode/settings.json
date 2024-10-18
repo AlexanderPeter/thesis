@@ -15,6 +15,10 @@
     {
       "name": "Full: pdflatex, biber",
       "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+    },
+    {
+      "name": "BibTex",
+      "tools": ["biber"]
     }
   ],
   "latex-workshop.message.error.show": false,
