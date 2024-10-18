@@ -125,7 +125,8 @@ A few example images are shown in Figure~\ref{fig:example_images_of_pddd}. Some 
 
 This large-scale plant disease dataset is explicitely meant to be used to pre-train models that then can be fine-tuned on specific downstream tasks \autocite{dong2023}. They also provide a brad selection of \gls{sl} trained models to be used for fine-tuning. This work uses the provided weights of the Resnet50 model to compare its performance on plant and dermatology tasks.
 
-\section{Downstream dermatology datasets}\label{section:derma_datasets}
+\section{Dermatology datasets}\label{section:derma_datasets}
+%TODO
 % The following data sets are selected by F.~Gröger due to his former experience.
 
 \begin{table}[H]
@@ -187,17 +188,16 @@ Every image also has a patient id. This patient id was considered while dividing
 
 
 \subsection{HAM10000}
-Figure~\ref{fig:example_images_of_ham10000}.
-
+The HAM10000 dataset is based on the \gls{isic} 2018 challenge \autocite{codella2019}. The \gls{ssl} pre-training of the dermatology model also used images from \gls{isic}. The effects caused by similar data should in that case be the most clearly.
+Figure~\ref{fig:example_images_of_ham10000} shows the uniformity of the picture. The affected area is always centered and clearly visible.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/example_images_of_ham10000.png}
     \caption{Example images of HAM10000}\label{fig:example_images_of_ham10000}
     \end{center}
 \end{figure}
-
-Figure~\ref{fig:class_distribution_of_ham10000}
-
+HAM10000 comes with a predefined test split. This does only influence the split as visible in Figure~\ref{fig:class_distribution_of_ham10000}.
+Additionally the class ``Nevi'' dominates the other classes. Lastly the two classes ``Dermatofibroma'' and ``Vascular'' do not have enough samples for subsampling 30 datapoints per class.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_ham10000.png}
@@ -205,12 +205,9 @@ Figure~\ref{fig:class_distribution_of_ham10000}
     \end{center}
 \end{figure}
 
-The class ``Melanoma'' has only a few occurences. 
-
-
 
 \subsection{Fitzpatrick17k}
-Figure~\ref{fig:example_images_of_fitzpatrick17k}.
+With 16'536 images is Fitzpatrick17k the largest dermatology data set in this work. The Different areas of skin can be affected as seen in Figure~\ref{fig:example_images_of_fitzpatrick17k}.
 
 \begin{figure}[H]
     \begin{center}
@@ -219,7 +216,7 @@ Figure~\ref{fig:example_images_of_fitzpatrick17k}.
     \end{center}
 \end{figure}
 
-Figure~\ref{fig:class_distribution_of_fitzpatrick17k}
+Beside \gls{ddi} this data set also provides more than one possivle target class. In this work the following three classes were used. This can also be seen on Figure~\ref{fig:class_distribution_of_fitzpatrick17k}.
 
 \begin{figure}[H]
     \begin{center}
@@ -227,3 +224,15 @@ Figure~\ref{fig:class_distribution_of_fitzpatrick17k}
     \caption{Class distribution of Fitzpatrick17k}\label{fig:class_distribution_of_fitzpatrick17k}
     \end{center}
 \end{figure}
+
+\subsection{SSL dermatology datasets}
+The pre-trained dermatology models were provided by Fabian Gröger from a previous work \autocite{groeger2023}. Images from following data sets were used for training.
+
+\begin{itemize}
+    \item MED-NODE: 170'462 clinical images \autocite{giotis2015}
+    \item $PH^2$ Database: 200 dermoscopy images \autocite{mendonca2013}
+    \item Derm7pt: 2'022 images \autocite{kawahara2019}
+    \item SD-260: 12'583 clinical images \autocite{sun2016}
+    \item ISIC: 107'208 images \autocite{giotis2015}
+    \item A private collection of roughly 120'000 clinical images 
+\end{itemize}

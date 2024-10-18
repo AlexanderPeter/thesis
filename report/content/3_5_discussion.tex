@@ -1,0 +1,35 @@
+\chapter{Discussion}
+
+The results of the frozen evaluation show that models pre-trained on similar data are not significantly better than the models pre-trained on ImageNet. This could be due to various reasons.
+
+% Interestingly, the models... (chose 1. or 2.)
+%1. ViT seemed less impacted by 
+%2. pre-trained with \gls{ssl} seemed less impacted by 
+
+Evaluating frozen feautures could be less meaningful than assumed. The approaches of fine-tuning hast changed drastically in the last years. It is not common anymore to keep the pretrained layers frozen and only train only one linear layer on top.
+% Especially models pre-trained with \gls{ssl} probably need a deeper finetuning. 
+Therefore, a linear evaluation may also not represent today's practises accurately anymore. This could be validated by comparing the scores of modernly fine-tuned models with the respective scores of the evaluations on frozen features.
+
+% Modern practices like \gls{lora} 
+
+\section{Further research}
+% segmentation (is there a finding in part one?)
+
+
+% Maybe the assumed similarity between plant leaves and skin is overrated.
+% This work used pretrained models which are not necessarily very similar to the downstream task, especially thinking of ones trained with \gls{ssl}.
+
+% It could be very interesting to analyse transfer learning by using fully artificial data. This way datasets with the desired specific similarity could be generated and checked how the results change with increasing similarity. 
+Analysing similarity mays bring valuable insights how such a similarity can be measured and potentially even be applied to check which images within a data set are better suited.
+
+% already 
+% Another approach looking into 
+
+
+% The data quality could also be the cause preventing models to unfold their potential. If label errors
+
+% Another cause of prevention
+% is the noise of data
+
+
+% possibility

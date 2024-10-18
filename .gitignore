@@ -10,6 +10,7 @@
 
 # files
 **/__pycache__/**/*.pyc
+archive/
 runs/**/*.pth
 documents/medium/
 documents/demo_notes.md
