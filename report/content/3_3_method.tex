@@ -1,8 +1,46 @@
 \chapter{Method}
-This chapter lists all the used data sets and explains the procedure.
+This chapter explains the procedure and lists all the used data sets.
 
-\section{Downstream plant disease datasets}
-\label{section:plant_datasets}
+\section{Procedure}
+
+
+Frozen features are evaluated to verify if a plant based pre-training is beneficial. This evaluation contains roughly the following steps.
+\begin{enumerate}
+    \item ImageNet, plant and dermatology based models are acquired and their classifier removed.
+    \item All downstream tasks are fed to every pre-trained model to receive the frozen features.
+    \item Logistic regression and \gls{knn} are trained to predict the target classes based on the frozen features.
+\end{enumerate}
+\subsection{Models}
+
+The following Table~\ref{tab:models} lists all used models were prepared.
+
+\begin{table}[H]
+\centering
+\caption{Models \label{tab:models}}
+\begin{tabularx}{\textwidth}{|
+    >{\hsize=.18\hsize}X |
+    >{\hsize=.30\hsize}X |
+    >{\hsize=.52\hsize}X |
+}
+\hline
+\textbf{Architecture} & \textbf{Pre-training} & \textbf{Source} \tabularnewline \hline
+Resnet50 & Random & torchvision.models.resnet50 \tabularnewline \hline
+Resnet50 & ImageNet SL & torchvision \tabularnewline \hline
+Resnet50 & ImageNet SL (SimCLR) & Github \autocite{groeger2022} \tabularnewline \hline
+Resnet50 & Derma SSL (SimCLR) & Github \autocite{groeger2022} \tabularnewline \hline
+Resnet50 & Plant SL & Zenodo PDDD \autocite{zenodo2023} \tabularnewline \hline
+ViT-T/16 & Random & timm \tabularnewline \hline
+ViT-T/16 & ImageNet SL & huggingface \autocite{winkawaks2022} \tabularnewline \hline
+ViT-T/16 & ImageNet SL (AugReg) & Google \autocite{google2024} \tabularnewline \hline
+ViT-T/16 & ImageNet SSL (DINO) & Github \autocite{groeger2022} \tabularnewline \hline
+ViT-T/16 & Derma SSL (DINO) & Github \autocite{groeger2022} \tabularnewline \hline
+ViT-T/16 & Plant SSL (DINO) & Github \autocite{groeger2022} \tabularnewline \hline
+\end{tabularx} 
+\end{table}
+
+
+
+\section{Downstream plant disease datasets}\label{section:plant_datasets}
 
 There are several datasets on plant diseases publicly available, but only a few meet the requirements such as sufficient size and appropriate image resolution. The following Table~\ref{tab:suitable_plant_datasets} lists the suitable plant disease datasets used in this work. The complete list regarded plant datasets including links is in the Appendix~\ref{appendix:datasets_tables}.
 
@@ -125,6 +163,8 @@ A few example images are shown in Figure~\ref{fig:example_images_of_pddd}. Some 
 
 This large-scale plant disease dataset is explicitely meant to be used to pre-train models that then can be fine-tuned on specific downstream tasks \autocite{dong2023}. They also provide a brad selection of \gls{sl} trained models to be used for fine-tuning. This work uses the provided weights of the Resnet50 model to compare its performance on plant and dermatology tasks.
 
+Although weights for the Resnet50 architecture are provided, there are no 
+
 \section{Dermatology datasets}\label{section:derma_datasets}
 %TODO
 % The following data sets are selected by F.~Gröger due to his former experience.
@@ -228,9 +268,10 @@ Beside \gls{ddi} this data set also provides more than one possivle target class
 \subsection{SSL dermatology datasets}
 The pre-trained dermatology models were provided by Fabian Gröger from a previous work \autocite{groeger2023}. Images from following data sets were used for training.
 
+
 \begin{itemize}
     \item MED-NODE: 170'462 clinical images \autocite{giotis2015}
-    \item $PH^2$ Database: 200 dermoscopy images \autocite{mendonca2013}
+    \item PH2 Database: 200 dermoscopy images \autocite{mendonca2013}
     \item Derm7pt: 2'022 images \autocite{kawahara2019}
     \item SD-260: 12'583 clinical images \autocite{sun2016}
     \item ISIC: 107'208 images \autocite{giotis2015}
