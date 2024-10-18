@@ -7,7 +7,55 @@
 The appendix includes detailed information, the original task description and selected notes from the meetings with the supervisors.
 
 \section{Detail information}
-%TODO put something on this page
+
+\subsection{Data quality assessment}\label{appendix:data_quality_assessment}
+
+\begin{table}[H]
+\centering
+\caption{Dataset cleaning\label{tab:dataset_cleaning}}
+\begin{tabularx}{\textwidth}{|
+ >{\hsize=.50\hsize}X |
+ >{\hsize=.20\hsize\raggedleft}X |
+ >{\hsize=.30\hsize}X |
+}
+\hline
+\textbf{Dataset} & \textbf{\#Duplicates} & \textbf{Additional cleaning} \tabularnewline\hline
+\gls{pvd} & 42 & \tabularnewline\hline
+Cassava Leaf Disease Classification & 0 &  \tabularnewline\hline
+PlantDataset & 62 & \tabularnewline\hline
+PlantDoc  & 40 & 1 nonsense class  \tabularnewline\hline
+PAD-UFES-20 & 32 & \tabularnewline\hline
+\gls{ddi} & 0 &  \tabularnewline\hline
+HAM10000 & 4 & 1 corrupted file \tabularnewline\hline
+Fitzpatrick17k & 10 &  \tabularnewline\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Baseline}\label{appendix:baseline_scores}
+
+The baseline score is especially high with the \gls{ddi} due to having only two classes. It is also the only data set where some models performed below this baseline. 
+\begin{table}[H]
+\centering
+\caption{Baseline values\label{tab:baseline_scores}}
+\begin{tabularx}{\textwidth}{|
+    >{\hsize=.50\hsize}X |
+    >{\hsize=.20\hsize\raggedleft}X |
+    >{\hsize=.30\hsize}X |
+}
+\hline
+\textbf{Dataset} & \textbf{ZeroR f1-score} & \textbf{Note} \tabularnewline\hline
+\gls{pvd} & 0.004851 & \tabularnewline\hline
+Cassava Leaf Disease Classification & 0.152315 &  \tabularnewline\hline
+PlantDataset & 0.017886 & \tabularnewline\hline
+PlantDoc & 0.002874 & \tabularnewline\hline
+PAD-UFES-20 & 0.089431 & \tabularnewline\hline
+\gls{ddi} & 0.426087 &  \tabularnewline\hline
+HAM10000 & 0.107246 & \tabularnewline\hline
+Fitzpatrick17k & 0.281094 & \tabularnewline\hline
+\end{tabularx}
+\end{table}
+
+
 
 \newpage % To make sure footnotes are on the same page.
 \subsection{Dataset collection}\label{appendix:datasets_tables}
@@ -67,29 +115,6 @@ New Plant Diseases Dataset & 87'000  & 38 & \href{https://www.kaggle.com/dataset
 \stepcounter{footnote}\footnotetext{https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset/data}
 \stepcounter{footnote}\footnotetext{https://plantpad.samlab.cn/image\_down.html}
 
-
-\subsection{Data quality assessment}\label{appendix:data_quality_assessment}
-
-\begin{table}[H]
-\centering
-\caption{Dataset cleaning\label{tab:dataset_cleaning}}
-\begin{tabularx}{\textwidth}{|
- >{\hsize=.50\hsize}X |
- >{\hsize=.20\hsize\raggedleft}X |
- >{\hsize=.30\hsize}X |
-}
-\hline
-\textbf{Dataset} & \textbf{\#Duplicates} & \textbf{Additional cleaning} \tabularnewline\hline
-\gls{pvd} & 42 & \tabularnewline\hline
-Cassava Leaf Disease Classification & 0 &  \tabularnewline\hline
-PlantDataset & 62 & \tabularnewline\hline
-PlantDoc  & 40 & 1 nonsense class  \tabularnewline\hline
-PAD-UFES-20 & 32 & \tabularnewline\hline
-\gls{ddi} & 0 &  \tabularnewline\hline
-HAM10000 & 4 & 1 corrupted file \tabularnewline\hline
-Fitzpatrick17k & 10 &  \tabularnewline\hline
-\end{tabularx}
-\end{table}
 
 \includepdf[pages=-,addtotoc={1, section, 1, Task description, task description}]{../documents/task_description_printed.pdf}\label{appendix:task_description}
 

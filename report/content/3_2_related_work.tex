@@ -74,7 +74,7 @@ This step is repeated until the result approaches an optimum and the progress ne
     % \nabla\mathcal{L}_{MSE} = \frac{\partial J(\boldsymbol{\theta}_k)}{\partial \boldsymbol{\theta}_k} = \frac{2}{n} \mathbf{X}^{T}(\mathbf{X}\boldsymbol{\theta}_k - \mathbf{X}^{T}\mathbf{y})
 % \end{equation}
 
-Libraries like `scikit' use algorithms like limited-memory BFGS to accelerate the calculations of linear models. For neural networks gradient descent based approaches have prevailed.
+Libraries like ``scikit'' use algorithms like limited-memory BFGS to accelerate the calculations of linear models. For neural networks gradient descent based approaches have prevailed.
 
 \subsection{k-nearest neighbors}
 \gls{knn} is an algorithm for classification and regression using the $k$ closest training samples \autocite{fix1989,cover1967}. The feature vector and the according target value of every provided training sample is stored. The feature vectors of further samples can be compared with a distance metric to find similar training samples. Common metrics are the Euclidean distance or the Manhattan distance. The cosine similarity can also be used, where vector magnitude is not critical. 
@@ -136,7 +136,7 @@ Figure~\ref{fig:neurons} shows such an example with four input values and three 
 \end{figure}
 
 \subsection{Multilayer perceptron}
-Stacking several layers of neurons leads to the \gls{mlp}. Every neuron is connected to each neuron of the previous layer making it a `dense' network.
+Stacking several layers of neurons leads to the \gls{mlp}. Every neuron is connected to each neuron of the previous layer making it a ``dense'' network.
 $\sigma(z)$ and $\operatorname{softmax}(\mathbf{z})$ are computably expensive to calculate. The \gls{relu} function has a similar effect, but is much simpler and therefore better suited in all layers except the last.
 
 \begin{equation}
@@ -157,7 +157,7 @@ Figure~\ref{fig:mlp_architecture} shows the previous network with two additional
 
 \subsection{Convolutional neural networks}
 Dense neural networks are not suited for images. Only the last few layers are usually dense to classify the extracted features. Extracting these features brings some obstacles. One one hand would a $224$ pixel high and $244$ pixel wide image already require millions of parameters per layer, which is not feasible. On the other hand should the model be resistant to small rotations and translations of the depicted object. Luckily, it is not necessary to regard all pixels in every neuron. Pixels usually highly correlate with their adjacent neighbors and therefore contain redundancy.
-Filters adress these problems by combining pixels locally and extracting meaningful features per region \autocite{lecun1989}. The input data can be written as a two-dimensional matrix $\mathbf{G} \in \mathbb{R}^{w_g \times h_g}$, where $w_g$ and $h_g$ are the width and height of the input data. Every filter consists of a filter matrix $\mathbf{F} \in \mathbb{R}^{w_f \times h_f}$ and a bias scalar $b$, where $w_f$ and $h_f$ are analogously the width and height of that filter. During the `convolution' the filter is applied to the input matrix to generate the output matrix $\mathbf{O} \in \mathbb{R}^{w_o \times h_o}$.
+Filters adress these problems by combining pixels locally and extracting meaningful features per region \autocite{lecun1989}. The input data can be written as a two-dimensional matrix $\mathbf{G} \in \mathbb{R}^{w_g \times h_g}$, where $w_g$ and $h_g$ are the width and height of the input data. Every filter consists of a filter matrix $\mathbf{F} \in \mathbb{R}^{w_f \times h_f}$ and a bias scalar $b$, where $w_f$ and $h_f$ are analogously the width and height of that filter. During the ``convolution'' the filter is applied to the input matrix to generate the output matrix $\mathbf{O} \in \mathbb{R}^{w_o \times h_o}$.
 
 \begin{equation}
 o_{i,j} = (\mathbf{F} \ast \mathbf{G})_{i,j} = \sum_{m=1}^{w_f}\sum_{n=1}^{h_f} f_{m,n} \cdot g_{i+m, j+n} + b
@@ -180,7 +180,7 @@ Convolutional layers are usually alternated with pooling layers. Latters scale d
 Some \gls{cnn} models were able to win the ImageNet classification challenge such AlexNet \autocite{krizhevsky2012} in 2012 and \gls{vgg} \autocite{simonyan2015} in 2014. But training such deep models was laborious and reaching its limits. 
 
 The introduction of residual connection in 2025 provided a remedy \autocite{he2015}. Residual connection copies the values of an earlier layer and adds it to a later layer. This stabilizes the training process and allows ever deeper models to be trained without vanishing gradients.
-The Resnet50 architecture is one of the resulting residual neural networks, which is still widely used in image classification today. Figure~\ref{fig:resnet50_architecture} shows the structure based on the implementation from `torchvision'. Additionally, the newly discovered batch normalization is utilized to stabilize and accelerate training \autocite{ioffe2015}.
+The Resnet50 architecture is one of the resulting residual neural networks, which is still widely used in image classification today. Figure~\ref{fig:resnet50_architecture} shows the structure based on the implementation from ``torchvision''. Additionally, the newly discovered batch normalization is utilized to stabilize and accelerate training \autocite{ioffe2015}.
 
 \begin{figure}[H]
     \begin{center}
@@ -189,7 +189,7 @@ The Resnet50 architecture is one of the resulting residual neural networks, whic
     \end{center}
 \end{figure}
 
-Every `bottleneck' block contains the layers shown in Figure~\ref{fig:resnet50_architecture_bottleneck} including the mentioned residual connection.
+Every ``bottleneck'' block contains the layers shown in Figure~\ref{fig:resnet50_architecture_bottleneck} including the mentioned residual connection.
 
 \begin{figure}[H]
     \begin{center}
@@ -201,9 +201,9 @@ Every `bottleneck' block contains the layers shown in Figure~\ref{fig:resnet50_a
 \subsection{Vision transformer}
 
 \subsection{ViT-T/16}
-Another major breakthrough was achieved 2017 by introducing the transformer \autocite{vaswani2017}. The transformer is able to handle context due to the concept of `attention'. After the broad success in \gls{nlp} transformers were introduced for visual tasks as well \autocite{dosovitskiy2020}. This original \gls{vit} comes in the sizes `base', `large' and `huge'. But further papers introduced the smaller version `tiny' \autocite{liu2021,wu2022}.
+Another major breakthrough was achieved 2017 by introducing the transformer \autocite{vaswani2017}. The transformer is able to handle context due to the concept of ``attention''. After the broad success in \gls{nlp} transformers were introduced for visual tasks as well \autocite{dosovitskiy2020}. This original \gls{vit} comes in the sizes ``base'', ``large'' and ``huge''. But further papers introduced the smaller version `tiny' \autocite{liu2021,wu2022}.
 
-Figure~\ref{fig:vit_t16_architecture} shows the implementation of the tiny \gls{vit} in the library `timm'. Other libraries have slightly different implementations.
+Figure~\ref{fig:vit_t16_architecture} shows the implementation of the tiny \gls{vit} in the library ``timm''. Other libraries have slightly different implementations.
 
 \begin{figure}[H]
     \begin{center}
