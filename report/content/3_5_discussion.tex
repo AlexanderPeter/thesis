@@ -2,25 +2,36 @@
 
 The results of the frozen evaluation show that models pre-trained on similar data are not significantly better than the models pre-trained on ImageNet. This could be due to various reasons.
 
-% Interestingly, the models... (chose 1. or 2.)
+\section{Further research}
+The approaches of fine-tuning have changed in the last years. It is not common anymore to keep the pre-trained layers frozen and only train one linear layer on top. 
+It would therefore be plausible that linear evaluation are not representing today's practices accurately anymore and the results are less meaningful compared to traditional fine-tuning.
+This could be validated by comparing the scores of modernly fine-tuned models with the respective scores of the evaluations on frozen features.
+
+In the same way the procedure of fine-tuning highly influences the outcome the type of pre-training massively influences the result. SimCLR seems not have worked out, while DINO has at least decent results. 
+Here different approaches should be tried to determine possible procedures of pre-training before attempting to use data from a similar domain.
+
+% Analysing similarity mays bring valuable insights how such a similarity can be measured and potentially even be applied to check which images within a data set are better suited.
+
+% Therefore, a . 
+
+% It would therefore make sense to look into modern practices of transfer learning.
+
+
+% Interestingly, the models... (choose 1. or 2.)
 %1. ViT seemed less impacted by 
 %2. pre-trained with \gls{ssl} seemed less impacted by 
 
-Evaluating frozen feautures could be less meaningful than assumed. The approaches of fine-tuning hast changed drastically in the last years. It is not common anymore to keep the pretrained layers frozen and only train only one linear layer on top.
 % Especially models pre-trained with \gls{ssl} probably need a deeper finetuning. 
-Therefore, a linear evaluation may also not represent today's practises accurately anymore. This could be validated by comparing the scores of modernly fine-tuned models with the respective scores of the evaluations on frozen features.
 
 % Modern practices like \gls{lora} 
 
-\section{Further research}
 % segmentation (is there a finding in part one?)
 
 
 % Maybe the assumed similarity between plant leaves and skin is overrated.
-% This work used pretrained models which are not necessarily very similar to the downstream task, especially thinking of ones trained with \gls{ssl}.
+% This work used pre-trained models which are not necessarily very similar to the downstream task, especially thinking of ones trained with \gls{ssl}.
 
 % It could be very interesting to analyse transfer learning by using fully artificial data. This way datasets with the desired specific similarity could be generated and checked how the results change with increasing similarity. 
-Analysing similarity mays bring valuable insights how such a similarity can be measured and potentially even be applied to check which images within a data set are better suited.
 
 % already 
 % Another approach looking into 

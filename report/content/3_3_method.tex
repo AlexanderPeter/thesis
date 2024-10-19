@@ -6,7 +6,7 @@ This chapter explains the procedure and lists all the used data sets.
 
 Frozen features are evaluated to verify if a plant based pre-training is beneficial. This evaluation contains roughly the following steps.
 \begin{enumerate}
-    \item ImageNet, plant and dermatology based models are acquired and their classifier removed.
+    \item ImageNet, plant and dermatology based models are acquired, and their classifier removed.
     \item All downstream tasks are fed to every pre-trained model to receive the frozen features.
     \item Logistic regression and \gls{knn} are trained to predict the target classes based on the frozen features.
 \end{enumerate}
@@ -24,7 +24,7 @@ The following Table~\ref{tab:models} lists all used models were prepared.
 }
 \hline
 \textbf{Architecture} & \textbf{Pre-training} & \textbf{Source} \tabularnewline \hline
-Resnet50 & Random & torchvision.models.resnet50 \tabularnewline \hline
+Resnet50 & Random & torchvision \tabularnewline \hline
 Resnet50 & ImageNet SL & torchvision \tabularnewline \hline
 Resnet50 & ImageNet SL (SimCLR) & Github \autocite{groeger2022} \tabularnewline \hline
 Resnet50 & Derma SSL (SimCLR) & Github \autocite{groeger2022} \tabularnewline \hline
@@ -63,7 +63,7 @@ PlantDoc \autocite{singh2020} & 2'598 & 28 \tabularnewline \hline
 \end{tabularx}
 \end{table}
 
-All datasets were checked for obvious duplicates and cleaned up if necessary. Some of the datasets have additional label errors and near duplicates with different magnifications or similar small changes \autocite{groeger2023}. These changes make it harder to detect such cases. For the sake of simplicity the duplicate check in this work only covers images with the exact same image hash or the same file name combined with manual verification. The complete list of cleaning steps is in the Appendix~\ref{appendix:data_quality_assessment}.
+All datasets were checked for obvious duplicates and cleaned up if necessary. Some datasets have additional label errors and near duplicates with different magnifications or similar small changes \autocite{groeger2023}. These changes make it harder to detect such cases. For the sake of simplicity the duplicate check in this work only covers images with the exact same image hash or the same file name combined with manual verification. The complete list of cleaning steps is in the Appendix~\ref{appendix:data_quality_assessment}.
 
 \subsection{PlantVillage Dataset (PVD)}
 All images in the \gls{pvd} have a lab-controlled background as shown in Figure~\ref{fig:example_images_of_plantvillage}. 
@@ -73,8 +73,8 @@ All images in the \gls{pvd} have a lab-controlled background as shown in Figure~
     \caption{Example images of the \gls{pvd}}\label{fig:example_images_of_plantvillage}
     \end{center}
 \end{figure}
-With 54'303 images it is one of the larger plant disease data sets available. Accordingly it is often used in other work \autocite{hughes2016}, but there is no official test split provided to compare the results of already existing models. Some achieved an accuracy around 90\% with the ResNet50 architecture \autocite{gole2023}.
-The data set includes different plants such as apple and tomatoes, but also different plant diseases. Some diseases like ``tomato early blight'' and ``potato early blight'' have the same root cause, but the symptons look a bit different. 
+With 54'303 images it is one of the larger plant disease data sets available. Accordingly, it is often used in other work \autocite{hughes2016}, but there is no official test split provided to compare the results of already existing models. Some achieved an accuracy around 90\% with the ResNet50 architecture \autocite{gole2023}.
+The data set includes different plants such as apple and tomatoes, but also different plant diseases. Some diseases like ``tomato early blight'' and ``potato early blight'' have the same root cause, but the symptoms look a bit different. 
 The splitting was carried out by myself using 80\% of the data for the training set and 10\% each for the validation and test set. The stratifying ensures, that the distribution of the 38 classes is the same over all sets, which can be seen in Figure~\ref{fig:class_distribution_of_plantvillage}.
 \begin{figure}[H]
     \begin{center}
@@ -91,15 +91,15 @@ The data set contains 21'398 of cassava leaves with a natural background as visi
     \caption{Example images of the cassava dataset}\label{fig:example_images_of_cassava}
     \end{center}
 \end{figure}
-Kaggle possesses a non public test set with which submitted notebooks get tested \autocite{mwebaze2020}. Currently, the best result has an accuracy of roughly 91\% and is achieved with an ensemble model containing a Resnet50, \gls{vit} and further models.  
-The split for this work was also done by myself. leading to the distribution shown in Figure~\ref{fig:class_distribution_of_cassava}.
+Kaggle possesses a non-public test set with which submitted notebooks get tested \autocite{mwebaze2020}. Currently, the best result has an accuracy of roughly 91\% and is achieved with an ensemble model containing a Resnet50, \gls{vit} and further models.  
+The split for this work was also done by myself, resulting in the distribution shown in Figure~\ref{fig:class_distribution_of_cassava}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_cassava.png}
     \caption{Class distribution of Cassava}\label{fig:class_distribution_of_cassava}
     \end{center}
 \end{figure}
-It is noticable that the ``Mosaic Disease'' dominates over the other classes. A baseline score was calculated for all downstream tasks. This score corresponds to the result when the model is only assigning the most common as prediction for all data points. The complete list of these baseline values is listed in the Appendix~\ref{appendix:baseline_scores}
+It is noticeable that the ``Mosaic Disease'' dominates over the other classes. A baseline score was calculated for all downstream tasks. This score corresponds to the result when the model is only assigning the most common as prediction for all data points. The complete list of these baseline values is listed in the Appendix~\ref{appendix:baseline_scores}
 
 \subsection{PlantDataset}
 The origin of the PlantDataset is not exactly known. The data is available on the kaggle platform, but it is unclear what it is intended for exactly. As far as is known, it is not used in any paper either.
@@ -161,7 +161,7 @@ A few example images are shown in Figure~\ref{fig:example_images_of_pddd}. Some 
     \end{center}
 \end{figure}
 
-This large-scale plant disease dataset is explicitely meant to be used to pre-train models that then can be fine-tuned on specific downstream tasks \autocite{dong2023}. They also provide a brad selection of \gls{sl} trained models to be used for fine-tuning. This work uses the provided weights of the Resnet50 model to compare its performance on plant and dermatology tasks.
+This large-scale plant disease dataset is explicitly meant to be used to pre-train models that then can be fine-tuned on specific downstream tasks \autocite{dong2023}. They also provide a brad selection of \gls{sl} trained models to be used for fine-tuning. This work uses the provided weights of the Resnet50 model to compare its performance on plant and dermatology tasks.
 
 Although weights for the Resnet50 architecture are provided, there are no 
 
@@ -187,7 +187,7 @@ Fitzpatrick17k \autocite{groh2021} & 16'536 & 9,3 \tabularnewline \hline
 \end{table}
 
 \subsection{Diverse Dermatology Images (DDI)}
-\gls{ddi} is the smallest dataset with only 656 images. Instead of using de detailed classes the main classification into malignant and non-malignant is made.
+\gls{ddi} is the smallest dataset with only 656 images. Instead of using the detailed classes the main classification into malignant and non-malignant is made.
 Figure~\ref{fig:example_images_of_ddi} shows, that the classification of many cases is not obvious.
 \begin{figure}[H]
     \begin{center}
@@ -237,7 +237,7 @@ Figure~\ref{fig:example_images_of_ham10000} shows the uniformity of the picture.
     \end{center}
 \end{figure}
 HAM10000 comes with a predefined test split. This does only influence the split as visible in Figure~\ref{fig:class_distribution_of_ham10000}.
-Additionally the class ``Nevi'' dominates the other classes. Lastly the two classes ``Dermatofibroma'' and ``Vascular'' do not have enough samples for subsampling 30 datapoints per class.
+Additionally, the class ``Nevi'' dominates the other classes. Lastly the two classes ``Dermatofibroma'' and ``Vascular'' do not have enough samples for subsampling 30 data points per class.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{../images/class_distribution_of_ham10000.png}
@@ -256,7 +256,7 @@ With 16'536 images is Fitzpatrick17k the largest dermatology data set in this wo
     \end{center}
 \end{figure}
 
-Beside \gls{ddi} this data set also provides more than one possivle target class. In this work the following three classes were used. This can also be seen on Figure~\ref{fig:class_distribution_of_fitzpatrick17k}.
+Beside \gls{ddi} this data set also provides more than one possible target class. In this work the following three classes were used. This can also be seen on Figure~\ref{fig:class_distribution_of_fitzpatrick17k}.
 
 \begin{figure}[H]
     \begin{center}

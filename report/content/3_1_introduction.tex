@@ -7,8 +7,8 @@ The medical fields often lack large datasets with the annotated diagnoses to eas
 Usually regulations like data protection laws hinder collecting or publishing large sets of images. Some institutions are able to collect data in their domain, but are not allowed publishing it. Such sets are usually small and may be biased to local conditions such as light skin pigmentation.
 Creating the according labels of high quality require experienced specialists. These costs compared to the limited scope may render it financially not worthwhile.
 
-One approach is to use weights of models pretrained on generic images like ImageNet dataset and fine-tune the model on a smaller domain specific dataset. Another approach uses \gls{ssl} to train foundation models without the cost of labeling large quantities of data. 
-Generic foundation models are sometimes not applicable, when the target domain differs to much from the generic data.%cite
+One approach is to use weights of models pre-trained on generic images like ImageNet dataset and fine-tune the model on a smaller domain specific dataset. Another approach uses \gls{ssl} to train foundation models without the cost of labeling large quantities of data. 
+Generic foundation models are sometimes not applicable, when the target domain differs too much from the generic data.%cite
 \gls{ssl} on the other hand, requires a lot of domain specific data.
 
 A large quantity of data from a similar domain could improve the performance or decrease the amount of required domain specific data. 
@@ -17,9 +17,36 @@ Plant disease datasets are, in contrary to dermatology images, publicly availabl
 
 
 \subsection{Basic goal}
-This work includes a basic research on transfer learning in general and the state of the art procedures. 
-The main part of this work includes the comparison of the performance of plant disease based pretraining to ImageNet and dermatology based ones. Beside the difference in score also the theoretical amount of data reduction is calculated to reach the same result when only using common foundation models or domain specific \gls{ssl}. 
+This work includes a basic research on transfer learning in general and the state-of-the-art procedures. 
+The main part of this work includes the comparison of the performance of plant disease based pre-training to ImageNet and dermatology based ones. Beside the difference in score also the theoretical amount of data reduction is calculated to reach the same result when only using common foundation models or domain specific \gls{ssl}. 
 Finally, it will be investigated if it is possible to detect which plant disease images have a higher influence.
 The detailed requirements can be found in the task description in the appendix~\ref{appendix:task_description}.
 
-%Math Notation
+\newline
+
+\section{Organization of this Report}
+\subsection{Notation}
+The following Table \ref{tab:notation} shows the used notations.
+
+\begin{table}[H]
+\centering
+\caption{Notations in this work.\label{tab:notation}}
+\begin{tabularx}{\textwidth}{|
+ >{\hsize=.1\hsize}X |
+ >{\hsize=.9\hsize}X |
+}
+\hline
+\textbf{Symbol} & \textbf{Description} \\ \hline
+$a$ & Scalar value \\ \hline 
+$\mathbf{a}$ & Row or column vector \\ \hline
+$\mathbf{a}^{[i]}$ & Vector with index $i$  \\ \hline
+$\mathbf{A}$ & Matrix \\ \hline 
+$\mathbf{A}^{[i]}$ & Matrix with index $i$ \\ \hline 
+$a_i$ & Entry of vector $\mathbf{a}$ with index $i$ \\ \hline 
+$a_{i,j}$ & Entry of matrix $\mathbf{A}$ in row $i$ and column $j$ \\ \hline
+$\hat{y}$ & Estimation for $y$ \\ \hline 
+$\mathbb{R}$ & The set of real numbers \\ \hline
+$\partial$ & Partial derivative \\ \hline
+$\cdot$ & Matrix product \\ \hline
+\end{tabularx}
+\end{table}
