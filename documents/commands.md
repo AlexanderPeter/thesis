@@ -76,6 +76,10 @@ set num_workers=0
 \.venv\Scripts\python.exe -m pip install --upgrade --force-reinstall pip
 ```
 
+### Package markdown: I can not access the shell.
+
+Use `-enable-write18` or `shell-escape` when generating pdf
+
 ### I can't find file `"|texlua ./report.markdown.lua"'.
 
 Use `-enable-write18` or `shell-escape` when generating pdf

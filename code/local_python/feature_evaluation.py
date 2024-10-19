@@ -1,6 +1,7 @@
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.dummy import DummyClassifier
 
 
 def calculate_scores(
@@ -27,7 +28,6 @@ def evaluate_with_lr(
     targets,
     entry,
     seed=None,
-    max_iter=10_000,
 ):
     (train_features, _, test_features) = features
     (train_targets, _, test_targets) = targets
@@ -37,6 +37,26 @@ def evaluate_with_lr(
     test_pred = model_lr.predict(test_features)
 
     entry["n_iter"] = model_lr.n_iter_.tolist()[0]
+    return calculate_scores(
+        test_targets,
+        test_pred,
+        entry,
+    )
+
+
+def evaluate_with_dc(
+    features,
+    targets,
+    entry,
+    seed=None,
+):
+    (train_features, _, test_features) = features
+    (train_targets, _, test_targets) = targets
+
+    model_dc = DummyClassifier(random_state=seed)
+    model_dc.fit(train_features, train_targets)
+    test_pred = model_dc.predict(test_features)
+
     return calculate_scores(
         test_targets,
         test_pred,

@@ -50,23 +50,21 @@
 | 🟢     | Separate ResNet50 from ViT_T16 metrics                                                      |
 | 🟢     | analyze "y_pred contains classes not in y_true"                                             |
 | 🟢     | subsampling less images per class                                                           |
+| 🟢     | Upload all split files                                                                      |
+| 🟢     | Compare WinKawak architecture with builder                                                  |
+| 🟢     | add notes from meeting to meeting notes                                                     |
+| 🟢     | calculate score when always predicting largest class / random baseline                      |
+| 🟢     | show skewness of each dataset                                                               |
+| 🟢     | remove comments from weekly meeting notes                                                   |
+| 🟢     | request data/models from previous work                                                      |
+| 🟢     | Use Keras plotter und checkpoint to create dynamic structures                               |
 | 🔵     | check truth matrix (potato early blight, potato late blight, ...)                           |
 | 🔵     | visualize_mae                                                                               |
-| 🔵     | Upload all split files                                                                      |
-| 🔵     | Compare WinKawak architecture with builder                                                  |
-| 🔵     | Use Keras plotter und checkpoint to create dynamic structures                               |
-| 🔵     | add notes from meeting to meeting notes                                                     |
-| 🔵     | calculate score when always predicting largest class / random baseline                      |
-| 🔵     | check seed machine dependency                                                               |
 | 🔵     | completely rework code                                                                      |
-| 🔵     | show skewness of each dataset                                                               |
 | 🔵     | Plot examples of knn neighbors (are the images not unique enough?) >0.9 Score is suspicious |
-| 🔵     | checkout cassava all notebooks                                                              |
-| 🔵     | request data/models from previous work                                                      |
-| 🔵     | read Dermatology-Paper                                                                      |
-| 🔵     | research iBot/DINO                                                                          |
-| 🔵     | remove comments from weekly meeting notes                                                   |
 | 🔵     | Consider using only pretrained weight in some layers and randomly initialize the others     |
+| 🔴     | checkout cassava all notebooks                                                              |
+| 🔴     | check seed machine dependency                                                               |
 | 🔴     | Find self supervised weights                                                                |
 | 🔴     | use preprocessed images 224x224                                                             |
 | 🔴     | Consider subset of DARMA or PDDD as task                                                    |

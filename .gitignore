@@ -12,10 +12,11 @@
 **/__pycache__/**/*.pyc
 archive/
 runs/**/*.pth
-documents/medium/
+documents/medium/*.pdf
 documents/demo_notes.md
-documents/research/Towards *.pdf
-documents/research/miccai_notes.md
+documents/research/*.md
+documents/research/*.pdf
+documents/research/*.pdf
 
 # report
 report/*.aux
@@ -45,3 +46,4 @@ report/textidote/textidote.jar
 
 # Exceptions
 !.gitkeep
+documents/research/arxiv.org_1706.05806 notes.md
