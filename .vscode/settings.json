@@ -5,26 +5,7 @@
   },
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.enableFiletypes": ["!python"],
-  "latex-workshop.latex.autoClean.run": "onFailed",
   "git.ignoreLimitWarning": true,
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "Fast: pdflatex",
-      "tools": ["pdflatex"]
-    },
-    {
-      "name": "Full: pdflatex, biber",
-      "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
-    },
-    {
-      "name": "BibTex",
-      "tools": ["biber"]
-    }
-  ],
-  "latex-workshop.message.error.show": false,
-  "latex-workshop.message.information.show": false,
-  "latex-workshop.message.warning.show": false,
-  "latex.linter.enabled": false,
   "python.defaultInterpreterPath": ".venv\\Scripts\\python.exe",
   "python.terminal.activateEnvironment": true
 }
