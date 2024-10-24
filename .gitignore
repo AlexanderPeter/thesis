@@ -34,10 +34,12 @@ presentations/*.pptx
 */latex/*.log
 */latex/*.lot
 */latex/*.markdown.lua
+*/latex/*.nav
 */latex/*.out
 # */latex/*.out.ps
 */latex/*.pdf
 */latex/*.run.xml
+*/latex/*.snm
 */latex/*.synctex.gz
 */latex/*.toc
 */latex/_markdown_report/
