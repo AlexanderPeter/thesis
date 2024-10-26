@@ -23,12 +23,7 @@ def calculate_scores(
     return entry
 
 
-def evaluate_with_lr(
-    features,
-    targets,
-    entry,
-    seed=None,
-):
+def evaluate_with_lr(features, targets, entry, seed=None, max_iter=10_000):
     (train_features, _, test_features) = features
     (train_targets, _, test_targets) = targets
 
