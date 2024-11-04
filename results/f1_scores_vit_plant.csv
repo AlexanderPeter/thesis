@@ -1,5 +1,5 @@
 Downstream,PlantDoc,PlantDoc,PlantDataset,PlantDataset,Cassava,Cassava,PlantVillage,PlantVillage
-Classifier,LogReg,k-NN,LogReg,k-NN,LogReg,k-NN,LogReg,k-NN
+Classifier,lin.,k-NN,lin.,k-NN,lin.,k-NN,lin.,k-NN
 Pre-training,,,,,,,,
 Random,8.9±0.5,9.2±0.6,38.6±0.3,22.0±0.5,26.3±0.1,23.9±0.3,59.4±0.1,36.4±0.1
 ImageNet SL,50.1±0.4,35.9±0.6,89.3±0.3,81.7±0.6,58.2±0.2,43.7±0.4,97.1±0.0,94.0±0.1

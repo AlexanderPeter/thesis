@@ -100,14 +100,11 @@ def load_model(
     return model
 
 
-# load concatenated json objects
-def load_pd_from_json(metric_file_path):
-    metric_file = open(metric_file_path, "r")
-    content = metric_file.read().replace("\n", "").replace("}{", "},{")
-    entries = json.loads("[" + content + "]")
+def load_pd_from_jsonl(metric_file_path):
+    df = pd.read_json(metric_file_path, lines=True)
     metric_file_name = os.path.basename(metric_file_path)
-    print(f"Read {len(entries)} entries from {metric_file_name}")
-    return pd.DataFrame.from_records(entries)
+    print(f"Read {len(df)} entries from {metric_file_name}")
+    return df
 
 
 def select_and_sort_dataframe(df, selection_config):

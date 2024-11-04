@@ -1,5 +1,5 @@
 Downstream,DDI,DDI,PAD-UFES-20,PAD-UFES-20,HAM10000,HAM10000,Fitzpatrick17k,Fitzpatrick17k
-Classifier,LogReg,k-NN,LogReg,k-NN,LogReg,k-NN,LogReg,k-NN
+Classifier,lin.,k-NN,lin.,k-NN,lin.,k-NN,lin.,k-NN
 Pre-training,,,,,,,,
 Random,40.7±0.7,52.2±1.8,34.0±1.0,24.0±1.8,22.7±0.3,23.1±0.4,28.6±0.1,41.9±0.2
 ImageNet SL,60.0±0.7,58.7±1.6,55.9±0.8,37.3±1.2,54.8±0.3,37.7±0.2,56.4±0.2,64.4±0.1
