@@ -13,6 +13,13 @@ from torchvision.models import resnet50
 from transformers import set_seed as transformers_set_seed
 
 
+def number_to_string(value, nan_value="None"):
+    if str(value) != "nan" and value is not None:
+        return str(int(value))
+    else:  # NaN
+        return nan_value
+
+
 def set_seed(seed, verbose=True):
     if verbose:
         print(f"Setting seed to {seed}")
@@ -100,11 +107,22 @@ def load_model(
     return model
 
 
-def load_pd_from_jsonl(metric_file_path):
-    df = pd.read_json(metric_file_path, lines=True)
-    metric_file_name = os.path.basename(metric_file_path)
-    print(f"Read {len(df)} entries from {metric_file_name}")
+# load linewise json objects like JSON Lines (.jsonl) or newline-delimited JSON (.ndjson)
+def load_pd_from_jsonl(jsonl_file_path):
+    df = pd.read_json(jsonl_file_path, lines=True)
+    json_file_name = os.path.basename(jsonl_file_path)
+    print(f"Read {len(df)} entries from {json_file_name}")
     return df
+
+
+# load concatenated json objects as array similar to relaxed JSON (.rjson) without square brackets
+def load_pd_from_json(metric_file_path):
+    metric_file = open(metric_file_path, "r")
+    content = metric_file.read().replace("\n", "").replace("}{", "},{")
+    entries = json.loads("[" + content + "]")
+    metric_file_name = os.path.basename(metric_file_path)
+    print(f"Read {len(entries)} entries from {metric_file_name}")
+    return pd.DataFrame.from_records(entries)
 
 
 def select_and_sort_dataframe(df, selection_config):
