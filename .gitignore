@@ -10,6 +10,7 @@
 # files
 **/__pycache__/**/*.pyc
 archive/
+code/99_check_values.ipynb
 runs/**/*.pth
 documents/medium/*.pdf
 documents/demo_notes.md

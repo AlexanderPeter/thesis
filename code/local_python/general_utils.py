@@ -174,3 +174,13 @@ def load_values_from_previous_epochs(run_path):
             best_loss = df_losses.min()
             print(f"Best epoch: {best_epoch} with {best_loss}")
     return (loss_file_path, latest_epoch, best_loss)
+
+
+def check_duplicates(df, columns):
+    df_duplicates = df.duplicated(subset=columns, keep=False)
+    if df_duplicates.any():
+        print(f"{df_duplicates.sum()} duplicates detected. Example:")
+        sample_values = df[df_duplicates][columns].values[0]
+        for column, value in zip(columns, sample_values):
+            df = df[df[column] == value]
+        print(df_subset.head(n=5))
