@@ -1,26 +1,79 @@
 \chapter{Introduction}
 This chapter explains the basic problem and motivation. It also defines the expected results of this project.
 
+
+% have proven to be capable with the annotated diagnoses 
+
 \section{Problem definition}
 
-The medical fields often lack large datasets with the annotated diagnoses to easily train \gls{ml} models \autocite{castro2019}.
-Usually regulations like data protection laws hinder collecting or publishing large sets of images. Some institutions are able to collect data in their domain, but are not allowed publishing it. Such sets are usually small and may be biased to local conditions such as light skin pigmentation.
-Creating the according labels of high quality require experienced specialists. These costs compared to the limited scope may render it financially not worthwhile.
+\gls{ml} models are sucessfully applied in various visual tasks, but many medical fields lack large datasets to develop such models \autocite{castro2019}. 
+Ideally, numerous samples per class in different variants are available to ensure, that the model learns to generalize and performs well on unseen data. 
+However, regulations such as data protection laws often hinder collecting or publishing medical records. 
+While some medical institutions are able to collect at least a small amount of suitable data, they are usually not allowed to publish it publicly. 
+In addition to their often rather small size, these small collections are sometimes biased to local characteristics, such as light skin pigmentation in Europea and Asia.
+Another obstacle is the obtaining of the according labels. Creating high-quality labels requires experienced specialists. 
+The high costs compared to the limited scope may render the project financially not worthwhile.
 
-One approach is to use weights of models pre-trained on generic images like ImageNet dataset and fine-tune the model on a smaller domain specific dataset. Another approach uses \gls{ssl} to train foundation models without the cost of labeling large quantities of data. 
-Generic foundation models are sometimes not applicable, when the target domain differs too much from the generic data.%cite
-\gls{ssl} on the other hand, requires a lot of domain specific data.
+\subsection{Generic pre-training}
+% One approach is to use weights of models pre-trained on generic images like ImageNet dataset and fine-tune the model on a smaller domain specific dataset. 
+Wherever possible, it is state-of-the-art to use model weights pre-trained on generic data. 
+Common pre-training datasets, such as ImageNet, mostly reduce the training duration and may also improve the resulting accuracy \autocite{deng2009}.
+However, their structure often differs greatly from most medical use cases, reducing the effect of pre-training. 
 
-A large quantity of data from a similar domain could improve the performance or decrease the amount of required domain specific data. 
-Plant disease images for example resemble to skin disease images in many aspects. The diseases in both cases usually manifest in discolorations which can be used to classify the cause and enables according treatment.
+The photos of the ImageNet data set depict various entities like animals or vehicles in a natural environment. 
+Therefore, the lightning and background greatly varies even between images with the same class.
+Clinical images, on the other hand, are often recorded with a consistent procedure and tool, resulting in less diverse images.
+The varying diversity also shows in the number of classes. 
+Usually only a single or two-digit number of diseases can be diagnosed from clinical images, while the ImageNet set covers a whole of 1'000 classes.
+
+The image resolution may also differ, but usually renders no big deal, since it can be adjusted quite easily. 
+Some model architectures are limited to a specific input size and require the training data to be adapted anyway.
+The photos from ImageNet are all standardized to a resolution of $224 \times 224 \times 3$, which can be done for clinical images in the same way.
+Different aspect ratios should be considered in this case, though, to prevent side effects from excessive stretching or cropping.
+
+An interesting use case are Medical images, such as X-ray radiographs or \gls{mri} images, since they usually have a single color channels only
+In addition, the objects on radiographs have smooth outlines and overlap each other, which opposes the rather clear contours of objects from ImageNet. 
+It is also possible to use ImageNet weights for this case by stacking the grayscale layer three times on top of each other.
+\autocite{ke2021} trained and compared various \gls{ann} models on the same radiograph task, once from scratch and again using pre-trained ImageNet weights.
+Although no general statement can be made, he shows that despite all the differences many models still profit from the generic pre-training.
+
+\subsection{Domain specific pre-training}
+
+Using weights pre-trained on data similar to the target domain often leads to better results than with generic or no pre-training.
+This brings us to the initial problem again of not having a sufficient amount of domain specific data.
+\gls{ssl} enables the usage of unlabeled data to train basic models, thus saving at least the costs of labeling large quantities of data.
+
+\autocite{cho2023} created such a basic model based on X-ray radiographs and trained a downstream task, which is distinct from the pre-training data.
+He also trained the same downstream task with generic pre-trained weights and completely from scratch.
+The improvement due to generic pre-training compared to no pre-training is confirmed and an even larger improvement was achieved with his basic model.
+He further shows, that with his basic model a fraction of the training data can be omitted and the same results can still be achieved as without the basic model, but the full amount of data for downstream task. 
+% The basic model is publicly available and can be used for 
+
+\subsection{Cross-domain pre-training}
+It is not yet clear how to determine in advance if a domain is suited for pre-training a model. 
+It is also not clear how to separate suitable and unsuitable images within a data set to make the best of the pre-training.
+% It is suspected, that range and stuff
+
+However, cross-domain pre-training has been successfull applied between different radiograph datasets \autocite{cohen2020} and different skin lesion datasets \autocite{krammer2022}.
+
+Due to the sparsity of all clinical images, using clinical images from another related data set is still limiting.
+Plant disease images resemble to skin disease images in many aspects. 
+In both cases the diseases usually manifest in distinctive discolorations. %which can be used to classify the cause and enables according treatment.
+The spot of an infected leaf has a similar characteristic as a mole on human skin.
 Plant disease datasets are, in contrary to dermatology images, publicly available in large quantities and are therefore suited to try out this approach.
 
 
-\subsection{Basic goal}
-This work includes a basic research on transfer learning in general and the state-of-the-art procedures. 
-The main part of this work includes the comparison of the performance of plant disease based pre-training to ImageNet and dermatology based ones. Beside the difference in score also the theoretical amount of data reduction is calculated to reach the same result when only using common foundation models or domain specific \gls{ssl}. 
-Finally, it will be investigated if it is possible to detect which plant disease images have a higher influence.
+\section{Basic goal}
+This work includes a basic research about transfer learning in general and the current state-of-the-art procedures. 
+% The main part of this work covers the practical work consisting the following steps.
+% pre-training of multiple plant disease 
+% and verification
+% the comparison of the performance of plant disease based pre-training to ImageNet and dermatology based ones. 
+% Beside the difference in score also the theoretical amount of data reduction is calculated to reach the same result when only using common basic models or domain specific \gls{ssl}. 
+% Finally, it will be investigated if it is possible to detect which plant disease images have a higher influence.
 The detailed requirements can be found in the task description in the appendix~\ref{appendix:task_description}.
+
+% \subsection{Expected results}
 
 %\newpage
 

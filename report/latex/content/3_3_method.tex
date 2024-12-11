@@ -1,8 +1,7 @@
 \chapter{Method}
-This chapter explains the procedure and lists all the used data sets.
+This chapter explains the procedure and lists all the used datasets.
 
 \section{Procedure}
-
 
 Frozen features are evaluated to verify if a plant based pre-training is beneficial. This evaluation contains roughly the following steps.
 \begin{enumerate}
@@ -38,8 +37,6 @@ ViT-T/16 & Plant SSL (DINO) & Github \autocite{groeger2022} \tabularnewline \hli
 \end{tabularx} 
 \end{table}
 
-
-
 \section{Downstream plant disease datasets}\label{section:plant_datasets}
 
 There are several datasets on plant diseases publicly available, but only a few meet the requirements such as sufficient size and appropriate image resolution. The following Table~\ref{tab:suitable_plant_datasets} lists the suitable plant disease datasets used in this work. The complete list regarded plant datasets including links is in the Appendix~\ref{appendix:datasets_tables}.
@@ -73,7 +70,7 @@ All images in the \gls{pvd} have a lab-controlled background as shown in Figure~
     \caption{Example images of the \gls{pvd}}\label{fig:example_images_of_plantvillage}
     \end{center}
 \end{figure}
-With 54'303 images it is one of the larger plant disease data sets available. Accordingly, it is often used in other work \autocite{hughes2016}, but there is no official test split provided to compare the results of already existing models. Some achieved an accuracy around 90\% with the ResNet50 architecture \autocite{gole2023}.
+With 54'303 images it is one of the larger plant disease datasets available. Accordingly, it is often used in other work \autocite{hughes2016}, but there is no official test split provided to compare the results of already existing models. Some achieved an accuracy around 90\% with the ResNet50 architecture \autocite{gole2023}.
 The data set includes different plants such as apple and tomatoes, but also different plant diseases. Some diseases like ``tomato early blight'' and ``potato early blight'' have the same root cause, but the symptoms look a bit different. 
 The splitting was carried out by myself using 80\% of the data for the training set and 10\% each for the validation and test set. The stratifying ensures, that the distribution of the 38 classes is the same over all sets, which can be seen in Figure~\ref{fig:class_distribution_of_plantvillage}.
 \begin{figure}[H]
@@ -140,7 +137,7 @@ The 2'598 images are distributed as shown in Figure~\ref{fig:class_distribution_
 
 \section{SSL plant datasets}
 
-Due to their size, the following data sets were not used as downstream tasks, but only to create a plant based \gls{ssl} model. 
+Due to their size, the following datasets were not used as downstream tasks, but only to create a plant based \gls{ssl} model. 
 \subsection{DARMA}
 The \gls{darma} has a total of 231'414 and 1000 different plant classes rather than diseases. It also includes images of other plant parts than leaves like bark or blossoms. Figure~\ref{fig:example_images_of_darma} shows some of such examples.
 
@@ -167,7 +164,7 @@ Although weights for the Resnet50 architecture are provided, there are no
 
 \section{Dermatology datasets}\label{section:derma_datasets}
 %TODO
-% The following data sets are selected by F.~Gröger due to his former experience.
+% The following datasets are selected by F.~Gröger due to his former experience.
 
 \begin{table}[H]
     \centering
@@ -266,7 +263,7 @@ Beside \gls{ddi} this data set also provides more than one possible target class
 \end{figure}
 
 \subsection{SSL dermatology datasets}
-The pre-trained dermatology models were provided by Fabian Gröger from a previous work \autocite{groeger2023}. Images from following data sets were used for training.
+The pre-trained dermatology models were provided by Fabian Gröger from a previous work \autocite{groeger2023}. Images from following datasets were used for training.
 
 
 \begin{itemize}

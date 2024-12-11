@@ -1,8 +1,8 @@
 \chapter{Results}
 
-\section{Resnet}
-
 % \subsection{Linear evaluation on features}
+\section{Overview}
+\subsection{Resnet}
 
 The following Figure~\ref{fig:spider_resnet50} shows the result with Resnet50, while Table~\ref{tab:f1_scores_resnet_derma} and Table~\ref{tab:f1_scores_resnet_plant} contain the respective values.
 \begin{figure}[H]
@@ -19,7 +19,7 @@ In the linear evaluation the plant based model is actually a bit better than the
 
 
 
-\section{Vision Transformers}
+\subsection{Vision Transformers}
 
 The results of the \gls{vit} can bee seen in Figure~\ref{fig:spider_vit_t16}, Table~\ref{tab:f1_scores_vit_derma} and Table~\ref{tab:f1_scores_vit_plant}. 
 The scores look similar. The scores of the plant based model are better in some tasks than the model trained with \gls{sl} on ImageNet, but not better than the \gls{ssl} variant. All DINO based models are relatively close to each other. This is probably due to their way of training rather than the data.
@@ -32,9 +32,81 @@ The scores look similar. The scores of the plant based model are better in some 
 \end{figure}
 
 
+\section{Subsampling}
+% NOTE: order by size
+\subsection{PlantDoc}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_plantdoc.png}
+    \caption{Results of linear evaluation on subsampled sets from PlantDoc}\label{fig:lines_plantdoc}
+    \end{center}
+\end{figure}
+
+\subsection{PlantDataset}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_plantdataset.png}
+    \caption{Results of linear evaluation on subsampled sets from PlantDataset}\label{fig:lines_plantdataset}
+    \end{center}
+\end{figure}
+
+\subsection{Cassava Leaf Disease Classification}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_cassava.png}
+    \caption{Results of linear evaluation on subsampled sets from Cassava}\label{fig:lines_cassava}
+    \end{center}
+\end{figure}
+
+\subsection{PlantVillage Dataset (PVD)}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_plantvillage.png}
+    \caption{Results of linear evaluation on subsampled sets from \gls{pvd}}\label{fig:lines_plantvillage}
+    \end{center}
+\end{figure}
+
+\subsection{Diverse Dermatology Images (DDI)}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_ddi.png}
+    \caption{Results of linear evaluation on subsampled sets from \gls{ddi}}\label{fig:lines_ddi}
+    \end{center}
+\end{figure}
+
+\subsection{PAD-UFES-20}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_pad-ufes-20.png}
+    \caption{Results of linear evaluation on subsampled sets from PAD-UFES-20}\label{fig:lines_pad-ufes-20}
+    \end{center}
+\end{figure}
+
+\subsection{HAM10000}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_ham10000.png}
+    \caption{Results of linear evaluation on subsampled sets from HAM10000}\label{fig:lines_ham10000}
+    \end{center}
+\end{figure}
+
+\subsection{Fitzpatrick17k}
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{lines_fitzpatrick17k.png}
+    \caption{Results of linear evaluation on subsampled sets from Fitzpatrick17k}\label{fig:lines_fitzpatrick17k}
+    \end{center}
+\end{figure}
 
 
-% \subsection{Subsampling}
 % \section{Other}
 % \subsection{DINO student/teacher}
 % \subsection{Fine-tuning}
