@@ -59,7 +59,7 @@ Figure~\ref{fig:example_images_of_ddi} shows, that the classification of many ca
 \end{figure}
 
 The binary classes, visible in Figure~\ref{fig:class_distribution_of_ddi}, are skewed. 
-This leads to a high baseline values for this dataset, listed in the Appendix~\ref{appendix:baseline_scores}.
+This leads to a high baseline values for this dataset.
 
 \begin{figure}[H]
     \begin{center}
@@ -223,7 +223,6 @@ The split for this work was also done by myself, resulting in the distribution s
 It is noticeable that the ``Mosaic Disease'' dominates over the other classes. 
 A baseline score was calculated for all downstream tasks. 
 This score corresponds to the result when the model is only assigning the most common as prediction for all data points. 
-The complete list of these baseline values is listed in the Appendix~\ref{appendix:baseline_scores}
 
 \subsection{PlantDataset}
 The origin of the PlantDataset is not exactly known. The data is available on the kaggle platform, but it is unclear what it is intended for exactly. 
@@ -333,9 +332,6 @@ The default classifier was removed from the Resnet50 models leaving an output si
 Beside removing the head, the \gls{vit} models were also adjusted to concatenate the output of the last four blocks. 
 
 Due to this modification the effective output size is now 768 instead 192.
-
-The figure \ref{fig:activation_functions} shows the graphs of all mentioned activation functions.
-
 
 \section{Frozen features}
 The eight datasets were put into the eleven models resulting in 88 single feature datasets.
