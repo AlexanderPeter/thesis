@@ -1,22 +1,23 @@
 # folders
-/.venv/
-/code/wandb/
-/data/
-/datasets/*
-/model_weights/
-/runs/*
 *_old/
+.venv/
+code/slimfit/
+code/wandb/
+data/
+datasets/*
+documents/examples/
+documents/medium/
+documents/research/
+model_weights/
+presentations/latex/images/
+presentations/latex/resources/
+runs/*
 
 # files
 **/__pycache__/**/*.pyc
 archive/
 code/99_check_values.ipynb
-runs/**/*.pth
-documents/medium/*.pdf
 documents/demo_notes.md
-documents/research/*.md
-documents/research/*.pdf
-documents/research/*.pdf
 presentations/*.pptx
 
 # latex

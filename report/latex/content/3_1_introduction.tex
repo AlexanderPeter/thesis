@@ -1,8 +1,7 @@
-\chapter{Introduction}
-This chapter explains the basic problem and motivation. It also defines the expected results of this project.
-
-
-% have proven to be capable with the annotated diagnoses 
+\chapter{Introduction}\label{chapter_1}
+% This chapter explains the basic problem and motivation. 
+% Further the research questions and the respective expectation are discussed. 
+% It also defines the expected results of this project.
 
 \section{Problem definition}
 
@@ -62,47 +61,82 @@ In both cases the diseases usually manifest in distinctive discolorations. %whic
 The spot of an infected leaf has a similar characteristic as a mole on human skin.
 Plant disease datasets are, in contrary to dermatology images, publicly available in large quantities and are therefore suited to try out this approach.
 
+\section{Basic goal and expected results}
+This work aims to evaluate \gls{ml} models with different pre-training approaches on plant disease and dermatology diagnostic tasks.
+The different strategies and the respective performance ranking is listed in Table \ref{tab:expected_results}.
 
-\section{Basic goal}
-This work includes a basic research about transfer learning in general and the current state-of-the-art procedures. 
-% The main part of this work covers the practical work consisting the following steps.
-% pre-training of multiple plant disease 
-% and verification
-% the comparison of the performance of plant disease based pre-training to ImageNet and dermatology based ones. 
-% Beside the difference in score also the theoretical amount of data reduction is calculated to reach the same result when only using common basic models or domain specific \gls{ssl}. 
-% Finally, it will be investigated if it is possible to detect which plant disease images have a higher influence.
-The detailed requirements can be found in the task description in the appendix~\ref{appendix:task_description}.
+\begin{table}[H]
+    \centering
+    \caption{Expected rankings \label{tab:expected_results}}
+    \begin{tabularx}{\textwidth}{|
+        >{\hsize=.4\hsize}X |
+        >{\hsize=.3\hsize}X |
+        >{\hsize=.3\hsize}X |
+    }
+    \hline
+    \textbf{Pre-training data} & \textbf{Plant tasks} & \textbf{Dermatology tasks} \tabularnewline \hline
+    No pre-training & 4. & 4. \tabularnewline \hline
+    Generic data (\gls{sl}/\gls{ssl}) & 3. & 3. \tabularnewline \hline
+    Plant diseases (\gls{sl}/\gls{ssl}) & 1. & 2. \tabularnewline \hline
+    Dermatology (\gls{ssl}) & 2. & 1. \tabularnewline \hline
+    \end{tabularx} 
+\end{table}
 
-% \subsection{Expected results}
+The domain specific pre-training is expected to achieve the best results.
+ideally, cross-domain pre-training will surpass the generic pre-training and have the second best result.
+Transfer learning probably will work not only from plant disease to dermatology diagnostics, but the other way around as well.
 
-%\newpage
 
-\section{Organization of this Report}
+Furthermore, should be measured how limiting downstream images impacts the resulting performance. 
+The results of conventional approaches and the results from pre-training on plant diseases and limited clinical data can then be compared to estimate the savings potential.
+These main questions are also listed in the task description in the appendix~\ref{appendix:task_description}.
+
+\section{Notes on this report}
+\subsection{Basic organization}
+The organization of this report is mainly based on the structure given by \gls{hslu} during the bachelor's program \autocite{balzert2011}.
+Chapter \ref{chapter_1} explains the problem with existing approaches and lists the research questions with the expectated results. 
+Furthermore organizational notes are provided to understand the structure and notation of the report.
+Chapter \ref{chapter_2} first introduces the main \gls{ml} concepts to allow less versed readers to follow through the report.
+It also provides some relevant findings from the project specific literature research.
+Chapter \ref{chapter_3} covers the experimental setup including the selected datasets and their main characteristics.
+Chapter \ref{chapter_4} presents the received results in comparison with each other.
+Chapter \ref{chapter_5} discusses the main findings of this work and proposes areas for further research. 
+
 \subsection{Notation}
-The following Table \ref{tab:notation} shows the used notations.
+
+The following Table~\ref{tab:notation} shows the notations used in this work, which are not self-explanatory.
 
 \begin{table}[H]
 \centering
 \caption{Notations in this work.\label{tab:notation}}
 \begin{tabularx}{\textwidth}{|
- >{\hsize=.1\hsize}X |
- >{\hsize=.9\hsize}X |
+ >{\hsize=.2\hsize}X |
+ >{\hsize=.8\hsize}X |
 }
 \hline
-\textbf{Symbol} & \textbf{Description} \\ \hline
+\textbf{Math symbol} & \textbf{Description} \\ \hline
+$\times$ & Dimension sign \\ \hline
+$\cdot$ & Matrix product \\ \hline
+$\partial$ & Partial derivative \\ \hline
+$\nabla$ & Gradient \\ \hline
+$\ast$ & Convolution \\ \hline
+$:=$ & Defined as being equal to \\ \hline
 $a$ & Scalar value \\ \hline 
 $\mathbf{a}$ & Row or column vector \\ \hline
 $\mathbf{a}^{[i]}$ & Vector with index $i$  \\ \hline
 $\mathbf{A}$ & Matrix \\ \hline 
 $\mathbf{A}^{[i]}$ & Matrix with index $i$ \\ \hline 
+$\mathbf{X}^{-1}$ & Inverse matrix of $\mathbf{X}$ \\ \hline 
+$\mathbf{X}^{T}$ & Transformation matrix of $\mathbf{X}$ \\ \hline 
 $a_i$ & Entry of vector $\mathbf{a}$ with index $i$ \\ \hline 
 $a_{i,j}$ & Entry of matrix $\mathbf{A}$ in row $i$ and column $j$ \\ \hline
 $\hat{y}$ & Estimation for $y$ \\ \hline 
 $\mathbb{R}$ & The set of real numbers \\ \hline
-$\partial$ & Partial derivative \\ \hline
-$\cdot$ & Matrix product \\ \hline
+$\mathcal{L}$ & Loss function \\ \hline
+$\mathcal{O}$ & Big O notation \\ \hline
 \end{tabularx}
 \end{table}
 
-\section{Acknowledgements}
-I would like to thank my supervisor Prof. Dr. Marc Pouly for his supervision and support during my studies. I also would like to thank Fabian Gröger for his valuable ideas, various explanations and constructive feedback.
+% $\ldots$ & Placeholder horizontal \\ \hline
+% $\ddots$ & Placeholder diagonal \\ \hline
+% $\vdots$ & Placeholder vertical \\ \hline

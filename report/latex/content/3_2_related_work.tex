@@ -1,4 +1,4 @@
-\chapter{Related work}
+\chapter{Related work}\label{chapter_2}
 This chapter explains the necessary basis to understand the procedure and contains all relevant information of previous work in this field.
 \section{Basic machine learning algorithms}
 %entry text
@@ -57,7 +57,7 @@ The loss $\mathcal{L}$ should be minimal for accurate estimations. In case of th
 \begin{equation}
     \boldsymbol{\hat{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^{T}\mathbf{y}
 \end{equation}
-The computational complexity of this closed solution is nearly cubic $O(n^3)$ due to the calculating of the matrix inverse, making it unfeasible for almost all datasets \autocite{riahi2023}. Therefore   
+The computational complexity of this closed solution is nearly cubic $\mathcal{O}(n^3)$ due to the calculating of the matrix inverse, making it unfeasible for almost all datasets \autocite{riahi2023}. Therefore   
 
 A common way of \gls{ml} to find good parameters $\boldsymbol{\beta}$ is through gradient descent \autocite{robbins1951}. 
 \gls{sgd} starts with randomly initialized values for $\boldsymbol{\theta}_0$ and a predefined learning rate $\alpha$. 
@@ -223,17 +223,18 @@ Figure~\ref{fig:vit_t16_architecture_block}.
     \end{center}
 \end{figure}
 
+%TODO
 
-\section{Transfer Learning}
-The basic concept of transfer learning is to reuse the trained parameters for other similar tasks. It was shown, that the positive effect of transfer learning often was not achieved and sometimes even a negative effect occurred \autocite{perkins1999}. There are several approaches trying to determine the potential by measuring the relatedness of tasks \autocite{torrey2009}. In most cases the success of transfer was highly dependent on the type of \gls{ml} algorithm and even the specific architecture. There is simply no solution that fits all.
+% \section{Transfer Learning}
+% The basic concept of transfer learning is to reuse the trained parameters for other similar tasks. It was shown, that the positive effect of transfer learning often was not achieved and sometimes even a negative effect occurred \autocite{perkins1999}. There are several approaches trying to determine the potential by measuring the relatedness of tasks \autocite{torrey2009}. In most cases the success of transfer was highly dependent on the type of \gls{ml} algorithm and even the specific architecture. There is simply no solution that fits all.
 
-\subsection{Transfer Learning in medical imaging}
-In the past years it became common practise in image classification to use the pre-trained weights such as from the ImageNet dataset and then fine-tuning on the domain specific task \autocite{russakovsky2014}. 
-Among others this approach has been successfully used with \glspl{cnn} for image classification in dermatology and many other medical fields \autocite{esteva2017,lam2018,bayramoglu2016,pardamean2018,yang2018}. But some results show that ImageNet pre-training may speed up convergence early in training, but does not improve the final accuracy compared to randomly initialized models \autocite{he2018}.
+% \subsection{Transfer Learning in medical imaging}
+% In the past years it became common practise in image classification to use the pre-trained weights such as from the ImageNet dataset and then fine-tuning on the domain specific task \autocite{russakovsky2014}. 
+% Among others this approach has been successfully used with \glspl{cnn} for image classification in dermatology and many other medical fields \autocite{esteva2017,lam2018,bayramoglu2016,pardamean2018,yang2018}. But some results show that ImageNet pre-training may speed up convergence early in training, but does not improve the final accuracy compared to randomly initialized models \autocite{he2018}.
 
-Some claim that the differences between the pre-training and target datasets is considerably high and therefore the ImageNet are not suited \autocite{raghu2019}.
-The main differences include the resolution, data set size and the number of classes.
-\autocite{raghu2019} shows, that Resnet-50 fine-tuned on the medical datasets CheXpert and Retina does not benefit significantly from ImageNet pre-training. On the other hand \autocite{raghu2019} shows that only certain layer benefit from pre-trained weights while others should be initialized randomly. With many contradicting observations and claims but no general statement can be made, and the problem requires to be looked at specifically.
+% Some claim that the differences between the pre-training and target datasets is considerably high and therefore the ImageNet are not suited \autocite{raghu2019}.
+% The main differences include the resolution, data set size and the number of classes.
+% \autocite{raghu2019} shows, that Resnet-50 fine-tuned on the medical datasets CheXpert and Retina does not benefit significantly from ImageNet pre-training. On the other hand \autocite{raghu2019} shows that only certain layer benefit from pre-trained weights while others should be initialized randomly. With many contradicting observations and claims but no general statement can be made, and the problem requires to be looked at specifically.
 
 
 % \subsection{Linear evaluation with frozen features}
