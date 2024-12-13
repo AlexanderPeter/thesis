@@ -12,7 +12,7 @@ The semi-transparent area indicates the sample standard deviation.
 
 Overall the ImageNet based approach outperforms the other approaches in most cases.
 PlantDoc and the \gls{pvd} are only tasks in which the plant based model actually get the best result.
-The dermatology based model performs very poorly and gets beaten by the ramdomly initialized model in some multiple cases.
+The dermatology based model performs very poorly and gets beaten by the randomly initialized model in some multiple cases.
 The scores are never significantly better than the other pre-trained models. 
 % The model which was trained on ImageNet with \gls{ssl} was not put into the graphic, but the tables show that these scores are bad as well. 
 This indicates a problem with the type of training rather than with the data per se.
@@ -33,11 +33,6 @@ This is probably due to their way of training rather than the data.
 
 % In the linear evaluation the plant based model is actually a bit better than the ImageNet based model, but with \gls{knn} the difference becomes negligible.
 \section{Results on plant disease tasks}
-
-All f1-scores on the plant disease tasks are listed in Table~\ref{tab:f1_scores_resnet_plant} for Resnet50 and Table~\ref{tab:f1_scores_vit_plant} for \gls{vit} respectively.
-The numbers show the mean macro-averaged f1-scores as percentage with the sample standard deviation.
-The ZeroR baseline represents a dummy classifier always predicting the largest class regardless of the input data.
-The deviation for the baseline was ommited, because this classifier is unnaffected by randomness.
 
 \begin{table}[H]
     \centering
@@ -62,13 +57,19 @@ The deviation for the baseline was ommited, because this classifier is unnaffect
     }
 \end{table}
 
+All f1-scores on the plant disease tasks are listed in Table~\ref{tab:f1_scores_resnet_plant} for Resnet50 and Table~\ref{tab:f1_scores_vit_plant} for \gls{vit} respectively.
+The numbers show the mean macro-averaged f1-scores as percentage with the sample standard deviation.
+The ZeroR baseline represents a dummy classifier always predicting the largest class regardless of the input data.
+The deviation for the baseline was omitted, because this classifier is unaffected by randomness.
+
+
 \subsection{PlantDoc}
 The best results for the PlantDoc task is pre-trained on plant images. 
 This is true for Resnet50 as well as the \gls{vit} models.
 SimCLR was used to pre-train the Resnet50 models on ImageNet and dermatology images and both of these models perform poorly.
 \gls{sl} with ImageNet achieves significant better scores, making thus clear, that the training algorithm can have a high impact on the results. 
 
-Figure \ref{fig:lines_plantdoc} shows the the macro-averaged f1-scores when the training data gets reduced.
+Figure \ref{fig:lines_plantdoc} shows the macro-averaged f1-scores when the training data gets reduced.
 The subsampling was repeated 100 times with different random seeds. 
 Thus, the standard deviation is higher compared to the full dataset.
 
@@ -151,7 +152,7 @@ The \gls{knn} evaluation of the \gls{vit} on the HAM10000 dataset is the only ca
 
 \subsection{Diverse Dermatology Images (DDI)}
 The \gls{ddi} dataset was used for a binary classification. 
-Additionally one class has significantly more images than the other.
+Additionally, one class has significantly more images than the other.
 This bias causes an unusually high baseline score, as can be seen in Figure~\ref{fig:lines_ddi}.
 
 \begin{figure}[H]

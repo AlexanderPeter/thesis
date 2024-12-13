@@ -59,7 +59,7 @@ Figure~\ref{fig:example_images_of_ddi} shows, that the classification of many ca
 \end{figure}
 
 The binary classes, visible in Figure~\ref{fig:class_distribution_of_ddi}, are skewed. 
-This leads to a high baseline values for this data set, listed in the Appendix~\ref{appendix:baseline_scores}.
+This leads to a high baseline values for this dataset, listed in the Appendix~\ref{appendix:baseline_scores}.
 
 \begin{figure}[H]
     \begin{center}
@@ -70,7 +70,7 @@ This leads to a high baseline values for this data set, listed in the Appendix~\
 
 
 \subsection{PAD-UFES-20}
-The PAD-UFES-20 data set provide 2'298 images of skin lesions belonging to six different classes. 
+The PAD-UFES-20 dataset provide 2'298 images of skin lesions belonging to six different classes. 
 Figure~\ref{fig:example_images_of_pad-ufes-20} lists some example images.
 
 \begin{figure}[H]
@@ -93,7 +93,7 @@ As visible in Figure~\ref{fig:class_distribution_of_pad-ufes-20} the distributio
 
 \subsection{HAM10000}
 The HAM10000 dataset is based on the \gls{isic} 2018 challenge \autocite{codella2019}. 
-This set provides dermoscopy images in contrary to the the other medical downstream tasks.
+This set provides dermoscopy images in contrary to the other medical downstream tasks.
 They have all the same resolution of $600 \times 450$ and the affected area is always centered and clearly visible.
 Figure~\ref{fig:example_images_of_ham10000} shows this uniformity of the images. 
 \begin{figure}[H]
@@ -116,7 +116,7 @@ The \gls{ssl} pre-training of the dermatology model also used images from \gls{i
 The effects caused by similar data should in that case be the most clearly.
 
 \subsection{Fitzpatrick17k}
-With 16'536 images is Fitzpatrick17k the largest dermatology data set in this work. 
+With 16'536 images is Fitzpatrick17k the largest dermatology dataset in this work. 
 The Different areas of skin can be affected as seen in Figure~\ref{fig:example_images_of_fitzpatrick17k}.
 
 \begin{figure}[H]
@@ -126,7 +126,7 @@ The Different areas of skin can be affected as seen in Figure~\ref{fig:example_i
     \end{center}
 \end{figure}
 
-Beside \gls{ddi} this data set also provides more than one possible target class. 
+Beside \gls{ddi} this dataset also provides more than one possible target class. 
 In this work the following three classes were used. This can also be seen on Figure~\ref{fig:class_distribution_of_fitzpatrick17k}.
 
 \begin{figure}[H]
@@ -192,7 +192,7 @@ All images in the \gls{pvd} have a lab-controlled background as shown in Figure~
 With 54'303 images it is one of the larger plant disease datasets available. 
 Accordingly, it is often used in other work \autocite{hughes2016}, but there is no official test split provided to compare the results of already existing models. 
 Some achieved an accuracy around 90\% with the Resnet50 architecture \autocite{gole2023}.
-The data set includes different plants such as apple and tomatoes, but also different plant diseases. 
+The dataset includes different plants such as apple and tomatoes, but also different plant diseases. 
 Some diseases like ``tomato early blight'' and ``potato early blight'' have the same root cause, but the symptoms look a bit different. 
 The splitting was carried out by myself using 80\% of the data for the training set and 10\% each for the validation and test set. 
 The stratifying ensures, that the distribution of the 38 classes is the same over all sets, which can be seen in Figure~\ref{fig:class_distribution_of_plantvillage}.
@@ -204,7 +204,7 @@ The stratifying ensures, that the distribution of the 38 classes is the same ove
 \end{figure}
 
 \subsection{Cassava Leaf Disease Classification}
-The data set contains 21'398 of cassava leaves with a natural background as visible in Figure~\ref{fig:example_images_of_cassava}.
+The dataset contains 21'398 of cassava leaves with a natural background as visible in Figure~\ref{fig:example_images_of_cassava}.
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=15cm]{example_images_of_cassava.png}
@@ -235,7 +235,7 @@ The images do not only contain leaves, but also the bark or fruits for some clas
     \caption{Example images of PlantDataset}\label{fig:example_images_of_plantdataset}
     \end{center}
 \end{figure}
-A small disadvantage of this data set is the presence of near duplicates in some classes. This should not be a problem, as most classes are safe.
+A small disadvantage of this dataset is the presence of near duplicates in some classes. This should not be a problem, as most classes are safe.
 
 Figure~\ref{fig:class_distribution_of_plantdataset}
 \begin{figure}[H]
@@ -246,7 +246,7 @@ Figure~\ref{fig:class_distribution_of_plantdataset}
 \end{figure}
 
 \subsection{PlantDoc}
-This data set was chosen, because it contains a wild mix of images scrapped from the internet. 
+This dataset was chosen, because it contains a wild mix of images scrapped from the internet. 
 Figure~\ref{fig:example_images_of_plantdoc} shows, that some pictures even have a watermark on them or some.
 \begin{figure}[H]
     \begin{center}
@@ -256,7 +256,7 @@ Figure~\ref{fig:example_images_of_plantdoc} shows, that some pictures even have 
 \end{figure}
 The corresponding paper lists the achieved scores. 
 The best accuracy and f1-score are roughly 70\% \autocite{singh2020}. 
-The data set contains some falsely classified images, which was also confirmed by the creators. 
+The dataset contains some falsely classified images, which was also confirmed by the creators. 
 For this work these few errors should not be a problem, because the classification of the plants is not as important as detecting the stains.
 The 2'598 images are distributed as shown in Figure~\ref{fig:class_distribution_of_plantdoc}.
 
@@ -297,7 +297,7 @@ They also provide a broad selection of \gls{sl} trained models to be used for fi
 This work uses the provided weights of the Resnet50 model to compare its performance on plant and dermatology tasks.
 
 \subsection{Models}
-To have a meaningful comparison it is highly advised to choose a common architecture to which the pre-trained weights can be aquired.
+To have a meaningful comparison it is highly advised to choose a common architecture to which the pre-trained weights can be acquired.
 This work uses the widely applied Resnet50 architecture and ViT-T/16, a tiny \gls{vit} with a patch size of $16 \times 16$.
 Some models for dermatology diagnostic can be provided from previous work by the industry partner.
 A Resnet50 model pre-trained on plant diseases is publicly available from the \gls{pddd} project.
@@ -328,3 +328,26 @@ ViT-T/16 & Derma SSL (DINO) & Github \autocite{groeger2022} \tabularnewline \hli
 ViT-T/16 & Plant SSL (DINO) & Github \autocite{groeger2022} \tabularnewline \hline
 \end{tabularx} 
 \end{table}
+
+The default classifier was removed from the Resnet50 models leaving an output size of 2'048.
+Beside removing the head, the \gls{vit} models were also adjusted to concatenate the output of the last four blocks. 
+
+Due to this modification the effective output size is now 768 instead 192.
+
+The figure \ref{fig:activation_functions} shows the graphs of all mentioned activation functions.
+
+
+\section{Frozen features}
+The eight datasets were put into the eleven models resulting in 88 single feature datasets.
+% Storing these feature enables to repeat
+
+The embeddings of the models can be shown already before applying classifiers.
+Figure~\ref{fig:features_visualized_with_tsne_combined} shows the structure of different feature samples visualized with \gls{tsne}.
+It is clearly visible that the features from the ImageNet and the plant model are more structured and therefore likely will produce better results with the classifier. 
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=15cm]{features_visualized_with_tsne_combined.png}
+    \caption{Class similarities within frozen features visualized with t-SNE}\label{fig:features_visualized_with_tsne_combined}
+    \end{center}
+\end{figure}

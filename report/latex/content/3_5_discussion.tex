@@ -1,17 +1,26 @@
-\chapter{Discussion}{chapter_5}
+\chapter{Discussion}\label{chapter_5}
 
-The results of the frozen evaluation show that models pre-trained on similar data are not significantly better than the models pre-trained on ImageNet. 
-This could be due to various reasons.
+The results of the frozen evaluation show that in some cases transfer learning clearly improves the performance.
+The Resnet50 model with supervised pre-training on plant images as well as the \gls{vit} with self-supervised pre-training on plant images both surpass the other approaches.
+This effect could not be found neither with the dermatology images nor from the plant domain to the dermatology tasks and vice versa.
+
+Often the models pre-trained on ImageNet lead the ranking and still provide a solid basis.
+
+% This could be due to various reasons.
 
 \section{Further research}
-The approaches of fine-tuning have changed in the last years. It is not common anymore to keep the pre-trained layers frozen and only train one linear layer on top. 
+The approaches of fine-tuning have changed in the last years. 
+It is not common anymore to keep the pre-trained layers frozen and only train one linear layer on top. 
 It would therefore be plausible that frozen evaluation are not representing today's practices accurately anymore and the results are less meaningful compared to traditional fine-tuning.
 This could be validated by comparing the scores of modernly fine-tuned models with the respective scores of the evaluations on frozen features.
 
-In the same way the procedure of fine-tuning highly influences the outcome the type of pre-training massively influences the result. SimCLR seems not have worked out, while DINO has at least decent results. 
+In the same way the procedure of fine-tuning highly influences the outcome the type of pre-training massively influences the result. 
+SimCLR seems not have worked out, while DINO has at least decent results. 
 Here different approaches should be tried to determine possible procedures of pre-training before attempting to use data from a similar domain.
 
-% Analysing similarity mays bring valuable insights how such a similarity can be measured and potentially even be applied to check which images within a data set are better suited.
+%TODO
+
+% Analysing similarity mays bring valuable insights how such a similarity can be measured and potentially even be applied to check which images within a dataset are better suited.
 
 % Therefore, a . 
 

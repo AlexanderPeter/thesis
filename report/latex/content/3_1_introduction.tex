@@ -5,11 +5,11 @@
 
 \section{Problem definition}
 
-\gls{ml} models are sucessfully applied in various visual tasks, but many medical fields lack large datasets to develop such models \autocite{castro2019}. 
+\gls{ml} models are successfully applied in various visual tasks, but many medical fields lack large datasets to develop such models \autocite{castro2019}. 
 Ideally, numerous samples per class in different variants are available to ensure, that the model learns to generalize and performs well on unseen data. 
 However, regulations such as data protection laws often hinder collecting or publishing medical records. 
 While some medical institutions are able to collect at least a small amount of suitable data, they are usually not allowed to publish it publicly. 
-In addition to their often rather small size, these small collections are sometimes biased to local characteristics, such as light skin pigmentation in Europea and Asia.
+In addition to their often rather small size, these small collections are sometimes biased to local characteristics, such as light skin pigmentation in Europe and Asia.
 Another obstacle is the obtaining of the according labels. Creating high-quality labels requires experienced specialists. 
 The high costs compared to the limited scope may render the project financially not worthwhile.
 
@@ -19,7 +19,7 @@ Wherever possible, it is state-of-the-art to use model weights pre-trained on ge
 Common pre-training datasets, such as ImageNet, mostly reduce the training duration and may also improve the resulting accuracy \autocite{deng2009}.
 However, their structure often differs greatly from most medical use cases, reducing the effect of pre-training. 
 
-The photos of the ImageNet data set depict various entities like animals or vehicles in a natural environment. 
+The photos of the ImageNet dataset depict various entities like animals or vehicles in a natural environment. 
 Therefore, the lightning and background greatly varies even between images with the same class.
 Clinical images, on the other hand, are often recorded with a consistent procedure and tool, resulting in less diverse images.
 The varying diversity also shows in the number of classes. 
@@ -44,18 +44,18 @@ This brings us to the initial problem again of not having a sufficient amount of
 
 \autocite{cho2023} created such a basic model based on X-ray radiographs and trained a downstream task, which is distinct from the pre-training data.
 He also trained the same downstream task with generic pre-trained weights and completely from scratch.
-The improvement due to generic pre-training compared to no pre-training is confirmed and an even larger improvement was achieved with his basic model.
-He further shows, that with his basic model a fraction of the training data can be omitted and the same results can still be achieved as without the basic model, but the full amount of data for downstream task. 
+The improvement due to generic pre-training compared to no pre-training is confirmed, and an even larger improvement was achieved with his basic model.
+He further shows, that with his basic model a fraction of the training data can be omitted, and the same results can still be achieved as without the basic model, but the full amount of data for downstream task. 
 % The basic model is publicly available and can be used for 
 
 \subsection{Cross-domain pre-training}
 It is not yet clear how to determine in advance if a domain is suited for pre-training a model. 
-It is also not clear how to separate suitable and unsuitable images within a data set to make the best of the pre-training.
+It is also not clear how to separate suitable and unsuitable images within a dataset to make the best of the pre-training.
 % It is suspected, that range and stuff
 
-However, cross-domain pre-training has been successfull applied between different radiograph datasets \autocite{cohen2020} and different skin lesion datasets \autocite{krammer2022}.
+However, cross-domain pre-training has been successfully applied between different radiograph datasets \autocite{cohen2020} and different skin lesion datasets \autocite{krammer2022}.
 
-Due to the sparsity of all clinical images, using clinical images from another related data set is still limiting.
+Due to the sparsity of all clinical images, using clinical images from another related dataset is still limiting.
 Plant disease images resemble to skin disease images in many aspects. 
 In both cases the diseases usually manifest in distinctive discolorations. %which can be used to classify the cause and enables according treatment.
 The spot of an infected leaf has a similar characteristic as a mole on human skin.
@@ -83,7 +83,7 @@ The different strategies and the respective performance ranking is listed in Tab
 \end{table}
 
 The domain specific pre-training is expected to achieve the best results.
-ideally, cross-domain pre-training will surpass the generic pre-training and have the second best result.
+ideally, cross-domain pre-training will surpass the generic pre-training and have the second-best result.
 Transfer learning probably will work not only from plant disease to dermatology diagnostics, but the other way around as well.
 
 
@@ -94,8 +94,8 @@ These main questions are also listed in the task description in the appendix~\re
 \section{Notes on this report}
 \subsection{Basic organization}
 The organization of this report is mainly based on the structure given by \gls{hslu} during the bachelor's program \autocite{balzert2011}.
-Chapter \ref{chapter_1} explains the problem with existing approaches and lists the research questions with the expectated results. 
-Furthermore organizational notes are provided to understand the structure and notation of the report.
+Chapter \ref{chapter_1} explains the problem with existing approaches and lists the research questions with the expected results. 
+Furthermore, organizational notes are provided to understand the structure and notation of the report.
 Chapter \ref{chapter_2} first introduces the main \gls{ml} concepts to allow less versed readers to follow through the report.
 It also provides some relevant findings from the project specific literature research.
 Chapter \ref{chapter_3} covers the experimental setup including the selected datasets and their main characteristics.

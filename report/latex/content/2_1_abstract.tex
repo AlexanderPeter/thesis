@@ -1,10 +1,13 @@
 \chapter*{Abstract}
 
-In the medical field, the lack of large, annotated datasets poses a significant challenge for training \gls{ml} models. Data protection laws often restrict the collection and publication of such datasets, and even when data is collected, it tends to be small and biased, limiting its generalizability. Creating high-quality diagnostic labels requires expert knowledge, making the process expensive and often unfeasible. To address these issues, models pre-trained on generic datasets like ImageNet can be fine-tuned on smaller domain-specific datasets. \gls{ssl} offers another solution, enabling model training without extensive labeled data. However, \gls{ssl} still requires substantial domain-specific data. The availability of large datasets from similar domains could help bridge this gap. For instance, plant disease images, which share visual similarities with skin diseases, are publicly available in large quantities and could serve as a useful resource for improving dermatology models.
+In the medical field, the lack of large, annotated datasets poses a significant challenge for training \gls{ml} models. 
+Data protection laws often restrict the collection and publication of such datasets, and even when data is collected, it tends to be small and biased, limiting its generalizability. Creating high-quality diagnostic labels requires expert knowledge, making the process expensive and often unfeasible. To address these issues, models pre-trained on generic datasets like ImageNet can be fine-tuned on smaller domain-specific datasets. \gls{ssl} offers another solution, enabling model training without extensive labeled data. However, \gls{ssl} still requires substantial domain-specific data. The availability of large datasets from similar domains could help bridge this gap. For instance, plant disease images, which share visual similarities with skin diseases, are publicly available in large quantities and could serve as a useful resource for improving dermatology models.
 
 This work evaluated this possibility with linear regression and \gls{knn} on top of features extracted with differently pre-trained models.
 
-The results show no significant improvement over common generic models. But also the model pre-trained on skin images does not perform better than the ImageNet based one. This leaves the question, if pre-training nowadays still is as efficient as commonly assumed.
+The results show no significant improvement over common generic models. 
+But also the model pre-trained on skin images does not perform better than the ImageNet based one. 
+This leaves the question, if pre-training nowadays still is as efficient as commonly assumed.
 
 
 % Transfer learning has become common practice in the field of image recognition. Ideally, models exist that have been trained on images from the same domain. 
