@@ -72,6 +72,8 @@
 \DeclareMathOperator{\sigm}{sigm}
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\emoji}[1]{\scalerel*{\includegraphics{#1}}{\strut}}
+\newcommand{\slidedefault}[3]{\begin{frame}{#1}\begin{columns}[T] \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill #2 \vfill}\end{column}\begin{column}{0.2\textwidth}\vbox to .8\textheight{\includegraphics[width=0.75\textwidth]{#3}\vfill}\end{column}\end{columns}\end{frame}}
+
 
 % colors
 \definecolor{snowymint}{HTML}{E3F8D1}
@@ -133,212 +135,140 @@
 %%%%%%%%%%%%%%%%
 % Start of Slides:
 
-\begin{frame}{Fundamental problem}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{itemize}
-            \item Public medical data is sparse
-            \item Obtaining labelled data is costly
-            \item SSL pre-training is sometimes not feasible % Large amount of data for
-        \end{itemize}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_1.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
 
-\begin{frame}{Basic idea}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{itemize}
-            \item Utilizing data from a similar domain
-            \item Considering images of diseased plant leaves
-        \end{itemize}
-        %TODO consider image 
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_3.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Fundamental problem}{
+    \begin{itemize}
+        \item Public medical data is sparse
+        \item Obtaining labelled data is costly
+        \item SSL pre-training is sometimes not feasible % Large amount of data for
+    \end{itemize}
+}{icon_1.png}
 
-\begin{frame}{Expected results}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{tabular}{l|c|c}\hline
-            \textbf{Pre-training} & \textbf{Plant tasks}  & \textbf{Dermatology tasks} \\\hline
-            Random & \emoji{unicode_274c.png} & \emoji{unicode_274c.png} \\\hline
-            ImageNet (SSL/SL) & \emoji{unicode_1f949.png} & \emoji{unicode_1f949.png}\\\hline
-            Plant (SSL/SL) & \emoji{unicode_1f947.png} & \emoji{unicode_1f948.png} \\\hline
-            Dermatology (SSL) & \emoji{unicode_1f948.png} & \emoji{unicode_1f947.png}\\\hline
-        \end{tabular}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_4.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
-
-
-\begin{frame}{Datasets}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{tabular}{c c c c}
-            PlantVillage & Cassava & PlantDataset & PlantDoc \\
-            \includegraphics[width=2cm]{sample_plantvillage.jpg} & \includegraphics[width=2cm]{sample_cassava.jpg} & \includegraphics[width=2cm]{sample_plantdataset.jpg} & \includegraphics[width=2cm]{sample_plantdoc.jpg} \\
+\slidedefault{Basic idea}{
+    \begin{itemize}
+        \item Utilizing data from a similar domain
+        \item Considering images of diseased plant leaves
+        \begin{tabular}{c c}
             \\
-            DDI & PAD-UFES-20 & HAM10000 & Fitzpatrick17k \\
-            \includegraphics[width=2cm]{sample_ddi.png} & \includegraphics[width=2cm]{sample_padufes20.png} & \includegraphics[width=2cm]{sample_ham10000.jpg} & \includegraphics[width=2cm]{sample_fitzpatrick17k.jpg} \\
+            \includegraphics[width=4cm]{spots_on_leaf.jpg} & \includegraphics[width=4cm]{sports_on_skin.jpg} \\
         \end{tabular}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_5.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+    \end{itemize}
+}{icon_3.png}
 
+\slidedefault{Method}{
+    \framesubtitle{Fine-tuning last layer}
+    \begin{itemize}
+        \item Last layer during fine tuning
+        \item Computationally complex
+    \end{itemize}
+    \includegraphics[width=1\textwidth]{fine_tuning_last.png}
+}{icon_11.png}
 
-\begin{frame}{Models \& Weights}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{tabular}{|c|c|c|c|c|}\hline
-            \multicolumn{1}{|c|}{} & \multicolumn{2}{c|}{\textbf{Resnet50}} & \multicolumn{2}{c|}{\textbf{ViT-T/16}}\\\hline
-            & \textbf{SL} & \textbf{SSL} & \textbf{SL} & \textbf{SSL} \\\hline
-            \multicolumn{1}{|c|}{Random} & \multicolumn{2}{c|}{Random} & \multicolumn{2}{c|}{Random}\\\hline
-            ImageNet & Default & SimCLR & Down-scaled & DINO \\\hline
-            Dermatology & -- & SimCLR & -- & DINO \\\hline
-            Plant & PDDD & -- & -- & DINO \\\hline
-        \end{tabular}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_7.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Method}{
+    \framesubtitle{Frozen evaluation}
+    \begin{itemize}
+        \item Fast algorithms like kNN or linear regression
+        \item Reusing features
+    \end{itemize}
+    \includegraphics[width=1\textwidth]{frozen_evaluation.png}
+}{icon_13.png}
+
+\slidedefault{Expected results}{
+    \begin{tabular}{l|c|c}\hline
+        \textbf{Pre-training} & \textbf{Plant tasks}  & \textbf{Dermatology tasks} \\\hline
+        Random & \emoji{unicode_274c.png} & \emoji{unicode_274c.png} \\\hline
+        ImageNet (SSL/SL) & \emoji{unicode_1f949.png} & \emoji{unicode_1f949.png}\\\hline
+        Plant (SSL/SL) & \emoji{unicode_1f947.png} & \emoji{unicode_1f948.png} \\\hline
+        Dermatology (SSL) & \emoji{unicode_1f948.png} & \emoji{unicode_1f947.png}\\\hline
+    \end{tabular}
+}{icon_4.png}
+
+\slidedefault{Datasets}{
+    \begin{tabular}{c c c c}
+        PlantVillage & Cassava & PlantDataset & PlantDoc \\
+        \includegraphics[width=2cm]{sample_plantvillage.jpg} & \includegraphics[width=2cm]{sample_cassava.jpg} & \includegraphics[width=2cm]{sample_plantdataset.jpg} & \includegraphics[width=2cm]{sample_plantdoc.jpg} \\
+        \\
+        DDI & PAD-UFES-20 & HAM10000 & Fitzpatrick17k \\
+        \includegraphics[width=2cm]{sample_ddi.png} & \includegraphics[width=2cm]{sample_padufes20.png} & \includegraphics[width=2cm]{sample_ham10000.jpg} & \includegraphics[width=2cm]{sample_fitzpatrick17k.jpg} \\
+    \end{tabular}
+}{icon_5.png}
+
+\slidedefault{Models \& Weights}{
+    \begin{tabular}{|c|c|c|c|c|}\hline
+        \multicolumn{1}{|c|}{} & \multicolumn{2}{c|}{\textbf{Resnet50}} & \multicolumn{2}{c|}{\textbf{ViT-T/16}}\\\hline
+        & \textbf{SL} & \textbf{SSL} & \textbf{SL} & \textbf{SSL} \\\hline
+        \multicolumn{1}{|c|}{Random} & \multicolumn{2}{c|}{Random} & \multicolumn{2}{c|}{Random}\\\hline
+        ImageNet & Default & SimCLR & Down-scaled & DINO \\\hline
+        Dermatology & -- & SimCLR & -- & DINO \\\hline
+        Plant & PDDD & -- & -- & DINO \\\hline
+    \end{tabular}
+}{icon_7.png}
+
+\slidedefault{Frozen features}{
+    \includegraphics[width=1\textwidth]{features_visualized_with_tsne_combined.png}
+    Class similarities within frozen features visualized with t-SNE
+}{icon_9.png}
 
 % \textbf{Original} & \textbf{Random} & \textbf{ImageNet} & \textbf{Dermatology} & \textbf{Plant} \\
 % \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantdoc.png} \\
 
-\begin{frame}{Model attention}
-\framesubtitle{Random}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{tabular}{c c c c c}
-            \multicolumn{4}{l}{The random model is prone to brightness} \\
-            \\
-            \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
-            \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_fitzpatrick17k.png} \\
-        \end{tabular}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_8.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Model attention}{
+    \framesubtitle{Random}
+    \begin{tabular}{c c c c c}
+        \multicolumn{4}{l}{The random model is prone to brightness} \\
+        \\
+        \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
+        \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_fitzpatrick17k.png} \\
+    \end{tabular}
+}{icon_8.png}
 
-\begin{frame}{Model attention}
-\framesubtitle{ImageNet}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{tabular}{c c c c c}
-            \multicolumn{4}{l}{The imagenet model mainly focuses on abnormalities} \\
-            \\
-            \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
-            \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_fitzpatrick17k.png} \\
-        \end{tabular}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_8.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Model attention}{
+    \framesubtitle{ImageNet}
+    \begin{tabular}{c c c c c}
+        \multicolumn{4}{l}{The imagenet model mainly focuses on abnormalities} \\
+        \\
+        \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
+        \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_fitzpatrick17k.png} \\
+    \end{tabular}
+}{icon_8.png}
 
-\begin{frame}{Model attention}
-\framesubtitle{Dermatology}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{tabular}{c c c c c}
-            \multicolumn{4}{l}{The dermatology model includes the surrounding area} \\
-            \\
-            \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
-            \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_fitzpatrick17k.png} \\
-        \end{tabular}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_8.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Model attention}{
+    \framesubtitle{Dermatology}
+    \begin{tabular}{c c c c c}
+        \multicolumn{4}{l}{The dermatology model includes the surrounding area} \\
+        \\
+        \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
+        \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_fitzpatrick17k.png} \\
+    \end{tabular}
+}{icon_8.png}
 
-\begin{frame}{Model attention}
-\framesubtitle{Plant}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \begin{tabular}{c c c c c}
-            \multicolumn{4}{l}{The plant model seems to depict the main vein} \\
-            \\
-            \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
-            \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_fitzpatrick17k.png} \\
-        \end{tabular}
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_8.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Model attention}{
+    \framesubtitle{Plant}
+    \begin{tabular}{c c c c c}
+        \multicolumn{4}{l}{The plant model seems to depict the main vein} \\
+        \\
+        \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
+        \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_fitzpatrick17k.png} \\
+    \end{tabular}
+}{icon_8.png}
 
-\begin{frame}{Frozen features}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \includegraphics[width=1\textwidth]{features_visualized_with_tsne_combined.png}
-        Class similarities within frozen features visualized with t-SNE
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_9.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Evaluation results}{
+    \framesubtitle{Resnet50}
+    \includegraphics[width=1\textwidth]{spider_resnet50.png}
+    Average F1-score from the Resnet50 results
+}{icon_10.png}
 
-\begin{frame}{Evaluation results}
-\framesubtitle{Resnet50}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \includegraphics[width=1\textwidth]{spider_resnet50.png}
-        Average F1-score from the Resnet50 results
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_10.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
+\slidedefault{Evaluation results}{
+    \framesubtitle{Vision transformer}
+    \includegraphics[width=1\textwidth]{spider_vit_t16.png}
+    Average F1-score from the vision transformer results
+}{icon_10.png}
 
-\begin{frame}{Evaluation results}
-\framesubtitle{Vision transformer}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \includegraphics[width=1\textwidth]{spider_vit.png}
-        Average F1-score from the vision transformer results
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_10.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Evaluation results}
-\framesubtitle{Subsampling}
-\begin{columns}[T]
-    \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill
-        \includegraphics[width=1\textwidth]{spider_vit.png}
-        Average F1-score with limited samples per class
-    \vfill}\end{column}
-    \begin{column}{0.2\textwidth}\vbox to .8\textheight{%
-        \includegraphics[width=0.8\textwidth]{icon_2.png}
-    \vfill}\end{column}
-    \end{columns}
-\end{frame}
-
+\slidedefault{Evaluation results}{
+    \framesubtitle{Subsampling}
+    \includegraphics[width=1\textwidth]{lines_ham10000_ViT_T16.png}
+    Average F1-score with limited samples per class
+}{icon_2.png}
 
 % \section{Fundamental problem}
 % \section{Basic idea}
@@ -366,6 +296,8 @@
 
 %% REFERENCES
 % allowframebreaks: creates multiple slides if it is to long for one
+
+% image: Flaticon.com
 \begin{frame}[allowframebreaks]{References}
     \begin{thebibliography}{}
         \setbeamertemplate{bibliography item}[book]
