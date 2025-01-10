@@ -72,7 +72,7 @@
 \DeclareMathOperator{\sigm}{sigm}
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\emoji}[1]{\scalerel*{\includegraphics{#1}}{\strut}}
-\newcommand{\slidedefault}[3]{\begin{frame}{#1}\begin{columns}[T] \begin{column}{0.8\textwidth}\vbox to .8\textheight{\vfill #2 \vfill}\end{column}\begin{column}{0.2\textwidth}\vbox to .8\textheight{\includegraphics[width=0.75\textwidth]{#3}\vfill}\end{column}\end{columns}\end{frame}}
+\newcommand{\slidedefault}[3]{\begin{frame}{#1}\begin{columns}[T] \begin{column}{0.85\textwidth}\vbox to .85\textheight{\vfill #2 \vfill}\end{column}\begin{column}{0.15\textwidth}\vbox to .85\textheight{\includegraphics[width=0.75\textwidth]{#3}\vfill}\end{column}\end{columns}\end{frame}}
 
 
 % colors
@@ -135,55 +135,75 @@
 %%%%%%%%%%%%%%%%
 % Start of Slides:
 
+\section{Introduction}
 
-\slidedefault{Fundamental problem}{
+\slidedefault{Introduction}{
+    \framesubtitle{Fundamental problem}
     \begin{itemize}
-        \item Public medical data is sparse
-        \item Obtaining labelled data is costly
-        \item SSL pre-training is sometimes not feasible % Large amount of data for
+        \setlength\itemsep{1em}
+        \item Sparsity of public medical data
+        \item Costs of labelling data
+        \item High demand for domain specific SSL pre-training
+        \item Insufficient results of generic pre-training
+        \item Lack of understanding for pre-training data selection
     \end{itemize}
 }{icon_1.png}
 
-\slidedefault{Basic idea}{
+\slidedefault{Introduction}{
+    \framesubtitle{Basic idea}
+    Diseased plant leaves
     \begin{itemize}
-        \item Utilizing data from a similar domain
-        \item Considering images of diseased plant leaves
-        \begin{tabular}{c c}
-            \\
-            \includegraphics[width=4cm]{spots_on_leaf.jpg} & \includegraphics[width=4cm]{sports_on_skin.jpg} \\
-        \end{tabular}
+        \item Abundant data availability
+        \item Domain with similar characteristics
     \end{itemize}
+    \vfill
+    \begin{tabular}{c c}
+        \includegraphics[width=5cm]{spots_on_leaf.jpg} & \includegraphics[width=5cm]{sports_on_skin.jpg} \\
+    \end{tabular}
 }{icon_3.png}
 
+\slidedefault{Introduction}{
+    \framesubtitle{Expected results}
+    Expected performance order
+    \vfill
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{l|c|c}\hline
+        Pre-training & Plant tasks  & Dermatology tasks \\\hline
+        ImageNet (SSL/SL) & \emoji{unicode_1f949.png} & \emoji{unicode_1f949.png}\\\hline
+        Plant (SSL/SL) & \emoji{unicode_1f947.png} & \emoji{unicode_1f948.png} \\\hline
+        Dermatology (SSL) & \emoji{unicode_1f948.png} & \emoji{unicode_1f947.png}\\\hline
+        Random & \emoji{unicode_274c.png} & \emoji{unicode_274c.png} \\\hline
+    \end{tabular}
+}{icon_4.png}
+
+\section{Method}
+
 \slidedefault{Method}{
-    \framesubtitle{Fine-tuning last layer}
+    \framesubtitle{Fine-tuning the last layer}
+    Standard fine-tuning procedure 
     \begin{itemize}
-        \item Last layer during fine tuning
-        \item Computationally complex
+        \item Last layer as classifier
+        \item High computation complexity for all combinations
     \end{itemize}
     \includegraphics[width=1\textwidth]{fine_tuning_last.png}
+    \includegraphics[width=1\textwidth]{bar_computed.png}
 }{icon_11.png}
 
 \slidedefault{Method}{
     \framesubtitle{Frozen evaluation}
+    Optimizations
     \begin{itemize}
         \item Fast algorithms like kNN or linear regression
         \item Reusing features
     \end{itemize}
     \includegraphics[width=1\textwidth]{frozen_evaluation.png}
+    \includegraphics[width=1\textwidth]{bar_pre_computed.png}
 }{icon_13.png}
 
-\slidedefault{Expected results}{
-    \begin{tabular}{l|c|c}\hline
-        \textbf{Pre-training} & \textbf{Plant tasks}  & \textbf{Dermatology tasks} \\\hline
-        Random & \emoji{unicode_274c.png} & \emoji{unicode_274c.png} \\\hline
-        ImageNet (SSL/SL) & \emoji{unicode_1f949.png} & \emoji{unicode_1f949.png}\\\hline
-        Plant (SSL/SL) & \emoji{unicode_1f947.png} & \emoji{unicode_1f948.png} \\\hline
-        Dermatology (SSL) & \emoji{unicode_1f948.png} & \emoji{unicode_1f947.png}\\\hline
-    \end{tabular}
-}{icon_4.png}
-
-\slidedefault{Datasets}{
+\slidedefault{Method}{
+    \framesubtitle{Datasets}
+    \textbf{8 datasets}
+    \vfill
     \begin{tabular}{c c c c}
         PlantVillage & Cassava & PlantDataset & PlantDoc \\
         \includegraphics[width=2cm]{sample_plantvillage.jpg} & \includegraphics[width=2cm]{sample_cassava.jpg} & \includegraphics[width=2cm]{sample_plantdataset.jpg} & \includegraphics[width=2cm]{sample_plantdoc.jpg} \\
@@ -193,136 +213,184 @@
     \end{tabular}
 }{icon_5.png}
 
-\slidedefault{Models \& Weights}{
+\slidedefault{Method}{
+    \framesubtitle{Models \& Weights}
+    2 architectures with 11 models
+    \vfill
+    \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{|c|c|c|c|c|}\hline
-        \multicolumn{1}{|c|}{} & \multicolumn{2}{c|}{\textbf{Resnet50}} & \multicolumn{2}{c|}{\textbf{ViT-T/16}}\\\hline
-        & \textbf{SL} & \textbf{SSL} & \textbf{SL} & \textbf{SSL} \\\hline
-        \multicolumn{1}{|c|}{Random} & \multicolumn{2}{c|}{Random} & \multicolumn{2}{c|}{Random}\\\hline
-        ImageNet & Default & SimCLR & Down-scaled & DINO \\\hline
+        \multicolumn{1}{|c|}{} & \multicolumn{2}{c|}{Resnet50} & \multicolumn{2}{c|}{ViT-T/16}\\\hline
+        & SL & SSL & SL & SSL \\\hline
+        ImageNet & Default & SimCLR & 2x Google & DINO \\\hline
         Dermatology & -- & SimCLR & -- & DINO \\\hline
         Plant & PDDD & -- & -- & DINO \\\hline
+        \multicolumn{1}{|c|}{Random} & \multicolumn{2}{c|}{Random} & \multicolumn{2}{c|}{Random}\\\hline
     \end{tabular}
 }{icon_7.png}
 
-\slidedefault{Frozen features}{
+\section{First analysis}
+
+\slidedefault{First analysis}{
+    \framesubtitle{Frozen features}
+    Frozen features of PlantVillage visualized with t-SNE
+    \begin{itemize}
+        \item Structure of similar classes
+        \item SL and SSL
+    \end{itemize}
     \includegraphics[width=1\textwidth]{features_visualized_with_tsne_combined.png}
-    Class similarities within frozen features visualized with t-SNE
 }{icon_9.png}
 
 % \textbf{Original} & \textbf{Random} & \textbf{ImageNet} & \textbf{Dermatology} & \textbf{Plant} \\
 % \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantdoc.png} \\
 
-\slidedefault{Model attention}{
-    \framesubtitle{Random}
+\slidedefault{First analysis}{
+    \framesubtitle{Model attention random}
+    Attention of random model
+    \begin{itemize}
+        \item Sensitivity to brightness
+    \end{itemize}
     \begin{tabular}{c c c c c}
-        \multicolumn{4}{l}{The random model is prone to brightness} \\
+        % \multicolumn{4}{l}{The random model is prone to brightness} \\
         \\
         \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
         \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Random_headless_fitzpatrick17k.png} \\
     \end{tabular}
 }{icon_8.png}
 
-\slidedefault{Model attention}{
-    \framesubtitle{ImageNet}
+\slidedefault{First analysis}{
+    \framesubtitle{Model attention ImageNet}
+    Attention of ImageNet model
+    \begin{itemize}
+        \item Main focus on abnormalities
+    \end{itemize}
     \begin{tabular}{c c c c c}
-        \multicolumn{4}{l}{The imagenet model mainly focuses on abnormalities} \\
+        % \multicolumn{4}{l}{The ImageNet model mainly focuses on abnormalities} \\
         \\
         \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
         \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-ImageNet_1k_SSL_Dino_headless_fitzpatrick17k.png} \\
     \end{tabular}
 }{icon_8.png}
 
-\slidedefault{Model attention}{
-    \framesubtitle{Dermatology}
+\slidedefault{First analysis}{
+    \framesubtitle{Model attention dermatology}
+    Attention of dermatology model
+    \begin{itemize}
+        \item Focus on abnormalities and surrounding area
+    \end{itemize}
     \begin{tabular}{c c c c c}
-        \multicolumn{4}{l}{The dermatology model includes the surrounding area} \\
+        % \multicolumn{4}{l}{The dermatology model includes the surrounding area} \\
         \\
         \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
         \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Derma_SSL_Dino_headless_fitzpatrick17k.png} \\
     \end{tabular}
 }{icon_8.png}
 
-\slidedefault{Model attention}{
-    \framesubtitle{Plant}
+\slidedefault{First analysis}{
+    \framesubtitle{Model attention plant}
+    Attention of plant model
+    \begin{itemize}
+        \item Depiction of the main vein
+    \end{itemize}
     \begin{tabular}{c c c c c}
-        \multicolumn{4}{l}{The plant model seems to depict the main vein} \\
+        % \multicolumn{4}{l}{The plant model seems to depict the main vein} \\
         \\
         \includegraphics[width=2cm]{attention_input_plantvillage.png} & \includegraphics[width=2cm]{attention_input_plantdoc.png} & \includegraphics[width=2cm]{attention_input_ham10000.png} & \includegraphics[width=2cm]{attention_input_fitzpatrick17k.png} \\
         \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantvillage.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_plantdoc.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_ham10000.png} & \includegraphics[width=2cm]{attention_ViT_T16-Plant_SSL_Dino_headless_fitzpatrick17k.png} \\
     \end{tabular}
 }{icon_8.png}
 
+\section{Evaluation results}
+
 \slidedefault{Evaluation results}{
     \framesubtitle{Resnet50}
-    \includegraphics[width=1\textwidth]{spider_resnet50.png}
-    Average F1-score from the Resnet50 results
+    Average f1-scores from the Resnet50 results
+    \begin{itemize}
+        \item Bad performance of dermatology
+    \end{itemize}
+    \includegraphics[width=10cm]{spider_resnet50.png}
 }{icon_10.png}
 
 \slidedefault{Evaluation results}{
     \framesubtitle{Vision transformer}
-    \includegraphics[width=1\textwidth]{spider_vit_t16.png}
-    Average F1-score from the vision transformer results
+    Average f1-scores from the vision transformer results
+    \begin{itemize}
+        \item Only one interesting case % add circle
+    \end{itemize}
+    \includegraphics[width=10cm]{spider_vit_t16.png}
 }{icon_10.png}
+
+\section{Subsampling results}
 
 \slidedefault{Subsampling results}{
     \framesubtitle{Overview HAM10000}
+    Average f1-scores with limited samples per class
+    \begin{itemize}
+        \item Expected performance order
+    \end{itemize}
     \includegraphics[width=1\textwidth]{lines_ham10000_ViT_T16.png}
-    Average F1-score with limited samples per class
 }{icon_17.png}
 
 \slidedefault{Subsampling results}{
     \framesubtitle{Training HAM10000}
+    Loss curve and f1-score
+    \begin{itemize}
+        \item Full memorization of training data
+        \item Limited generalization
+    \end{itemize}
     \includegraphics[width=1\textwidth]{training_ham10000_ViT_T16_Derma_100.png}
-    Training set is fully memorized
 }{icon_17.png}
 
-% Consequence would be regularization, right?
-
-\slidedefault{Class comparison}{
-    \framesubtitle{HAM10000}
+\slidedefault{Subsampling results}{
+    \framesubtitle{HAM10000 class comparison}
+    confusion matrices of ImageNet and plant model
+    \begin{itemize}
+        \item Performance of vascular lesions
+        \item No obvious connection
+    \end{itemize}
     \begin{tabular}{c c}
-        \includegraphics[width=4cm]{confusion_matrix_ham10000_ViT_T16_plant.png} & \includegraphics[width=4cm]{confusion_matrix_ham10000_ViT_T16_imagenet.png} \\
-        \\
+        \includegraphics[width=4cm]{confusion_matrix_ham10000_ViT_T16_imagenet.png} & \includegraphics[width=4cm]{confusion_matrix_ham10000_ViT_T16_plant.png} \\
     \end{tabular}
-    Similarity of the confusion matrices of plant and ImageNet
 }{icon_15.png}
 
-\slidedefault{Experiments}{
+\section{Further experiments}
+
+\slidedefault{Further experiments}{
     \framesubtitle{Fine-tuning multiple layers}
+    Fine-tuning vs frozen evaluation
+    \begin{itemize}
+        \item Multiple layers
+        \item Different fine-tuning techniques
+    \end{itemize}
     \includegraphics[width=1\textwidth]{fine_tuning_half.png}
-    Fine-tuning multiple layers
 }{icon_12.png}
 
-% \begin{itemize}
-%     \item ???
-%     \item ???
-% \end{itemize}
+\slidedefault{Further experiments}{
+    \framesubtitle{Fine-tuning results}
+    
+    %TODO matrix
+}{icon_16.png}
+\section{Discussion}
 
-%TODO loss curves
-\slidedefault{Fine-tuning results}{}{icon_2.png}
+\slidedefault{Discussion}{
+    \framesubtitle{Findings}
+    \begin{itemize}
+        \item Only one case with expected performance order
+        \item Full memorization of training data
+        \item Limited generalization
+        \item Big differences between Resnet50 and ViT
+        \item Attention on text
+    \end{itemize}
+}{icon_19.png}
 
-%TODO matrix
-
-% \slidedefault{Teacher / student}{}{icon_2.png}
-\slidedefault{Teacher / student}{}{icon_2.png}
-
-% \section{Fundamental problem}
-% \section{Basic idea}
-% \section{Related work}
-% \framesubtitle{This is a subtitle}
-% \subsection{Related work subject \#1}
-% \begin{frame}{Related work}
-%     \framesubtitle{Related work subject \#1}
-%     \begin{columns}[T]
-%         \column{0.5\textwidth}
-%             column left
-%         \column{0.5\textwidth}
-%             column right
-%     \end{columns}
-%     \note{
-%         Notes....
-%     }
-% \end{frame}
+\slidedefault{Discussion}{
+    \framesubtitle{Further research}
+    \begin{itemize}
+        \item Data clean up (duplicates, text, false classes)
+        \item Comparison of more pre-training algorithms
+        \item Standardization of images
+        \item Better stopping conditions
+    \end{itemize}
+}{icon_18.png}
 
 \begin{frame}{Questions and answers}
     \begin{center}
@@ -330,40 +398,4 @@
     \end{center}
 \end{frame}
 
-%% REFERENCES
-% allowframebreaks: creates multiple slides if it is to long for one
-
-% image: Flaticon.com
-\begin{frame}[allowframebreaks]{References}
-    \begin{thebibliography}{}
-        \setbeamertemplate{bibliography item}[book]
-        \bibitem{DeepLearning}
-        Goodfellow, Ian, Yoshua Bengio, and Aaron Courville.
-        \newblock \emph{Deep Learning}.
-        \newblock MIT Press, 2016.
-        
-        \setbeamertemplate{bibliography item}[article]
-        \bibitem{FaceNet}
-        Schroff, Florian, Dmitry Kalenichenko, and James Philbin.
-        \newblock \emph{FaceNet: A Unified Embedding for Face Recognition and Clustering}, 2015.
-        \newblock \url{https://arxiv.org/abs/1503.03832}
-        
-        \setbeamertemplate{bibliography item}[online]
-        \bibitem{DCASE}
-        Dekkers, Lauwereins, Thoen et al.
-        \newblock \emph{DCASE Challenge 2018 Task 5}, 2018.
-        \newblock \url{http://dcase.community/challenge2018/task-monitoring-domestic-activities}
-    \end{thebibliography}
-\end{frame}
-
-%% APPENDIX
-% \appendix
-
-%%%% BACKUP
-\begin{frame}{Backup Slides}
-	\framesubtitle{backup slides}
-	Backup!
-\end{frame}
-
-%%
 \end{document}
