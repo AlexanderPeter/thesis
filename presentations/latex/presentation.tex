@@ -264,11 +264,47 @@
     Average F1-score from the vision transformer results
 }{icon_10.png}
 
-\slidedefault{Evaluation results}{
-    \framesubtitle{Subsampling}
+\slidedefault{Subsampling results}{
+    \framesubtitle{Overview HAM10000}
     \includegraphics[width=1\textwidth]{lines_ham10000_ViT_T16.png}
     Average F1-score with limited samples per class
-}{icon_2.png}
+}{icon_17.png}
+
+\slidedefault{Subsampling results}{
+    \framesubtitle{Training HAM10000}
+    \includegraphics[width=1\textwidth]{training_ham10000_ViT_T16_Derma_100.png}
+    Training set is fully memorized
+}{icon_17.png}
+
+% Consequence would be regularization, right?
+
+\slidedefault{Class comparison}{
+    \framesubtitle{HAM10000}
+    \begin{tabular}{c c}
+        \includegraphics[width=4cm]{confusion_matrix_ham10000_ViT_T16_plant.png} & \includegraphics[width=4cm]{confusion_matrix_ham10000_ViT_T16_imagenet.png} \\
+        \\
+    \end{tabular}
+    Similarity of the confusion matrices of plant and ImageNet
+}{icon_15.png}
+
+\slidedefault{Experiments}{
+    \framesubtitle{Fine-tuning multiple layers}
+    \includegraphics[width=1\textwidth]{fine_tuning_half.png}
+    Fine-tuning multiple layers
+}{icon_12.png}
+
+% \begin{itemize}
+%     \item ???
+%     \item ???
+% \end{itemize}
+
+%TODO loss curves
+\slidedefault{Fine-tuning results}{}{icon_2.png}
+
+%TODO matrix
+
+% \slidedefault{Teacher / student}{}{icon_2.png}
+\slidedefault{Teacher / student}{}{icon_2.png}
 
 % \section{Fundamental problem}
 % \section{Basic idea}

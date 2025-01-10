@@ -1,3 +1,9 @@
 seed,strategy,dataset_path,checkpoint_path
-1,lora_2,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth
-1,lora_4,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-ImageNet_1k_SSL_Dino_headless.pth
+1,concat_1,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
+1,concat_2,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
+1,concat_3,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
+1,concat_4,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
+1,lora_1,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
+1,lora_2,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
+1,lora_3,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
+1,lora_4,../data_splits/HAM10000_split.csv,../model_weights/vit_t16_v2/ViT_T16-Plant_SSL_Dino_headless.pth
