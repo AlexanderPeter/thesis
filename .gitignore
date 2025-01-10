@@ -9,7 +9,7 @@ documents/examples/
 documents/medium/
 documents/research/
 model_weights/
-presentations/latex/images/
+# presentations/latex/images/
 presentations/latex/resources/
 runs/*
 
